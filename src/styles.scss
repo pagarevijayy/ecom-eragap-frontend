@@ -1,1 +1,94 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: 'Poppins, monospace',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core($custom-typography);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$front-ssk-beads-primary: mat-palette($mat-indigo);
+$front-ssk-beads-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$front-ssk-beads-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$front-ssk-beads-theme: mat-light-theme((
+  color: (
+    primary: $front-ssk-beads-primary,
+    accent: $front-ssk-beads-accent,
+    warn: $front-ssk-beads-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($front-ssk-beads-theme);
+
+
+
 /* You can add global styles to this file, and also import other style files */
+
+// variables
+:root {
+  --bg_color_light: #F8F9FA;
+  --primary_text_dark: #333333;
+
+  --primary_text_light: #ffffff;
+  --secondary_text_dark: #666666;
+
+  --primary_theme_color: #197278;
+  --whatsapp_theme_color: #25D366;
+  --callout_bg: #E9ECEF;
+}
+
+
+html, body { height: 100%; }
+body { 
+  margin: 0;
+  color: var(--primary_text_dark, #333333)!important;
+  font-family: 'Poppins', "Helvetica Neue", sans-serif !important;
+}
+
+
+// ụtils:
+
+.secondary-text {
+  color: var(--secondary_text_dark, #666666);
+}
+
+.primary-text-light {
+  color: var(--primary_text_light, #ffffff);
+}
+
+.fs-12 {
+  font-size: 0.75em;
+}
+
+.fs-14 {
+  font-size: 0.875em;
+}
+
+.fs-18 {
+  font-size: 1.125em;
+}
+
+.fs-24 {
+  font-size: 1.5em;
+}
