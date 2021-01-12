@@ -1,16 +1,15 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav text-center" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'">
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'">
     <mat-toolbar class="secondary-text fs-18">Categories</mat-toolbar>
     <mat-nav-list class="pt-0">
       <a mat-list-item href="#" *ngFor="let item of menuItems">
-       <span> {{item}} </span>
-       <span> <img src="assets/images/chevron_right.svg" alt="chevron"> </span> 
+        <span> {{item}} </span>
+        <span> <img src="assets/images/chevron_right.svg" alt="chevron"> </span>
       </a>
     </mat-nav-list>
     <div class="whatsapp-cta p-3 mt-2">
-      <a class="btn btn-style" href="https://wa.me/919029559131?text={{enquiryPrefillMessage}}"  target="_blank" > 
+      <a class="btn btn-style" href="https://wa.me/919029559131?text={{enquiryPrefillMessage}}" target="_blank">
         <section class="d-flex align-items-center">
           <img src="assets/images/whatsapp.svg" alt="whatsapp">
           <span class="px-2 fs-12">{{whatsappBtnLabel}}</span>
@@ -22,19 +21,16 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar>
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
+    <mat-toolbar class="main-toolbar mb-3">
+      <button type="button" aria-label="Toggle sidenav"
+        mat-icon-button style="outline: none;" 
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span class="px-1">{{storeName}}</span>
+      <span class="px-2">{{storeName}}</span>
     </mat-toolbar>
-    <!-- Add Content Here -->
+    <!-- Add Main Page Content Here -->
     <ng-content></ng-content>
-    
   </mat-sidenav-content>
 </mat-sidenav-container>

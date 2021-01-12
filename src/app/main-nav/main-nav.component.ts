@@ -11,12 +11,12 @@ import { map, shareReplay } from 'rxjs/operators';
 
 export class MainNavComponent {
 
-  storeName:string = 'SSK Beads';
+  storeName: string = 'SSK Beads';
   menuItems: Array<string> = ['Beads', 'Pendants', 'Jewellery', 'Tools & Kit'];
-  enquiryPrefillMessage:string = `Hi! I wanted to know more about your product and services.
+  enquiryPrefillMessage: string = `Hi! I wanted to know more about your product and services.
                                  Can we have a word?`;
-  whatsappBtnLabel:string = 'Contact for Business Enquiry';
-  copyright_text:string = '© Shree Sai Krupa Beads';                             
+  whatsappBtnLabel: string = 'Contact for Business Enquiry';
+  copyright_text: string = '© Shree Sai Krupa Beads';
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
