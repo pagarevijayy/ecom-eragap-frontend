@@ -32,18 +32,66 @@
         </div>
     </section>
 
-    <!-- section A -->
-    <section class="pt-2">
+    <!-- section A [gridTypeA] -->
+    <section class="pt-3">
         <h5 class="py-3 fs-18">{{sectionAHeading}}</h5>
-        <div class="sub-categories">
+        <div class="grid-type-A" [ngClass]="{'smaller-screen-grid-A': isHandset$ | async}">
             <div class="showcase-card">
+                card 1
             </div>
+            <div class="showcase-card">
+                card 2
+            </div>
+            <div class="showcase-card">
+                card 3
+            </div>
+            <div class="showcase-card">
+                card4
+            </div>
+            <div class="showcase-card">
+                card 5
+            </div>
+            <!-- <div class="showcase-card">
+                card 6
+            </div>
+            <div class="showcase-card">
+                card 7
+            </div>
+            <div class="showcase-card">
+                card 8
+            </div> -->
         </div>
     </section>
 
-    <!-- section B -->
-    <section>
-
+    <!-- section B [gridTypeB]-->
+    <section class="pt-3">
+        <h5 class="py-3 fs-18"> Section B</h5>
+        <div class="grid-type-B">
+            <div class="showcase-card">
+                card 1
+            </div>
+            <div class="showcase-card">
+                card 2
+            </div>
+            <div class="showcase-card">
+                card 3
+            </div>
+            <div class="showcase-card">
+                card4
+            </div>
+            <div class="showcase-card">
+                card 5
+            </div>
+            <div class="showcase-card">
+                card 6
+            </div>
+            <div class="showcase-card">
+                card 7
+            </div>
+            <div class="showcase-card">
+                card 8
+            </div>
+        </div>
     </section>
 
     <!-- section C -->

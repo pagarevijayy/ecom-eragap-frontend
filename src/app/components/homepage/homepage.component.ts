@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UtilsService } from 'src/app/services';
 
 @Component({
   selector: 'app-homepage',
@@ -11,8 +13,10 @@ export class HomepageComponent implements OnInit {
   sectionBHeading:string = 'Pendants Collection';
   sectionCHeading:string = 'Jewellery component';
 
+  isHandset$: Observable<boolean> = this._utilService.isHandset$;
 
-  constructor() { }
+
+  constructor(private _utilService: UtilsService) { }
 
   ngOnInit(): void {
   }
