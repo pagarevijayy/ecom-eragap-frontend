@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { ProductsComponent } from './components/products/products.component';
 
-const routes: Routes = [  
+const routes: Routes = [
   { path: 'home', component: HomepageComponent },
-  { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `home-component`
+  { path: 'product/:id', component: ProductsComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, // redirect to `home-component`
   { path: '**', component: HomepageComponent },  // Wildcard route ideally for a 404 page
 ];
 

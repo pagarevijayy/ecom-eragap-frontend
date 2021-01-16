@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
 import { UtilsService } from 'src/app/services';
+import { Router } from '@angular/router';
 
-@Component({ 
+@Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
   styleUrls: ['./main-nav.component.scss']
@@ -13,7 +12,25 @@ import { UtilsService } from 'src/app/services';
 export class MainNavComponent {
 
   storeName: string = 'SSK Beads';
-  menuItems: Array<string> = ['Beads', 'Pendants', 'Jewellery', 'Tools & Kit'];
+  menuItems: Array<any> = [
+    {
+      label: 'Beads',
+      route: 'bead'
+    },
+    {
+      label: 'Pendants',
+      route: 'pendant'
+    },
+    {
+      label: 'Jewellery',
+      route: 'jewellery'
+    },
+    {
+      label: 'Tools & Kit',
+      route: 'tools-and-kit'
+    }
+  ];
+  
   enquiryPrefillMessage: string = `Hi! I wanted to know more about your product and services.
                                  Can we have a word?`;
   whatsappBtnLabel: string = 'Contact for Business Enquiry';
@@ -21,7 +38,14 @@ export class MainNavComponent {
 
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
 
-  constructor( private _utilService: UtilsService) { }
+  constructor(
+    private _utilService: UtilsService,
+    private _router: Router
+  ) { }
+
+  redirectRoute(routeName: string) {
+    this._router.navigate([`/product/${routeName}`]);
+  }
 
 }
 

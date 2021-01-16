@@ -3,8 +3,8 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'">
     <mat-toolbar class="secondary-text fs-18">Categories</mat-toolbar>
     <mat-nav-list class="pt-0">
-      <a mat-list-item href="#" *ngFor="let item of menuItems">
-        <span> {{item}} </span>
+      <a mat-list-item *ngFor="let item of menuItems" (click)="redirectRoute(item?.route)">
+        <span> {{item?.label}} </span>
         <span> <img src="assets/images/chevron_right.svg" alt="chevron"> </span>
       </a>
     </mat-nav-list>
