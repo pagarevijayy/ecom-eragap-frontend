@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
+import { MatSidenav } from '@angular/material/sidenav';
 import { UtilsService } from 'src/app/services';
 import { Router } from '@angular/router';
+import { DummyData } from 'src/assets/data'
 
 @Component({
   selector: 'app-main-nav',
@@ -10,27 +12,11 @@ import { Router } from '@angular/router';
 })
 
 export class MainNavComponent {
+  @ViewChild('drawer') sideNavDrawer: MatSidenav;
 
   storeName: string = 'SSK Beads';
-  menuItems: Array<any> = [
-    {
-      label: 'Beads',
-      route: 'bead'
-    },
-    {
-      label: 'Pendants',
-      route: 'pendant'
-    },
-    {
-      label: 'Jewellery',
-      route: 'jewellery'
-    },
-    {
-      label: 'Tools & Kit',
-      route: 'tools-and-kit'
-    }
-  ];
-  
+  menuItems: Array<any> = DummyData.categories;
+
   enquiryPrefillMessage: string = `Hi! I wanted to know more about your product and services.
                                  Can we have a word?`;
   whatsappBtnLabel: string = 'Contact for Business Enquiry';
@@ -43,8 +29,15 @@ export class MainNavComponent {
     private _router: Router
   ) { }
 
-  redirectRoute(routeName: string) {
-    this._router.navigate([`/product/${routeName}`]);
+  redirectRoute(isCategory: boolean, routeName: string) {
+    if (isCategory) {
+      this._router.navigate([`/product/${routeName}`]);
+      // close side nav drawer after routing
+      this.sideNavDrawer.close();
+    } else {
+      this._router.navigate([`${routeName}`]);
+    }
+
   }
 
 }

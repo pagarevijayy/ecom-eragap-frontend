@@ -3,7 +3,7 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'">
     <mat-toolbar class="secondary-text fs-18">Categories</mat-toolbar>
     <mat-nav-list class="pt-0">
-      <a mat-list-item *ngFor="let item of menuItems" (click)="redirectRoute(item?.route)">
+      <a mat-list-item *ngFor="let item of menuItems" (click)="redirectRoute(true, item?.route)">
         <span> {{item?.label}} </span>
         <span> <img src="assets/images/chevron_right.svg" alt="chevron"> </span>
       </a>
@@ -28,7 +28,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span class="px-2">{{storeName}}</span>
+      <span class="px-2" (click)="redirectRoute(false, 'home')">{{storeName}}</span>
     </mat-toolbar>
     <!-- Add Main Page Content Here -->
     <ng-content></ng-content>
