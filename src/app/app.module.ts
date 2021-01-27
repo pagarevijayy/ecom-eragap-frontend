@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card'; 
 
 // components
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductCardComponent } from './components/utils/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     MainNavComponent,
     HomepageComponent,
     ProductsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     MatIconModule,
     MatListModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

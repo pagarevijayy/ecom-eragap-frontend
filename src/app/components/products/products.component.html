@@ -1,10 +1,17 @@
-<p>products works! - {{currentRouteID}}</p>
 <div class="products px-3">
-    <mat-form-field appearance="outline">
-        <mat-label>{{currentCategory}}</mat-label>
-        <mat-select [(value)]="primarySubcategory">
-          <mat-option [value]="option" *ngFor="let option of subcategories">{{ option }}</mat-option>
-        </mat-select>
-      </mat-form-field>
+  <div class='subsection-dropdown'>
+    <mat-form-field appearance="outline" style="width:100%">
+      <mat-label>{{currentCategory}}</mat-label>
+      <mat-select [(value)]="primarySubcategory">
+        <mat-option [value]="option" *ngFor="let option of subcategories">{{ option }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="product-catlogue">
+    <app-product-card></app-product-card>
+    <app-product-card></app-product-card>
+    <app-product-card></app-product-card>
+    <app-product-card></app-product-card>
+    <app-product-card></app-product-card>
+  </div>
 </div>
-

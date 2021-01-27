@@ -1,1 +1,69 @@
-<p>product-details works!</p>
+<div class="product-container px-3">
+    <div class="product-details my-3">
+        <div class="product-image">
+            <img class="img-style"
+                src="https://cdn2.storehippo.com/s/5bf5074adb08ee03812b17be/5fdb4d3929efee08cd9299b5/cmc-32-640x640.JPG">
+        </div>
+        <div class="product-header mt-3">
+            <span class="d-block fs-18">50 Pcs Crystal Bead Special</span>
+            <span class="d-block fs-14 text-secondary pt-1">Crytal Bead</span>
+        </div>
+        <div class="product-content fs-14 my-3">
+            <div class='label'>
+                <span>Available colors</span>
+            </div>
+            <div>
+                <span class='dot-container'>
+                    <span class="dot" style="background-color: #3668a1"></span>
+                </span>
+                <span class='dot-container'>
+                    <span class="dot" style="background-color: #A6E4B3"></span>
+                </span>
+                <span class='dot-container'>
+                    <span class="dot" style="background-color: #EB5757"></span>
+                </span>
+
+            </div>
+            <div class='label'>
+                <span>Quantiy</span>
+            </div>
+            <div>3 threads </div>
+            <div class='label'>
+                <span>Price</span>
+            </div>
+            <div>
+                <span class='font-weight-bold'>
+                    ₹550
+                </span>
+            </div>
+        </div>
+        <div class="product-cta text-center my-3">
+            <button mat-stroked-button style="background-color: blanchedalmond; width:50%;">Buy Now</button>
+        </div>
+        <div class="product-description p-3 my-4">
+            <div class="label">
+                <span>Product Description</span>
+            </div>
+            <div class="details fs-12 pt-3">
+                <span class='d-block'>
+                    lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, id.
+                </span>
+                <span class="d-block pt-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium tempore est
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="other-products my-3 text-center">
+        <section class='my-4'>
+            <span class='check-products text-secondary px-3'>Check similar products</span>
+        </section>
+        <div class="recommended-products py-2">
+            <app-product-card></app-product-card>
+            <app-product-card></app-product-card>
+        </div>
+        <section class="find-more py-4">
+            <button mat-stroked-button style="background-color: blanchedalmond;">Find More</button>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+.products{
+    .product-catlogue{
+        display: grid;
+        grid-gap: 0.65em;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

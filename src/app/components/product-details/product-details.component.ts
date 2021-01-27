@@ -16,13 +16,13 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {
 
-        // subscribe to route param id
-        this._route.params.subscribe(params => {
-          this.categoryID = params['categoryID'];
-          this.productID = params['productID'];
+    // subscribe to route param id
+    this._route.params.subscribe(params => {
+      this.categoryID = params['categoryID'];
+      this.productID = params['productID'];
 
-          console.log('productID [productdetails]', this.productID, params);
-        });
+      console.log('productID [productdetails]', this.productID, params);
+    });
   }
 
 }

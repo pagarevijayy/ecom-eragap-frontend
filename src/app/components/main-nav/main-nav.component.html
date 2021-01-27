@@ -28,7 +28,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span class="px-2" (click)="redirectRoute(false, 'home')">{{storeName}}</span>
+      <span  class="px-2 cursor-pointer" (click)="redirectRoute(false, 'home')">{{storeName}}</span>
     </mat-toolbar>
     <!-- Add Main Page Content Here -->
     <ng-content></ng-content>
