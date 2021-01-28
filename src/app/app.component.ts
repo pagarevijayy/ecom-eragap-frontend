@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'front-ssk-beads';
+  footerText = 'Copyright © 2020 SSK Beads. All Rights Reserved';
 }

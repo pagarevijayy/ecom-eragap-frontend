@@ -1,6 +1,6 @@
 <div class="home-page text-center px-3 pb-3">
     <!-- bootstrap carousel -->
-    <section class="pt-2">
+    <section class="carousel-banner pt-2">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -8,16 +8,16 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner border-radius-8">
-                <div class="carousel-item active">
+                <div class="carousel-item active" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
                     <img src="https://images.unsplash.com/photo-1510229955695-588e1612a69b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"
                         class="d-block w-100" alt="...">
                 </div>
-                <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1523251691580-613e117a75e7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80"
+                <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
+                    <img src="https://images.unsplash.com/photo-1510229955695-588e1612a69b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"
                         class="d-block w-100" alt="...">
                 </div>
-                <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1511253819057-5408d4d70465?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80"
+                <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
+                    <img src="https://images.unsplash.com/photo-1510229955695-588e1612a69b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"
                         class="d-block w-100" alt="...">
                 </div>
             </div>
