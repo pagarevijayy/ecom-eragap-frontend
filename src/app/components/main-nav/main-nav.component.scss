@@ -33,3 +33,25 @@
 :host ::ng-deep .mat-list-base .mat-list-item .mat-list-item-content {
   justify-content: space-between
 }
+
+.nav-item-link {
+  text-decoration: none;
+  color: #4b4b4b;
+  font-size: large;
+  text-transform: lowercase;
+
+  &:hover {
+    text-decoration: none;
+    color: #333
+  }
+}
+
+.margin-pull {
+  margin-bottom: -5px;
+}
+
+.logo-font {
+  font-family: 'Playfair Display', serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
