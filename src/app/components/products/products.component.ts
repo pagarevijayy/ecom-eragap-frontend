@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { UtilsService } from 'src/app/services';
 import { DummyData } from 'src/assets/data'
 
 @Component({
@@ -9,16 +11,22 @@ import { DummyData } from 'src/assets/data'
 })
 export class ProductsComponent implements OnInit {
 
+  isHandset$: Observable<boolean> = this._utilService.isHandset$;
+  enquiryPrefillMessage: string = `Hi! I wanted to know more about your product and services.
+  Can we have a word?`;
+  whatsappBtnLabel: string = 'Contact for Business Enquiry';
+
   currentRouteID: string;
-  currentCategory: string = 'Beads'; 
+  currentCategory: string = 'Beads';
   //pass currentCategory value from menu click [no need to iterate the loop and discover value]
-  
+
   primarySubcategory: string = 'Crystal Beads';
   subcategories: Array<any> = DummyData.subcategories;
 
 
   constructor(
     private _route: ActivatedRoute,
+    private _utilService: UtilsService
   ) { }
 
   ngOnInit(): void {

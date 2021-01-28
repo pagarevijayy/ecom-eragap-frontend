@@ -1,7 +1,21 @@
-.products{
-    .product-catlogue{
-        display: grid;
-        grid-gap: 0.65em;
-        grid-template-columns: repeat(2, 1fr);
+.products {
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  &.large-screen-product-layout {
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 0.65em;
+  }
+
+  .product-catlogue {
+    display: grid;
+    grid-gap: 0.65em;
+    grid-template-columns: repeat(2, 1fr);
+
+    &.large-screen-product-catlogue {
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.5em;
     }
+
+  }
 }
