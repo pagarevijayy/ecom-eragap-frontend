@@ -1,5 +1,12 @@
 .product-container {
   .product-details {
+
+    &.large-screen-details-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+
+
     .product-image {
       .img-style {
         filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.25));
@@ -30,12 +37,22 @@
       display: grid;
       grid-gap: 0.65em;
       grid-template-columns: repeat(2, 1fr);
+
+      &.large-screen-recommended-layout {
+        grid-gap: 1.5em;
+        grid-template-columns: repeat(6, 1fr);
+
+        .suggestion-start {
+          grid-column-start: 3;
+        }
+      }
     }
   }
 }
 
-.dot-container{
+.dot-container {
   padding: 0 6px 0 0;
+
   .dot {
     height: 25px;
     width: 25px;

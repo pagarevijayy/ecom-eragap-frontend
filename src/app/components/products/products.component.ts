@@ -12,6 +12,7 @@ import { DummyData } from 'src/assets/data'
 export class ProductsComponent implements OnInit {
 
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
+  
   enquiryPrefillMessage: string = `Hi! I wanted to know more about your product and services.
   Can we have a word?`;
   whatsappBtnLabel: string = 'Contact for Business Enquiry';
