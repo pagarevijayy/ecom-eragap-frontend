@@ -15,13 +15,7 @@
 
   }
 
-  .showcase-card {
-    background-color: aquamarine;
-    height: 145px;
-    border-radius: 4px;
-  }
-
-  .grid-type-A {
+  .layout-type-A {
     display: grid;
     grid-gap: 1em;
     grid-template-rows: repeat(2, 1fr);
@@ -30,15 +24,26 @@
     overflow-x: auto;
 
     &.smaller-screen-grid-A {
-      grid-auto-columns: calc(50%);
+      grid-auto-columns: calc(50% - 0.5em);
+    }
+
+    .showcase-card {
+      background-color: aquamarine;
+      height: 145px;
+      border-radius: 4px;
     }
   }
 
-  .grid-type-B {
-    display: grid;
-    grid-gap: 1em;
-    grid-auto-flow: column;
+  .layout-type-B {
+    display: flex;
+    gap: 1em;
     overflow-x: auto;
-  }
 
+    .showcase-card-long {
+      background-color: aquamarine;
+      height: 250px;
+      border-radius: 4px;
+      min-width: calc(50vw - 1.5em)
+    }
+  }
 }

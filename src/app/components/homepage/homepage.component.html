@@ -35,7 +35,7 @@
     <!-- section A [gridTypeA] -->
     <section class="pt-3">
         <h5 class="py-3 fs-18">{{sectionAHeading}}</h5>
-        <div class="grid-type-A" [ngClass]="{'smaller-screen-grid-A': isHandset$ | async}">
+        <div class="layout-type-A" [ngClass]="{'smaller-screen-grid-A': isHandset$ | async}">
             <div class="showcase-card">
                 card 1
             </div>
@@ -66,7 +66,41 @@
     <!-- section B [gridTypeB]-->
     <section class="pt-3">
         <h5 class="py-3 fs-18"> Section B</h5>
-        <div class="grid-type-B">
+        <div class="layout-type-B">
+            <div class="showcase-card-long">
+                card 1
+            </div>
+            <div class="showcase-card-long">
+                card 2
+            </div>
+            <div class="showcase-card-long">
+                card 3
+            </div>
+            <div class="showcase-card-long">
+                card4
+            </div>
+            <div class="showcase-card-long">
+                card 5
+            </div>
+            <div class="showcase-card-long">
+                card 6
+            </div>
+            <div class="showcase-card-long">
+                card 7
+            </div>
+            <div class="showcase-card-long">
+                card 8
+            </div>
+            <div class="showcase-card-long">
+                card 9
+            </div>
+        </div>
+    </section>
+
+    <!-- section C -->
+    <section class="pt-3">
+        <h5 class="py-3 fs-18">{{sectionAHeading}}</h5>
+        <div class="layout-type-A" [ngClass]="{'smaller-screen-grid-A': isHandset$ | async}">
             <div class="showcase-card">
                 card 1
             </div>
@@ -94,13 +128,17 @@
         </div>
     </section>
 
-    <!-- section C -->
-    <section>
-
-    </section>
 
     <!-- section D -->
-    <section>
-
+    <section class="pt-3">
+        <h5 class="py-3 fs-18"> Section B</h5>
+        <div class="layout-type-B">
+            <div class="showcase-card-long">
+                card 1
+            </div>
+            <div class="showcase-card-long">
+                card 2
+            </div>
+        </div>
     </section>
 </div>
