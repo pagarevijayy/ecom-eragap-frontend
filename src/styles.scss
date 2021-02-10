@@ -67,6 +67,10 @@ body {
 
 // ụtils:
 
+.primary-text{
+  color: var(--primary_text_dark, #333333);
+}
+
 .secondary-text {
   color: var(--secondary_text_dark, #666666);
 }
