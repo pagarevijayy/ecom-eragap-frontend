@@ -1,0 +1,179 @@
+<div class="home-page text-center px-3 pb-2 primary-text">
+    <!-- bootstrap carousel -->
+    <section class="carousel-banner pt-2">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner border-radius-8">
+                <div class="carousel-item active" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
+                    <img src="https://images.unsplash.com/photo-1510229955695-588e1612a69b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
+                    <img src="https://images.unsplash.com/photo-1510229955695-588e1612a69b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
+                    <img src="https://images.unsplash.com/photo-1510229955695-588e1612a69b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"
+                        class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- section A [gridTypeA] -->
+    <section class="pt-3">
+        <h5 class="py-3 fs-18">{{sectionAHeading}}</h5>
+        <div class="layout-type-A" [ngClass]="{'smaller-screen-grid-A': isHandset$ | async}">
+            <div class="showcase-card">
+                card 1
+            </div>
+            <div class="showcase-card">
+                card 2
+            </div>
+            <div class="showcase-card">
+                card 3
+            </div>
+            <div class="showcase-card">
+                card4
+            </div>
+            <div class="showcase-card">
+                card 5
+            </div>
+            <div class="showcase-card">
+                card 6
+            </div>
+            <div class="showcase-card">
+                card 7
+            </div>
+            <div class="showcase-card">
+                card 8
+            </div>
+        </div>
+    </section>
+
+    <!-- section B [gridTypeB]-->
+    <section class="pt-3">
+        <h5 class="py-3 fs-18"> Section B</h5>
+        <div class="layout-type-B">
+            <div class="showcase-card-long">
+                card 1
+            </div>
+            <div class="showcase-card-long">
+                card 2
+            </div>
+            <div class="showcase-card-long">
+                card 3
+            </div>
+            <div class="showcase-card-long">
+                card4
+            </div>
+            <div class="showcase-card-long">
+                card 5
+            </div>
+            <div class="showcase-card-long">
+                card 6
+            </div>
+            <div class="showcase-card-long">
+                card 7
+            </div>
+            <div class="showcase-card-long">
+                card 8
+            </div>
+            <div class="showcase-card-long">
+                card 9
+            </div>
+        </div>
+    </section>
+
+    <!-- section C -->
+    <section class="pt-3">
+        <h5 class="py-3 fs-18">{{sectionAHeading}}</h5>
+        <div class="layout-type-A" [ngClass]="{'smaller-screen-grid-A': isHandset$ | async}">
+            <div class="showcase-card">
+                card 1
+            </div>
+            <div class="showcase-card">
+                card 2
+            </div>
+            <div class="showcase-card">
+                card 3
+            </div>
+            <div class="showcase-card">
+                card4
+            </div>
+            <div class="showcase-card">
+                card 5
+            </div>
+            <div class="showcase-card">
+                card 6
+            </div>
+            <div class="showcase-card">
+                card 7
+            </div>
+            <div class="showcase-card">
+                card 8
+            </div>
+        </div>
+    </section>
+
+
+    <!-- section D -->
+    <section class="pt-3">
+        <h5 class="py-3 fs-18"> Section B</h5>
+        <div class="layout-type-B">
+            <div class="showcase-card-long">
+                card 1
+            </div>
+            <div class="showcase-card-long">
+                card 2
+            </div>
+        </div>
+    </section>
+
+    <!-- section D -->
+    <section class="pt-3">
+        <h5 class="pt-4 fs-18"> Want to checkout in person?</h5>
+        <h6 class="pb-4 fs-18"> visit us!</h6>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.496996454471!2d72.8273140143462!3d18.953645987158186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce22c9c02f19%3A0x4dd039fcbfb34267!2sShree%20Sai%20Krupa%20Beads!5e0!3m2!1sen!2sin!4v1612943851170!5m2!1sen!2sin"
+            width="400" height="400"
+            frameborder="0" 
+            class='map-style' 
+            allowfullscreen="" 
+            aria-hidden="false"
+            tabindex="0">
+        </iframe>
+        <aside class="pt-2 secondary-text fs-12">
+            <span class="d-block">Shroff Mansion, 65/71 Shop No: 14 </span>
+            <span class="d-block">3rd Bhoiwada Ln, Bhuleshwar, Mumbai-04</span>
+        </aside>
+    </section>
+
+    <!-- section D -->
+    <section class="pt-4">
+        <h5 class="fs-14 secondary-text"> Follow us:</h5>
+        <div class="pt-1">
+            <span class="px-2">
+                <i class="fa fa-facebook cursor-pointer" aria-hidden="true"></i>
+            </span>
+            <span class="px-2">
+                <i class="fa fa-instagram cursor-pointer" aria-hidden="true"></i>
+            </span>
+            <span class="px-2">
+                <i class="fa fa-twitter cursor-pointer" aria-hidden="true"></i>
+            </span>
+        </div>
+    </section>
+</div>
