@@ -37,15 +37,20 @@
         <h5 class="py-3 fs-18">{{sectionAHeading}}</h5>
         <div class="layout-type-A" [ngClass]="{'smaller-screen-grid-A': isHandset$ | async}">
 
-            <img class="showcase-card" src="{{item.url}}?tr=w-160" *ngFor="let item of showcaseImages">
+            <img class="showcase-card lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}" *ngFor="let item of showcaseImages" data-srcset="{{item.url}}?tr=w-190 190w,
+            {{item.url}}?tr=w-350 350w,
+            {{item.url}}?tr=w-550 550w" sizes="(max-width: 600px) 50vw, 33vw">
         </div>
     </section>
 
-      <!-- section B [gridTypeB]-->
-      <section class="pt-3">
-        <h5 class="py-3 fs-18"> Section B</h5>
+    <!-- section B [gridTypeB]-->
+    <section class="pt-3">
+        <h5 class="py-3 fs-18"> Specials</h5>
         <div class="layout-single-card-flex">
-            <img class="showcase-card-long" src="{{item.url}}?tr=w-160" *ngFor="let item of showcaseImages">
+            <img class="showcase-card-long lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}" *ngFor="let item of showcaseImages"
+                data-srcset="{{item.url}}?tr=w-190 190w,
+                 {{item.url}}?tr=w-350 350w,
+                 {{item.url}}?tr=w-550 550w" sizes="(max-width: 600px) 50vw, 33vw">
         </div>
     </section>
 
@@ -53,7 +58,10 @@
     <section class="pt-3">
         <h5 class="py-3 fs-18"> Section B</h5>
         <div class="layout-type-B">
-            <img class="showcase-card-long" src="{{item.url}}?tr=w-160" *ngFor="let item of showcaseImages">
+            <img class="showcase-card-long lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}" *ngFor="let item of showcaseImages"
+                data-srcset="{{item.url}}?tr=w-190 190w,
+                    {{item.url}}?tr=w-350 350w,
+                    {{item.url}}?tr=w-550 550w" sizes="(max-width: 600px) 50vw, 33vw">
         </div>
     </section>
 
