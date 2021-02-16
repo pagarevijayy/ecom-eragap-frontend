@@ -36,30 +36,16 @@
     <section class="pt-3">
         <h5 class="py-3 fs-18">{{sectionAHeading}}</h5>
         <div class="layout-type-A" [ngClass]="{'smaller-screen-grid-A': isHandset$ | async}">
-            <div class="showcase-card">
-                card 1
-            </div>
-            <div class="showcase-card">
-                card 2
-            </div>
-            <div class="showcase-card">
-                card 3
-            </div>
-            <div class="showcase-card">
-                card4
-            </div>
-            <div class="showcase-card">
-                card 5
-            </div>
-            <div class="showcase-card">
-                card 6
-            </div>
-            <div class="showcase-card">
-                card 7
-            </div>
-            <div class="showcase-card">
-                card 8
-            </div>
+
+            <img class="showcase-card" src="{{item.url}}?tr=w-160" *ngFor="let item of showcaseImages">
+        </div>
+    </section>
+
+      <!-- section B [gridTypeB]-->
+      <section class="pt-3">
+        <h5 class="py-3 fs-18"> Section B</h5>
+        <div class="layout-single-card-flex">
+            <img class="showcase-card-long" src="{{item.url}}?tr=w-160" *ngFor="let item of showcaseImages">
         </div>
     </section>
 
@@ -67,92 +53,17 @@
     <section class="pt-3">
         <h5 class="py-3 fs-18"> Section B</h5>
         <div class="layout-type-B">
-            <div class="showcase-card-long">
-                card 1
-            </div>
-            <div class="showcase-card-long">
-                card 2
-            </div>
-            <div class="showcase-card-long">
-                card 3
-            </div>
-            <div class="showcase-card-long">
-                card4
-            </div>
-            <div class="showcase-card-long">
-                card 5
-            </div>
-            <div class="showcase-card-long">
-                card 6
-            </div>
-            <div class="showcase-card-long">
-                card 7
-            </div>
-            <div class="showcase-card-long">
-                card 8
-            </div>
-            <div class="showcase-card-long">
-                card 9
-            </div>
+            <img class="showcase-card-long" src="{{item.url}}?tr=w-160" *ngFor="let item of showcaseImages">
         </div>
     </section>
 
-    <!-- section C -->
-    <section class="pt-3">
-        <h5 class="py-3 fs-18">{{sectionAHeading}}</h5>
-        <div class="layout-type-A" [ngClass]="{'smaller-screen-grid-A': isHandset$ | async}">
-            <div class="showcase-card">
-                card 1
-            </div>
-            <div class="showcase-card">
-                card 2
-            </div>
-            <div class="showcase-card">
-                card 3
-            </div>
-            <div class="showcase-card">
-                card4
-            </div>
-            <div class="showcase-card">
-                card 5
-            </div>
-            <div class="showcase-card">
-                card 6
-            </div>
-            <div class="showcase-card">
-                card 7
-            </div>
-            <div class="showcase-card">
-                card 8
-            </div>
-        </div>
-    </section>
-
-
-    <!-- section D -->
-    <section class="pt-3">
-        <h5 class="py-3 fs-18"> Section B</h5>
-        <div class="layout-type-B">
-            <div class="showcase-card-long">
-                card 1
-            </div>
-            <div class="showcase-card-long">
-                card 2
-            </div>
-        </div>
-    </section>
-
-    <!-- section D -->
+    <!-- section: Contact Map -->
     <section class="pt-3">
         <h5 class="pt-4 fs-18"> Want to checkout in person?</h5>
         <h6 class="pb-4 fs-18"> visit us!</h6>
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.496996454471!2d72.8273140143462!3d18.953645987158186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce22c9c02f19%3A0x4dd039fcbfb34267!2sShree%20Sai%20Krupa%20Beads!5e0!3m2!1sen!2sin!4v1612943851170!5m2!1sen!2sin"
-            width="400" height="400"
-            frameborder="0" 
-            class='map-style' 
-            allowfullscreen="" 
-            aria-hidden="false"
+            width="400" height="400" frameborder="0" class='map-style' allowfullscreen="" aria-hidden="false"
             tabindex="0">
         </iframe>
         <aside class="pt-2 secondary-text fs-12">
@@ -161,7 +72,7 @@
         </aside>
     </section>
 
-    <!-- section D -->
+    <!-- section: Footer content -->
     <section class="pt-4">
         <h5 class="fs-14 secondary-text"> Follow us:</h5>
         <div class="pt-1">
