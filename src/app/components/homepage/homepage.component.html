@@ -7,17 +7,31 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner border-radius-8">
+            <div class="carousel-inner border-radius-8 mobile-carousel" *ngIf="(isHandset$ | async)">
                 <div class="carousel-item active" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://images.unsplash.com/photo-1510229955695-588e1612a69b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"
+                    <img src="https://images.unsplash.com/photo-1510229955695-588e1612a69b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=751&q=80"
                         class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://images.unsplash.com/photo-1510229955695-588e1612a69b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"
+                    <img src="https://images.unsplash.com/photo-1523252012848-c22188792c27?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
                         class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://images.unsplash.com/photo-1510229955695-588e1612a69b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"
+                    <img src="https://images.unsplash.com/photo-1548925081-d5087ef8f683?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"
+                        class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <div class="carousel-inner border-radius-8" *ngIf="!(isHandset$ | async)">
+                <div class="carousel-item active" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
+                    <img src="https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/carousel-1_Bi3IshONp.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
+                    <img src="https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/carousel-3_p-1jMlTZ9m.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
+                    <img src="https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/carousel-2_N0vvEThjJ.jpg"
                         class="d-block w-100" alt="...">
                 </div>
             </div>
@@ -34,7 +48,7 @@
 
     <!-- section A [gridTypeA] -->
     <div class="wrapper-design">
-        <section class="pt-3">
+        <section [ngClass]="{'pt-3': (isHandset$ | async)}">
             <h5 class="py-3 fs-18">{{sectionAHeading}}</h5>
             <div class="layout-four-cards-grid" [ngClass]="{'smaller-screen-grid-A': isHandset$ | async}">
 
@@ -49,7 +63,7 @@
 
     <!-- section B [gridTypeB]-->
     <div class="wrapper-design-elongated">
-        <section class="pt-3">
+        <section [ngClass]="{'pt-3': (isHandset$ | async)}">
             <h5 class="py-3 fs-18"> Specials</h5>
             <div class="layout-single-card-flex">
                 <img class="showcase-card-long lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}"
@@ -64,7 +78,7 @@
 
     <!-- section B [gridTypeB]-->
     <div class="wrapper-design">
-        <section class="pt-3">
+        <section [ngClass]="{'pt-3': (isHandset$ | async)}">
             <h5 class="py-3 fs-18"> Section B</h5>
             <div class="layout-two-cards-flex">
                 <img class="showcase-card-long lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}"
@@ -78,7 +92,7 @@
 
     <!-- section B [gridTypeB]-->
     <div class="wrapper-design-elongated">
-        <section class="pt-3">
+        <section [ngClass]="{'pt-3': (isHandset$ | async)}">
             <h5 class="py-3 fs-18"> Section B</h5>
             <div class="layout-three-cards-flex">
                 <img class="showcase-card-long lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}"
