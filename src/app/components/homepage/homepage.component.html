@@ -48,7 +48,7 @@
 
     <!-- section A [gridTypeA] -->
     <div class="wrapper-design">
-        <section [ngClass]="{'pt-3': (isHandset$ | async)}">
+        <section [ngClass]="{'m-padding-wrapper ': (isHandset$ | async)}">
             <h5 class="py-3 fs-18">{{sectionAHeading}}</h5>
             <div class="layout-four-cards-grid" [ngClass]="{'smaller-screen-grid-A': isHandset$ | async}">
 
@@ -63,7 +63,7 @@
 
     <!-- section B [gridTypeB]-->
     <div class="wrapper-design-elongated">
-        <section [ngClass]="{'pt-3': (isHandset$ | async)}">
+        <section [ngClass]="{'m-padding-wrapper ': (isHandset$ | async)}">
             <h5 class="py-3 fs-18"> Specials</h5>
             <div class="layout-single-card-flex">
                 <img class="showcase-card-long lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}"
@@ -78,7 +78,7 @@
 
     <!-- section B [gridTypeB]-->
     <div class="wrapper-design">
-        <section [ngClass]="{'pt-3': (isHandset$ | async)}">
+        <section [ngClass]="{'m-padding-wrapper ': (isHandset$ | async)}">
             <h5 class="py-3 fs-18"> Section B</h5>
             <div class="layout-two-cards-flex">
                 <img class="showcase-card-long lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}"
@@ -92,7 +92,7 @@
 
     <!-- section B [gridTypeB]-->
     <div class="wrapper-design-elongated">
-        <section [ngClass]="{'pt-3': (isHandset$ | async)}">
+        <section [ngClass]="{'m-padding-wrapper ': (isHandset$ | async)}">
             <h5 class="py-3 fs-18"> Section B</h5>
             <div class="layout-three-cards-flex">
                 <img class="showcase-card-long lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}"

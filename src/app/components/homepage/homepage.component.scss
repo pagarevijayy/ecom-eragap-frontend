@@ -38,6 +38,10 @@
   }
 
   .wrapper-design {
+    margin: 2em -1em;
+    background: #fff;
+    border-radius: 0;
+
     @media only screen and (min-width: 600px) {
       margin: 4em;
       background: #fff;
@@ -47,12 +51,20 @@
   }
 
   .wrapper-design-elongated {
+    margin: auto -1em;
+    background: #fff;
+    border-radius: 0;
+
     @media only screen and (min-width: 600px) {
       margin: auto;
       background: #fff;
       border-radius: 16px;
       padding: 1em 4em 4em 4em;
     }
+  }
+
+  .m-padding-wrapper {
+    padding: 1em 1em 1.5em 1em;
   }
 }
 
