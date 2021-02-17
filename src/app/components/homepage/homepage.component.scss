@@ -22,6 +22,9 @@
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
     overflow-x: auto;
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
 
     &.smaller-screen-grid-A {
       grid-auto-columns: calc(50% - 0.5em);
@@ -56,7 +59,7 @@
   }
 }
 
-//  layouts:
+//  layouts: mobile screen [larger screen]
 
 // 1.0 FLEX: single card+ 
 .layout-single-card-flex {
@@ -69,6 +72,10 @@
     // height: 250px;
     border-radius: 4px;
     min-width: calc(65vw);
+    @media only screen and (min-width: 600px) {
+      min-width: calc(25%);
+    }
+    
   }
 }
 
@@ -78,11 +85,19 @@
   gap: 1em;
   overflow-x: auto;
 
+  // for larger screens:
+  max-width: 960px; //to restrict oversizing
+  margin-right: auto;
+  margin-left: auto;
+
   .showcase-card-long {
     // background-color: aquamarine;
     // height: 250px;
     border-radius: 4px;
     min-width: calc(50vw - 1.5em);
+    @media only screen and (min-width: 600px) {
+      min-width: calc(33% - 0.5em);
+    }
   }
 }
 
@@ -97,6 +112,9 @@
     // height: 250px;
     border-radius: 4px;
     min-width: calc(33vw - 1.25em);
+    @media only screen and (min-width: 600px) {
+      min-width: calc(20%);
+    }
   }
 }
 
@@ -108,6 +126,10 @@
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
   overflow-x: auto;
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+
 
   &.smaller-screen-grid-A {
     grid-auto-columns: calc(50% - 0.5em);
@@ -129,6 +151,9 @@
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
   overflow-x: auto;
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
 
   &.smaller-screen-grid-A {
     grid-auto-columns: calc(33% - 0.625em);

@@ -43,7 +43,15 @@ export class HomepageComponent implements OnInit {
     {
       name: 'image identifier',
       url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/product-2_kMPTyfcDi.jpg'
-    }
+    },
+    {
+      name: 'image identifier',
+      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/prod-5_Bmvc6No5S.jpg'
+    },
+    {
+      name: 'image identifier',
+      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/product-4_IMTJrTZIW.webp'
+    },
   ];
 
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
