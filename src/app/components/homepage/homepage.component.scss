@@ -30,11 +30,14 @@
     }
   }
 
-  .map-style {
-    border: 0;
-    max-width: calc(100vw - 2em);
-    border-radius: 8px;
-    filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.25));
+  .map-responsive {
+    height: 45vh;
+
+    iframe {
+      height: 100%;
+      width: 80%;
+      border-radius: 8px;
+    }
   }
 
   .wrapper-design {
@@ -65,6 +68,19 @@
 
   .m-padding-wrapper {
     padding: 1em 1em 1.5em 1em;
+  }
+
+  .footer-styling {
+    background: #2e2e2e;
+    color: #fff;
+    margin: 0 -1em;
+  }
+
+  .center-css-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 }
 
