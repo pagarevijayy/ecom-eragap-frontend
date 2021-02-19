@@ -117,9 +117,11 @@
     <div class="footer-styling row no-gutters py-4">
         <!-- section: Contact Map -->
         <section class="col-sm">
-            <h5 class="pt-4 fs-18"> Want to checkout in person?</h5>
-            <h6 class="pb-4 fs-18"> visit us!</h6>
-            <div class="map-responsive">
+            <div class="footer-text-cosmetics">
+                <span class="d-block text-rules"> Want to checkout in person?</span>
+                <span class="d-block text-rules"> visit us!</span>
+            </div>
+            <div class="map-responsive px-3">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.496996454471!2d72.8273140143462!3d18.953645987158186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce22c9c02f19%3A0x4dd039fcbfb34267!2sShree%20Sai%20Krupa%20Beads!5e0!3m2!1sen!2sin!4v1612943851170!5m2!1sen!2sin"
                     frameborder="0" class='map-style' allowfullscreen="" aria-hidden="false"
@@ -134,8 +136,8 @@
         <!-- section: Footer content -->
         <section class="col-sm">
             <div class='center-css-box'>
-                <div>
-                    <h5 class="fs-18"> follow us:</h5>
+                <div [ngClass]="{'pt-4': (isHandset$ | async)}">
+                    <h5 class="fs-18"  *ngIf="!(isHandset$ | async)" > follow us:</h5>
                     <div class="pt-1">
                         <span class="px-2">
                             <i class="fa fa-facebook cursor-pointer" aria-hidden="true"></i>
