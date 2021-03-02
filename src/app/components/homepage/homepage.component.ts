@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UtilsService } from 'src/app/services';
 
-import { browserData } from 'src/assets/inbrowser-data'
+import { browserData } from 'src/assets/data/inbrowser-data'
 
 @Component({
   selector: 'app-homepage',
