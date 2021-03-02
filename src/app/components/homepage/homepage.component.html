@@ -1,40 +1,37 @@
 <div class="home-page text-center px-3 pb-2 primary-text">
-    <!-- bootstrap carousel -->
+    <!-- bootstrap carousel sections -->
     <section class="carousel-banner">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner border-radius-8 mobile-carousel" *ngIf="(isHandset$ | async)">
-                <div class="carousel-item active" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://images.unsplash.com/photo-1510229955695-588e1612a69b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=751&q=80"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://images.unsplash.com/photo-1523252012848-c22188792c27?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://images.unsplash.com/photo-1548925081-d5087ef8f683?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"
-                        class="d-block w-100" alt="...">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+            <!-- small-screen carousel slider and images -->
+            <div class="small-screen-carousel"  *ngIf="(isHandset$ | async)">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{i}}" [ngClass]="{'active': i === 0 }" 
+                    *ngFor="let item of carouselSmallScreen; let i = index"></li>
+                </ol>
+                <div class="carousel-inner border-radius-8 mobile-carousel">
+                    <div class="carousel-item" [ngClass]="{'active': i === 0 }" 
+                    *ngFor="let item of carouselSmallScreen; let i = index">
+                        <img src="{{item}}"
+                            class="d-block w-100" alt="carousel-image">
+                    </div>
                 </div>
             </div>
-            <div class="carousel-inner border-radius-8" *ngIf="!(isHandset$ | async)">
-                <div class="carousel-item active" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/carousel-1_Bi3IshONp.jpg"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/carousel-3_p-1jMlTZ9m.jpg"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/carousel-2_N0vvEThjJ.jpg"
-                        class="d-block w-100" alt="...">
+
+            <!-- large-screen carousel slider and images -->
+            <div class="large-screen-carousel" *ngIf="!(isHandset$ | async)">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{i}}" [ngClass]="{'active': i === 0 }" 
+                    *ngFor="let item of carouselLargeScreen; let i = index"></li>
+                </ol>
+                <div class="carousel-inner border-radius-8" >
+                    <div class="carousel-item carousel-item-lg-screen" [ngClass]="{'active': i === 0 }" 
+                         *ngFor="let item of carouselLargeScreen; let i = index">
+                        <img src="{{item}}" class="d-block w-100" alt="carousel-image">
+                    </div>
                 </div>
             </div>
+
+            <!-- carousel arrow buttons -->
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>

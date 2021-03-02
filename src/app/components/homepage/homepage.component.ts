@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UtilsService } from 'src/app/services';
 
+import { browserData } from 'src/assets/inbrowser-data'
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -9,15 +11,17 @@ import { UtilsService } from 'src/app/services';
 })
 export class HomepageComponent implements OnInit {
 
+  // variable declaration and assignment
+  isHandset$: Observable<boolean> = this._utilService.isHandset$;
+
+  carouselLargeScreen: Array<any> = browserData.carouselLargeScreen;
+  carouselSmallScreen: Array<any> = browserData.carouselSmallScreen;
+
+
   sectionAHeading: string = 'Natural Beads Collection';
   sectionBHeading: string = 'Pendants Collection';
   sectionCHeading: string = 'Jewellery component';
 
-  transformationLayoutOne = [
-    { width: "100vw" }
-  ];
-
-  lqip = { active: true, quality: 1 };
 
   showcaseImages = [
     {
@@ -53,9 +57,6 @@ export class HomepageComponent implements OnInit {
       url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/product-4_IMTJrTZIW.webp'
     },
   ];
-
-  isHandset$: Observable<boolean> = this._utilService.isHandset$;
-
 
   constructor(private _utilService: UtilsService) { }
 

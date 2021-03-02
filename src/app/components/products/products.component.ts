@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UtilsService } from 'src/app/services';
-import { DummyData } from 'src/assets/data'
+import { browserData } from 'src/assets/inbrowser-data'
 
 @Component({
   selector: 'app-products',
@@ -22,7 +22,7 @@ export class ProductsComponent implements OnInit {
   //pass currentCategory value from menu click [no need to iterate the loop and discover value]
 
   primarySubcategory: string = 'Crystal Beads';
-  subcategories: Array<any> = DummyData.subcategories;
+  subcategories: Array<any> = browserData.subcategories;
 
 
   constructor(

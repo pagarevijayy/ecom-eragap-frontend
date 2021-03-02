@@ -1,9 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
 import { MatSidenav } from '@angular/material/sidenav';
-import { UtilsService } from 'src/app/services';
 import { Router } from '@angular/router';
-import { DummyData } from 'src/assets/data'
+import { Observable } from 'rxjs';
+
+import { UtilsService } from 'src/app/services';
+import { browserData } from 'src/assets/inbrowser-data'
 
 @Component({
   selector: 'app-main-nav',
@@ -15,7 +16,7 @@ export class MainNavComponent {
   @ViewChild('drawer') sideNavDrawer: MatSidenav;
 
   storeName: string = 'SSK Beads';
-  menuItems: Array<any> = DummyData.categories;
+  menuItems: Array<any> = browserData.categories;
 
   enquiryPrefillMessage: string = `Hi! I wanted to know more about your product and services.
                                  Can we have a word?`;
