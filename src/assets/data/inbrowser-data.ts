@@ -36,5 +36,31 @@ export class browserData {
         'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-2_Cl6oj1OGRD.webp'
     ];
 
+    static whatsAppDataContent = {
+        whatsAppContactNumber: 917972071550,
+        buttonLabelPrimary: `Contact for Business Enquiry`,
+        buttonLabelSecondary: "Looking for something else? Let us know!",
+        enquiryTextPrimary: `Hi! I wanted to know more about your product and services.
+        Can we have a word?`
+    };
+
+    static storeInformation = {
+        storeName: "Eragap",
+        contactNumber: 7972071550,
+        email: "eragaptech@gmail.com",
+        addressLineOne: "Sector 1, Shantinagar",
+        addressLineTwo: "Miraroad (E), Thane 401107",
+        socialFacebook: "urlhere",
+        socialInstagram: "",
+        socialTwitter: "",
+    };
+
+    static footerContent = {
+        copyrightText: "© Eragap Tech Company",
+        copyright:"Copyright ©",
+        claimName: "Eragap Co.",
+        allRightsReserved: "All Rights Reserved",
+        // copyrightYear: "This should be dynamic. Done via javascript in browser"
+    }
 
 }
