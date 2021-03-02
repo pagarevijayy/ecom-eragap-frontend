@@ -47,12 +47,12 @@ export class browserData {
     static storeInformation = {
         storeName: "Eragap",
         contactNumber: 7972071550,
-        email: "eragaptech@gmail.com",
+        emailAddress: "eragaptech@gmail.com",
         addressLineOne: "Sector 1, Shantinagar",
         addressLineTwo: "Miraroad (E), Thane 401107",
         socialFacebook: "urlhere",
-        socialInstagram: "",
-        socialTwitter: "",
+        socialInstagram: null,
+        socialTwitter: null,
     };
 
     static footerContent = {

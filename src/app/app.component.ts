@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { browserData } from 'src/assets/data/inbrowser-data'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  footerText = 'Copyright © 2020 SSK Beads. All Rights Reserved';
+
+  currentYear = new Date().getFullYear();
+  copyrightSymbol= browserData?.footerContent?.copyright;
+  copyrightClaimName= browserData?.footerContent?.claimName;
+  copyrightRightReserved= browserData?.footerContent?.allRightsReserved;
+
+
+  footerText = `${this.copyrightSymbol} ${this.currentYear} ${this.copyrightClaimName} ${this.copyrightRightReserved}`;
 }

@@ -17,6 +17,17 @@ export class HomepageComponent implements OnInit {
   carouselLargeScreen: Array<any> = browserData.carouselLargeScreen;
   carouselSmallScreen: Array<any> = browserData.carouselSmallScreen;
 
+  whatsAppButtonLabelSecondary= browserData?.whatsAppDataContent?.buttonLabelSecondary;
+  whatsAppEnquiryTextPrimary= browserData?.whatsAppDataContent?.enquiryTextPrimary;
+  whatsAppContactNumber= browserData?.whatsAppDataContent?.whatsAppContactNumber;
+
+  storeEmailAddress = browserData?.storeInformation?.emailAddress; 
+  storeContactNumber = browserData?.storeInformation?.contactNumber; 
+  storeAddressLineOne = browserData?.storeInformation?.addressLineOne; 
+  storeAddressLineTwo = browserData?.storeInformation?.addressLineTwo; 
+
+
+
 
   sectionAHeading: string = 'Natural Beads Collection';
   sectionBHeading: string = 'Pendants Collection';

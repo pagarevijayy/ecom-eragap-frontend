@@ -14,17 +14,17 @@ import { browserData } from 'src/assets/data/inbrowser-data'
 
 export class MainNavComponent {
   @ViewChild('drawer') sideNavDrawer: MatSidenav;
-
-  storeName: string = 'SSK Beads';
-  menuItems: Array<any> = browserData.categories;
-
-  enquiryPrefillMessage: string = `Hi! I wanted to know more about your product and services.
-                                 Can we have a word?`;
-  whatsappBtnLabel: string = 'Contact for Business Enquiry';
-  copyright_text: string = '© Shree Sai Krupa Beads';
-
+  
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
 
+  storeName: string = browserData?.storeInformation?.storeName;
+  copyrightText= browserData?.footerContent?.copyrightText;
+  menuItems: Array<any> = browserData.categories;
+  
+  whatsAppButtonLabelPrimary= browserData?.whatsAppDataContent?.buttonLabelPrimary;
+  whatsAppEnquiryTextPrimary= browserData?.whatsAppDataContent?.enquiryTextPrimary;
+  whatsAppContactNumber= browserData?.whatsAppDataContent?.whatsAppContactNumber;
+  
   constructor(
     private _utilService: UtilsService,
     private _router: Router

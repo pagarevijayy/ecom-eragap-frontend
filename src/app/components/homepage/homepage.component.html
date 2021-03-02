@@ -101,11 +101,10 @@
     </div>
 
     <div class="whatsapp-cta p-3 my-4">
-        <a class="btn btn-whatsapp-style" href="https://wa.me/919029559131?text=Hi! I wanted to know more about your product and services.
-        Can we have a word?" target="_blank">
+        <a class="btn btn-whatsapp-style" href="https://wa.me/{{whatsAppContactNumber}}?text={{whatsAppEnquiryTextPrimary}}" target="_blank">
             <section class="d-flex align-items-center">
                 <img src="assets/images/whatsapp.svg" alt="whatsapp">
-                <span class="px-2 fs-12"> Looking for something else? Let us know!</span>
+                <span class="px-2 fs-12"> {{whatsAppButtonLabelSecondary}}</span>
             </section>
         </a>
     </div>
@@ -126,8 +125,8 @@
                 </iframe>
             </div>
             <aside class="pt-3 fs-12">
-                <span class="d-block">Shroff Mansion, 65/71 Shop No: 14 </span>
-                <span class="d-block">3rd Bhoiwada Ln, Bhuleshwar, Mumbai-04</span>
+                <span class="d-block">{{storeAddressLineOne}} </span>
+                <span class="d-block">{{storeAddressLineTwo}}</span>
             </aside>
         </section>
         <!-- section: Footer content -->
@@ -147,8 +146,8 @@
                         </span>
                     </div>
                     <aside class="py-3">
-                        <span class="d-block fs-12"> 90xxxx9131</span>
-                        <span class="d-block fs-12 pt-1">ssk_store@gmail.com </span>
+                        <span class="d-block fs-12"> {{storeContactNumber}}</span>
+                        <span class="d-block fs-12 pt-1">{{storeEmailAddress}} </span>
                     </aside>
                 </div>
             </div>
