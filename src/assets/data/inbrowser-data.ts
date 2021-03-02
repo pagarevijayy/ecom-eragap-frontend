@@ -1,27 +1,92 @@
 export class browserData {
-    static categories: Array<any> = [
+    // static categories: Array<any> = [
+    //     {
+    //         label: 'Beads',
+    //         route: 'bead'
+    //     },
+    //     {
+    //         label: 'Pendants',
+    //         route: 'pendant'
+    //     },
+    //     {
+    //         label: 'Jewellery',
+    //         route: 'jewellery'
+    //     },
+    //     {
+    //         label: 'Tools & Kit',
+    //         route: 'tools-and-kit'
+    //     }
+    // ];
+
+    // static subcategories: Array<any> = [
+    //     'Crystal Beads',
+    //     'Bone Beads',
+    //     'Clay Beads'
+    // ];
+
+    static homepage: Array<any> = [
         {
-            label: 'Beads',
-            route: 'bead'
+            categoryLabel: 'Beads',
+            route: 'bead',
+            displayTitle: 'An Awesome Beads Collection',
+            weightage: 0,
+            product_subcategories: [
+                {
+                    subcategoryLabel: 'Clay Beads',
+                    displayPicture: 'ThisisanURL',
+                    subcategorySlug: 'clay-beads',
+                    weightage: 0
+                },
+                {
+                    subcategoryLabel: 'Bone Beads',
+                    displayPicture: 'ThisisanURL',
+                    subcategorySlug: 'bone-beads',
+                    weightage: 0
+                }
+            ]
         },
         {
             label: 'Pendants',
-            route: 'pendant'
+            route: 'pendant',
+            displayTitle: 'Special Pendants',
+            weightage: 0,
+            product_subcategories: [
+                {
+                    subcategoryLabel: 'Main',
+                    displayPicture: 'ThisisanURL',
+                    subcategorySlug: 'main',
+                    weightage: 0
+                }
+            ]
         },
         {
             label: 'Jewellery',
-            route: 'jewellery'
+            route: 'jewellery',
+            displayTitle: 'Jewllery Collection',
+            weightage: 0,
+            product_subcategories: [
+                {
+                    subcategoryLabel: 'Main',
+                    displayPicture: 'ThisisanURL',
+                    subcategorySlug: 'main',
+                    weightage: 0
+                }
+            ]
         },
         {
             label: 'Tools & Kit',
-            route: 'tools-and-kit'
+            route: 'tools-and-kit',
+            displayTitle: 'Tooks and Kit',
+            weightage: 0,
+            product_subcategories: [
+                {
+                    subcategoryLabel: 'Main',
+                    displayPicture: 'ThisisanURL',
+                    subcategorySlug: 'main',
+                    weightage: 0
+                }
+            ]
         }
-    ];
-
-    static subcategories: Array<any> = [
-        'Crystal Beads',
-        'Bone Beads',
-        'Clay Beads'
     ];
 
     static carouselLargeScreen: Array<any> = [
@@ -40,8 +105,7 @@ export class browserData {
         whatsAppContactNumber: 917972071550,
         buttonLabelPrimary: `Contact for Business Enquiry`,
         buttonLabelSecondary: "Looking for something else? Let us know!",
-        enquiryTextPrimary: `Hi! I wanted to know more about your product and services.
-        Can we have a word?`
+        enquiryTextPrimary: `Hi! I wanted to know more about your product and services. Can we have a word?`
     };
 
     static storeInformation = {
@@ -57,7 +121,7 @@ export class browserData {
 
     static footerContent = {
         copyrightText: "© Eragap Tech Company",
-        copyright:"Copyright ©",
+        copyright: "Copyright ©",
         claimName: "Eragap Co.",
         allRightsReserved: "All Rights Reserved",
         // copyrightYear: "This should be dynamic. Done via javascript in browser"

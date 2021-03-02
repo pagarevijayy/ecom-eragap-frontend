@@ -26,9 +26,6 @@ export class HomepageComponent implements OnInit {
   storeAddressLineOne = browserData?.storeInformation?.addressLineOne; 
   storeAddressLineTwo = browserData?.storeInformation?.addressLineTwo; 
 
-
-
-
   sectionAHeading: string = 'Natural Beads Collection';
   sectionBHeading: string = 'Pendants Collection';
   sectionCHeading: string = 'Jewellery component';
@@ -37,35 +34,35 @@ export class HomepageComponent implements OnInit {
   showcaseImages = [
     {
       name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/prod-6_N3T0c8dM9.jpg'
+      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp'
     },
     {
       name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/prod-5_Bmvc6No5S.jpg'
+      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-5_Bmvc6No5S.jpg'
     },
     {
       name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/product-4_IMTJrTZIW.webp'
+      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp'
     },
     {
       name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/product-3_rOFYI3OS2.jpg'
+      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg'
     },
     {
       name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/product-1_tbE8TJhRa.webp'
+      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg'
     },
     {
       name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/product-2_kMPTyfcDi.jpg'
+      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg'
     },
     {
       name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/prod-5_Bmvc6No5S.jpg'
+      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp'
     },
     {
       name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/product-4_IMTJrTZIW.webp'
+      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg'
     },
   ];
 
