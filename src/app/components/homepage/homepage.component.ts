@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UtilsService } from 'src/app/services';
+import { StateManagementService, UtilsService } from 'src/app/services';
 
 import { browserData } from 'src/assets/data/inbrowser-data'
 
@@ -12,19 +12,21 @@ import { browserData } from 'src/assets/data/inbrowser-data'
 export class HomepageComponent implements OnInit {
 
   // variable declaration and assignment
+  homepageItems: any;
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
 
+  // @todo: move this kinda stuff into data-service
   carouselLargeScreen: Array<any> = browserData.carouselLargeScreen;
   carouselSmallScreen: Array<any> = browserData.carouselSmallScreen;
 
-  whatsAppButtonLabelSecondary= browserData?.whatsAppDataContent?.buttonLabelSecondary;
-  whatsAppEnquiryTextPrimary= browserData?.whatsAppDataContent?.enquiryTextPrimary;
-  whatsAppContactNumber= browserData?.whatsAppDataContent?.whatsAppContactNumber;
+  whatsAppButtonLabelSecondary = browserData?.whatsAppDataContent?.buttonLabelSecondary;
+  whatsAppEnquiryTextPrimary = browserData?.whatsAppDataContent?.enquiryTextPrimary;
+  whatsAppContactNumber = browserData?.whatsAppDataContent?.whatsAppContactNumber;
 
-  storeEmailAddress = browserData?.storeInformation?.emailAddress; 
-  storeContactNumber = browserData?.storeInformation?.contactNumber; 
-  storeAddressLineOne = browserData?.storeInformation?.addressLineOne; 
-  storeAddressLineTwo = browserData?.storeInformation?.addressLineTwo; 
+  storeEmailAddress = browserData?.storeInformation?.emailAddress;
+  storeContactNumber = browserData?.storeInformation?.contactNumber;
+  storeAddressLineOne = browserData?.storeInformation?.addressLineOne;
+  storeAddressLineTwo = browserData?.storeInformation?.addressLineTwo;
 
   sectionAHeading: string = 'Natural Beads Collection';
   sectionBHeading: string = 'Pendants Collection';
@@ -66,9 +68,16 @@ export class HomepageComponent implements OnInit {
     },
   ];
 
-  constructor(private _utilService: UtilsService) { }
+  constructor(
+    private _utilService: UtilsService,
+    private _stateManagementService: StateManagementService,
+  ) { }
 
   ngOnInit(): void {
+    // get homepage data
+    this._stateManagementService.homepageItemsBroadcast$.subscribe((data) => {
+      this.homepageItems = data;
+      console.log('from homepage component[homepageItems]', this.homepageItems);
+    });
   }
-
 }

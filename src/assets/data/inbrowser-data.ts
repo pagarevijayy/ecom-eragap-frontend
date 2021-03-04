@@ -1,89 +1,65 @@
 export class browserData {
-    // static categories: Array<any> = [
-    //     {
-    //         label: 'Beads',
-    //         route: 'bead'
-    //     },
-    //     {
-    //         label: 'Pendants',
-    //         route: 'pendant'
-    //     },
-    //     {
-    //         label: 'Jewellery',
-    //         route: 'jewellery'
-    //     },
-    //     {
-    //         label: 'Tools & Kit',
-    //         route: 'tools-and-kit'
-    //     }
-    // ];
 
-    // static subcategories: Array<any> = [
-    //     'Crystal Beads',
-    //     'Bone Beads',
-    //     'Clay Beads'
-    // ];
-
-    static homepage: Array<any> = [
+    static productCategories: Array<any> = [
         {
-            categoryLabel: 'Beads',
-            route: 'bead',
-            displayTitle: 'An Awesome Beads Collection',
-            weightage: 0,
-            product_subcategories: [
+            "categoryLabel": "beads",
+            "route": "beads",
+            "displayTitle": "special beads collection",
+            "weightage": 0,
+            "product_subcategories": [
                 {
-                    subcategoryLabel: 'Clay Beads',
-                    displayPicture: 'ThisisanURL',
-                    subcategorySlug: 'clay-beads',
-                    weightage: 0
+                    "subcategoryLabel": "Clay Beads",
+                    "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
+                    "subcategorySlug": "clay-beads",
+                    "weightage": 0
                 },
                 {
-                    subcategoryLabel: 'Bone Beads',
-                    displayPicture: 'ThisisanURL',
-                    subcategorySlug: 'bone-beads',
-                    weightage: 0
+                    "subcategoryLabel": "Bone Beads",
+                    "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
+                    "subcategorySlug": "bone-beads",
+                    "weightage": 0
                 }
             ]
         },
         {
-            label: 'Pendants',
-            route: 'pendant',
-            displayTitle: 'Special Pendants',
-            weightage: 0,
-            product_subcategories: [
+            "categoryLabel": "Pendants",
+            "route": "pendant",
+            "displayTitle": "Special Pendants",
+            "weightage": 0,
+            "product_subcategories": [
                 {
-                    subcategoryLabel: 'Main',
-                    displayPicture: 'ThisisanURL',
-                    subcategorySlug: 'main',
-                    weightage: 0
+                    "subcategoryLabel": "Main pendants",
+                    "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
+                    "subcategorySlug": "main-pendants",
+                    "weightage": 0
                 }
             ]
         },
         {
-            label: 'Jewellery',
-            route: 'jewellery',
-            displayTitle: 'Jewllery Collection',
-            weightage: 0,
-            product_subcategories: [
+            "categoryLabel": "Jewellery",
+            "route": "jewellery",
+            "displayTitle": "Jewllery Collection",
+            "weightage": 0,
+            "product_subcategories": [
                 {
-                    subcategoryLabel: 'Main',
-                    displayPicture: 'ThisisanURL',
-                    subcategorySlug: 'main',
-                    weightage: 0
+                    "subcategoryLabel": "Default jewllery",
+                    "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
+                    "subcategorySlug": "default-jewellery",
+                    "weightage": 0
                 }
             ]
         },
         {
-            label: 'Tools & Kit',
-            route: 'tools-and-kit',
-            displayTitle: 'Tooks and Kit',
-            weightage: 0,
-            product_subcategories: [
+            "categoryLabel": "Tools & Kit",
+            "route": "tools-and-kit",
+            "displayTitle": "Tools and kit",
+            "weightage": 0,
+            "product_subcategories": [
                 {
-                    subcategoryLabel: 'Main',
-                    displayPicture: 'ThisisanURL',
-                    subcategorySlug: 'main',
-                    weightage: 0
+                    "subcategoryLabel": "Main tools & kit",
+                    "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
+                    "subcategorySlug": "main-tools-and-kit",
+                    "weightage": 0
                 }
             ]
         }
@@ -128,3 +104,74 @@ export class browserData {
     }
 
 }
+
+// actual graphql response:
+
+// {
+//     "data": {
+//         "productCategories": [
+//             {
+//                 "categoryLabel": "beads",
+//                 "route": "beads",
+//                 "displayTitle": "special beads collection",
+//                 "weightage": 0,
+//                 "product_subcategories": [
+//                     {
+//                         "subcategoryLabel": "Clay Beads",
+//                         "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
+//                         "subcategorySlug": "clay-beads",
+//                         "weightage": 0
+//                     },
+//                     {
+//                         "subcategoryLabel": "Bone Beads",
+//                         "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
+//                         "subcategorySlug": "bone-beads",
+//                         "weightage": 0
+//                     }
+//                 ]
+//             },
+//             {
+//                 "categoryLabel": "Pendants",
+//                 "route": "pendant",
+//                 "displayTitle": "Special Pendants",
+//                 "weightage": 0,
+//                 "product_subcategories": [
+//                     {
+//                         "subcategoryLabel": "Main pendants",
+//                         "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
+//                         "subcategorySlug": "main-pendants",
+//                         "weightage": 0
+//                     }
+//                 ]
+//             },
+//             {
+//                 "categoryLabel": "Jewellery",
+//                 "route": "jewellery",
+//                 "displayTitle": "Jewllery Collection",
+//                 "weightage": 0,
+//                 "product_subcategories": [
+//                     {
+//                         "subcategoryLabel": "Default jewllery",
+//                         "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
+//                         "subcategorySlug": "default-jewellery",
+//                         "weightage": 0
+//                     }
+//                 ]
+//             },
+//             {
+//                 "categoryLabel": "Tools & Kit",
+//                 "route": "tools-and-kit",
+//                 "displayTitle": "Tools and kit",
+//                 "weightage": 0,
+//                 "product_subcategories": [
+//                     {
+//                         "subcategoryLabel": "Main tools & kit",
+//                         "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
+//                         "subcategorySlug": "main-tools-and-kit",
+//                         "weightage": 0
+//                     }
+//                 ]
+//             }
+//         ]
+//     }
+// }

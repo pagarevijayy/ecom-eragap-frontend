@@ -3,8 +3,8 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'">
     <mat-toolbar class="secondary-text fs-18">Categories</mat-toolbar>
     <mat-nav-list class="pt-0">
-      <a mat-list-item *ngFor="let item of menuItems" (click)="redirectRoute(true, item?.route)">
-        <span> {{item?.label}} </span>
+      <a mat-list-item *ngFor="let item of homepageItems" (click)="navigationRoute(true, item?.route)">
+        <span> {{item?.categoryLabel}} </span>
         <span> <img src="assets/images/chevron_right.svg" alt="chevron"> </span>
       </a>
     </mat-nav-list>
@@ -28,9 +28,9 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span  class="px-2 cursor-pointer logo-font" (click)="redirectRoute(false, 'home')">{{storeName}}</span>
+      <span  class="px-2 cursor-pointer logo-font" (click)="navigationRoute(false, 'home')">{{storeName}}</span>
       <nav class="d-flex flex-wrap mx-2 margin-pull" *ngIf="!(isHandset$ | async)">
-        <a class="nav-item-link mx-2 cursor-pointer" *ngFor="let item of menuItems" (click)="redirectRoute(true, item?.route)">{{item?.label}}</a>
+        <a class="nav-item-link mx-2 cursor-pointer" *ngFor="let item of homepageItems" (click)="navigationRoute(true, item?.route)">{{item?.categoryLabel}}</a>
       </nav>
     </mat-toolbar>
     <!-- Add Main Page Content Here -->

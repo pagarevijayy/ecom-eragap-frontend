@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UtilsService } from 'src/app/services';
+import { StateManagementService, UtilsService } from 'src/app/services';
 import { browserData } from 'src/assets/data/inbrowser-data'
 
 @Component({
@@ -12,32 +12,35 @@ import { browserData } from 'src/assets/data/inbrowser-data'
 export class ProductsComponent implements OnInit {
 
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
-  subcategories: Array<any> = browserData.subcategories;
-  
-  whatsAppButtonLabelPrimary= browserData?.whatsAppDataContent?.buttonLabelPrimary;
-  whatsAppEnquiryTextPrimary= browserData?.whatsAppDataContent?.enquiryTextPrimary;
-  whatsAppContactNumber= browserData?.whatsAppDataContent?.whatsAppContactNumber;
 
-  currentRouteID: string;
-  currentCategory: string = 'Beads';
+  // @todo: move this stuff to data-service
+  whatsAppButtonLabelPrimary = browserData?.whatsAppDataContent?.buttonLabelPrimary;
+  whatsAppEnquiryTextPrimary = browserData?.whatsAppDataContent?.enquiryTextPrimary;
+  whatsAppContactNumber = browserData?.whatsAppDataContent?.whatsAppContactNumber;
+
   //pass currentCategory value from menu click [no need to iterate the loop and discover value]
+  currentCategoryRoute: string;
 
+  currentCategory: string = 'Beads';
   primarySubcategory: string = 'Crystal Beads';
+  subcategories: Array<any> = [
+    'Crystal Beads',
+    'Bone Beads',
+    'Clay Beads'
+  ];
 
 
   constructor(
     private _route: ActivatedRoute,
-    private _utilService: UtilsService
+    private _utilService: UtilsService,
+    private _stateManagementService: StateManagementService,
+
   ) { }
 
   ngOnInit(): void {
-    // subscribe to DummyData
 
-    // subscribe to route param id
-    this._route.params.subscribe(params => {
-      this.currentRouteID = params['categoryID'];
-      console.log('categoryID', this.currentRouteID);
-    });
+    // get name of current category route 
+    this._route.params.subscribe(params => this.currentCategoryRoute = params['categoryRoute']);
 
   }
 
