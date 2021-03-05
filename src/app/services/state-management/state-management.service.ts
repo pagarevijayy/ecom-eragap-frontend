@@ -8,8 +8,11 @@ import { UtilsService } from '../utils/utils.service';
 export class StateManagementService {
 
   private homepageItems = new BehaviorSubject<any>(this.setHomepageItems());
-
   homepageItemsBroadcast$ = this.homepageItems.asObservable();
+
+  private itemCategoryClicked = new BehaviorSubject<any>(null);
+  itemCategoryClickedBroadcast$ = this.itemCategoryClicked.asObservable();
+
 
   constructor(
     private _utilService: UtilsService,
@@ -22,6 +25,10 @@ export class StateManagementService {
 
   updateHomepageItems(data: any) {
     this.homepageItems.next(data);
+  }
+
+  updateItemCategoryClicked(data: any) {
+    this.itemCategoryClicked.next(data);
   }
 
 }

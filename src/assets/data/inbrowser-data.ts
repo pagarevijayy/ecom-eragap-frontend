@@ -88,6 +88,12 @@ export class browserData {
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
                     "subcategorySlug": "bone-beads",
                     "weightage": 0
+                },
+                {
+                    "subcategoryLabel": "Main pendants",
+                    "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
+                    "subcategorySlug": "main-pendants",
+                    "weightage": 0
                 }
             ]
         },
@@ -107,6 +113,12 @@ export class browserData {
                     "subcategoryLabel": "Bone Beads",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
                     "subcategorySlug": "bone-beads",
+                    "weightage": 0
+                },
+                {
+                    "subcategoryLabel": "Default jewllery",
+                    "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
+                    "subcategorySlug": "default-jewellery",
                     "weightage": 0
                 }
             ]

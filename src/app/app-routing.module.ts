@@ -7,11 +7,11 @@ import { ProductsComponent } from './components/products/products.component';
 const routes: Routes = [
   { path: 'home', component: HomepageComponent },
   //products page with a given category
-  { path: 'product/:categoryRoute', component: ProductsComponent },
+  { path: 'products/:categoryRoute', component: ProductsComponent },
   //products page with a given category and subcategory
-  { path: 'product/:categoryRoute/:subcategorySlug', component: ProductsComponent },
+  { path: 'products/:categoryRoute/:subcategorySlug', component: ProductsComponent },
   //product details page
-  { path: 'product/:categoryRoute/:subcategorySlug/:productSlug', component: ProductDetailsComponent },
+  { path: 'products/:categoryRoute/:subcategorySlug/:productSlug', component: ProductDetailsComponent },
 
   // error cases [streamline later]
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // redirect to `home-component`

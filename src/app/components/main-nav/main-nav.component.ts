@@ -44,13 +44,18 @@ export class MainNavComponent implements OnInit {
   navigationRoute(navigateToProductsPage: boolean, routeName: string) {
     if (navigateToProductsPage) {
       // navigate to products page and close the menu drawer
-      this._router.navigate([`/product/${routeName}`]);
+      this._router.navigate([`/products/${routeName}`]);
       this.sideNavDrawer.close();
       return
     }
 
     // navigate directly to the specified route.
     this._router.navigate([`${routeName}`]);
+  }
+
+  menuItemClicked(categoryInformation: any) {
+    // pass-on category details via BS [to products page]
+    this._stateManagementService.updateItemCategoryClicked(categoryInformation);
   }
 
 }

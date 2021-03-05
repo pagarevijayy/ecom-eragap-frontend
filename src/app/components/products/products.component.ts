@@ -18,16 +18,10 @@ export class ProductsComponent implements OnInit {
   whatsAppEnquiryTextPrimary = browserData?.whatsAppDataContent?.enquiryTextPrimary;
   whatsAppContactNumber = browserData?.whatsAppDataContent?.whatsAppContactNumber;
 
-  //pass currentCategory value from menu click [no need to iterate the loop and discover value]
   currentCategoryRoute: string;
-
-  currentCategory: string = 'Beads';
-  primarySubcategory: string = 'Crystal Beads';
-  subcategories: Array<any> = [
-    'Crystal Beads',
-    'Bone Beads',
-    'Clay Beads'
-  ];
+  activeSubcategorySlug: string;
+  currentCategory: string;
+  subcategories: Array<any> = [];
 
 
   constructor(
@@ -39,8 +33,19 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // get name of current category route 
-    this._route.params.subscribe(params => this.currentCategoryRoute = params['categoryRoute']);
+    // get routing details [route and slug]
+    this._route.params.subscribe((params) => {
+      this.currentCategoryRoute = params['categoryRoute'];
+      this.activeSubcategorySlug = params['subcategorySlug'];
+    });
+
+    // categoryInformation
+    this._stateManagementService.itemCategoryClickedBroadcast$.subscribe((data) => {
+      this.currentCategory = data?.categoryLabel;
+
+      //@todo: also pass slug info
+      this.subcategories = data?.product_subcategories.map(element => element.subcategoryLabel);
+    });
 
   }
 

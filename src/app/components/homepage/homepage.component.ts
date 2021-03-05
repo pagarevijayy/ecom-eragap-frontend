@@ -40,6 +40,20 @@ export class HomepageComponent implements OnInit {
       // console.log('from homepage component[homepageItems]', this.homepageItems);
     });
   }
+
+  subcategoryClicked(categoryInformation: any, subcategoryData: any){
+
+    // pass-on category details via BS [to products page]
+    this._stateManagementService.updateItemCategoryClicked(categoryInformation);
+    
+    //navigate to products page
+    const categoryRoute = categoryInformation?.route;
+    const subcategorySlug = subcategoryData?.subcategorySlug;
+    const destinationRoute = `products/${categoryRoute}/${subcategorySlug}`
+    
+    this._utilService.navigationRoute(destinationRoute);
+  }
+
 }
 
 

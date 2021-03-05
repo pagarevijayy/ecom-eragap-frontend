@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,10 @@ export class UtilsService {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private _router: Router
+  ) { }
 
   // encrypt and set data into session storage
   setDataIntoSessionStorage(data: any, keyLabel: string) {
@@ -38,6 +42,11 @@ export class UtilsService {
     }
 
     return null;
+  }
+
+  navigationRoute(routeName: string) {
+    // navigate to the specified route.
+    this._router.navigate([`/${routeName}`]);
   }
 
 }

@@ -2,7 +2,7 @@
   <div class='subsection-dropdown text-center'>
     <mat-form-field appearance="outline" style="width:100%">
       <mat-label>{{currentCategory}}</mat-label>
-      <mat-select [(value)]="primarySubcategory">
+      <mat-select>
         <mat-option [value]="option" *ngFor="let option of subcategories">{{ option }}</mat-option>
       </mat-select>
     </mat-form-field>

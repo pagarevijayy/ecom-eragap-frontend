@@ -16,7 +16,7 @@ export class ProductCardComponent implements OnInit {
   }
 
   routeLocation(){
-    this._router.navigate([`/product/bead/xyz`]);
+    this._router.navigate([`/products/beads/some-slug/xyz`]);
   }
 
 }
