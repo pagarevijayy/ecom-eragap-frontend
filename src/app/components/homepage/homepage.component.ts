@@ -28,38 +28,6 @@ export class HomepageComponent implements OnInit {
   storeAddressLineOne = browserData?.storeInformation?.addressLineOne;
   storeAddressLineTwo = browserData?.storeInformation?.addressLineTwo;
 
-  sectionAHeading: string = 'Natural Beads Collection';
-  sectionBHeading: string = 'Pendants Collection';
-  sectionCHeading: string = 'Jewellery component';
-
-
-  showcaseImages = [
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp'
-    },
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-5_Bmvc6No5S.jpg'
-    },
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp'
-    },
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg'
-    },
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg'
-    },
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg'
-    }
-  ];
-
   constructor(
     private _utilService: UtilsService,
     private _stateManagementService: StateManagementService,
@@ -76,7 +44,20 @@ export class HomepageComponent implements OnInit {
 
 
 /* layouts meta:
-    1. attractive page layout: keep the first section with more than 4 cards [even number items]
+    1. attractive page layout: [view 4-1-2-3 repeat]
+        - large screen
+            4 layout - min. 6 cards
+            1 layout - min. 3 cards
+            2 layout - min. 2 cards
+            3 layout - min. 3 cards
+
+        - mobile screen
+            4 layout - min. 4 cards
+            1 layout - min. 2 cards
+            2 layout - min. 2 cards
+            3 layout - min. 3 cards
+  
+
     2. --- for only one/no sub-category - directly show products [how? -- solve]
     3. Atleast have 2 subcategories
 */

@@ -65,67 +65,10 @@
                     *ngFor="let subcategory of item.product_subcategories"
                     src="{{subcategory.displayPictureUrl}}?tr=bl-6" 
                     data-src="{{subcategory.displayPictureUrl}}"
-                    data-srcset="
-                    {{subcategory.displayPictureUrl}}?tr=w-190 190w,
+                    data-srcset="{{subcategory.displayPictureUrl}}?tr=w-190 190w,
                     {{subcategory.displayPictureUrl}}?tr=w-350 350w,
                     {{subcategory.displayPictureUrl}}?tr=w-550 550w" 
                     sizes="(max-width: 600px) 50vw, 33vw">
-            </div>
-        </section>
-    </div>
-
-    <!-- Layout: Four cards  -->
-    <div class="wrapper-design">
-        <section [ngClass]="{'m-padding-wrapper ': (isHandset$ | async)}">
-            <h5 class="py-3 fs-18">{{sectionAHeading}}</h5>
-            <div class="layout-four-cards-grid" [ngClass]="{'smaller-screen-grid-A': isHandset$ | async}">
-
-                <img class="showcase-card lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}"
-                    *ngFor="let item of showcaseImages" data-srcset="{{item.url}}?tr=w-190 190w,
-                {{item.url}}?tr=w-350 350w,
-                {{item.url}}?tr=w-550 550w" sizes="(max-width: 600px) 50vw, 33vw">
-            </div>
-        </section>
-    </div>
-
-
-    <!-- Layout: Single card -->
-    <div class="wrapper-design-stretched">
-        <section [ngClass]="{'m-padding-wrapper ': (isHandset$ | async)}">
-            <h5 class="py-3 fs-18"> Specials</h5>
-            <div class="layout-single-card-flex">
-                <img class="showcase-card-long lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}"
-                    *ngFor="let item of showcaseImages" data-srcset="{{item.url}}?tr=w-190 190w,
-                     {{item.url}}?tr=w-350 350w,
-                     {{item.url}}?tr=w-550 550w" sizes="(max-width: 600px) 50vw, 33vw">
-            </div>
-        </section>
-    </div>
-
-
-    <!-- Layout: Two cards -->
-    <div class="wrapper-design">
-        <section [ngClass]="{'m-padding-wrapper ': (isHandset$ | async)}">
-            <h5 class="py-3 fs-18"> Section B</h5>
-            <div class="layout-two-cards-flex">
-                <img class="showcase-card-long lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}"
-                    *ngFor="let item of showcaseImages" data-srcset="{{item.url}}?tr=w-190 190w,
-                        {{item.url}}?tr=w-350 350w,
-                        {{item.url}}?tr=w-550 550w" sizes="(max-width: 600px) 50vw, 33vw">
-            </div>
-        </section>
-    </div>
-
-
-    <!-- Layout: Three cards -->
-    <div class="wrapper-design-stretched">
-        <section [ngClass]="{'m-padding-wrapper ': (isHandset$ | async)}">
-            <h5 class="py-3 fs-18"> Section B</h5>
-            <div class="layout-three-cards-flex">
-                <img class="showcase-card-long lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}"
-                    *ngFor="let item of showcaseImages" data-srcset="{{item.url}}?tr=w-190 190w,
-                            {{item.url}}?tr=w-350 350w,
-                            {{item.url}}?tr=w-550 550w" sizes="(max-width: 600px) 50vw, 33vw">
             </div>
         </section>
     </div>
