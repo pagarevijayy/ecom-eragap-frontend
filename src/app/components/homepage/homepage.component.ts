@@ -57,15 +57,7 @@ export class HomepageComponent implements OnInit {
     {
       name: 'image identifier',
       url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg'
-    },
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp'
-    },
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg'
-    },
+    }
   ];
 
   constructor(
@@ -77,7 +69,14 @@ export class HomepageComponent implements OnInit {
     // get homepage data
     this._stateManagementService.homepageItemsBroadcast$.subscribe((data) => {
       this.homepageItems = data;
-      console.log('from homepage component[homepageItems]', this.homepageItems);
+      // console.log('from homepage component[homepageItems]', this.homepageItems);
     });
   }
 }
+
+
+/* layouts meta:
+    1. attractive page layout: keep the first section with more than 4 cards [even number items]
+    2. --- for only one/no sub-category - directly show products [how? -- solve]
+    3. Atleast have 2 subcategories
+*/

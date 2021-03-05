@@ -37,7 +37,7 @@ export class MainNavComponent implements OnInit {
     // get homepage data
     this._stateManagementService.homepageItemsBroadcast$.subscribe((data) => {
       this.homepageItems = data;
-      console.log('from main-nav component[homepageItems]', this.homepageItems);
+      // console.log('from main-nav component[homepageItems]', this.homepageItems);
     });
   }
 

@@ -21,6 +21,7 @@ export class UtilsService {
   setDataIntoSessionStorage(data: any, keyLabel: string) {
     // @todo: edge case error handling
     const stringifiedData = JSON.stringify(data);
+
     const encryptedData = btoa(stringifiedData);
 
     sessionStorage.setItem(keyLabel, encryptedData);

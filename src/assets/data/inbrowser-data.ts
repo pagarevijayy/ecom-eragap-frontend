@@ -62,7 +62,57 @@ export class browserData {
                     "weightage": 0
                 }
             ]
-        }
+        },
+        // new
+        // {
+        //     "categoryLabel": "New Arrivals",
+        //     "route": "new-collections",
+        //     "displayTitle": "special beads collection",
+        //     "weightage": 0,
+        //     "product_subcategories": [
+        //         {
+        //             "subcategoryLabel": "Clay Beads",
+        //             "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
+        //             "subcategorySlug": "clay-beads",
+        //             "weightage": 0
+        //         },
+        //         {
+        //             "subcategoryLabel": "Bone Beads",
+        //             "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
+        //             "subcategorySlug": "bone-beads",
+        //             "weightage": 0
+        //         }
+        //     ]
+        // },
+        // {
+        //     "categoryLabel": "Pendants",
+        //     "route": "pendant",
+        //     "displayTitle": "Special Pendants",
+        //     "weightage": 0,
+        //     "product_subcategories": [
+        //         {
+        //             "subcategoryLabel": "Main pendants",
+        //             "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
+        //             "subcategorySlug": "main-pendants",
+        //             "weightage": 0
+        //         }
+        //     ]
+        // },
+        // {
+        //     "categoryLabel": "Tools & Kit",
+        //     "route": "tools-and-kit",
+        //     "displayTitle": "Tools and kit",
+        //     "weightage": 0,
+        //     "product_subcategories": [
+        //         {
+        //             "subcategoryLabel": "Main tools & kit",
+        //             "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
+        //             "subcategorySlug": "main-tools-and-kit",
+        //             "weightage": 0
+        //         }
+        //     ]
+        // },
+
     ];
 
     static carouselLargeScreen: Array<any> = [
