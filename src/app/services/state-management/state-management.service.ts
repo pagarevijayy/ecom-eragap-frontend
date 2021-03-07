@@ -10,7 +10,7 @@ export class StateManagementService {
   private homepageItems = new BehaviorSubject<any>(this.setHomepageItems());
   homepageItemsBroadcast$ = this.homepageItems.asObservable();
 
-  private itemCategoryClicked = new BehaviorSubject<any>(null);
+  private itemCategoryClicked = new BehaviorSubject<any>(this.setLastClickedItem());
   itemCategoryClickedBroadcast$ = this.itemCategoryClicked.asObservable();
 
 
@@ -23,12 +23,25 @@ export class StateManagementService {
     return homepageDataSessionStorage;
   }
 
-  updateHomepageItems(data: any) {
+  updateHomepageItems(data: any, sessionStorageLabel: string) {
+    // update the data value
     this.homepageItems.next(data);
+
+    // store in session storage
+    this._utilService.setDataIntoSessionStorage(data, sessionStorageLabel);
   }
 
-  updateItemCategoryClicked(data: any) {
+  setLastClickedItem() {
+    const lastItemCategoryClicked = this._utilService.getDataFromSessionStorage('lastItemCategoryClicked');
+    return lastItemCategoryClicked;
+  }
+
+  updateItemCategoryClicked(data: any, sessionStorageLabel: string) {
+    // update the data value
     this.itemCategoryClicked.next(data);
+
+    // store in session storage
+    this._utilService.setDataIntoSessionStorage(data, sessionStorageLabel);
   }
 
 }

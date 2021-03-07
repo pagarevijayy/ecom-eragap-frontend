@@ -25,13 +25,11 @@ export class AppComponent implements OnInit {
 
   async setHomepageData() {
     this.homepageItems = await this.getHomepageData();
-    console.log('app component [data received via. api]:', this.homepageItems);
+    // console.log('app component [data received via. api]:', this.homepageItems);
 
-    // assign the data to a BS 
-    this._stateManagementService.updateHomepageItems(this.homepageItems)
-
-    // store in session storage
-    this._utilService.setDataIntoSessionStorage(this.homepageItems, 'homepageItems');
+    // assign the data to a BS [also store in session storage]
+    this._stateManagementService.updateHomepageItems(this.homepageItems, 'homepageItems');
+    
   }
 
   // actual async request

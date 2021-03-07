@@ -20,7 +20,9 @@ export class ProductsComponent implements OnInit {
 
   currentCategoryRoute: string;
   activeSubcategorySlug: string;
-  currentCategory: string;
+  currentCategoryLabel: string;
+  currentSubcategoryInfo: Array<any> = [];
+
   subcategories: Array<any> = [];
 
 
@@ -28,10 +30,10 @@ export class ProductsComponent implements OnInit {
     private _route: ActivatedRoute,
     private _utilService: UtilsService,
     private _stateManagementService: StateManagementService,
-
   ) { }
 
   ngOnInit(): void {
+    console.log('products oninit');
 
     // get routing details [route and slug]
     this._route.params.subscribe((params) => {
@@ -40,12 +42,35 @@ export class ProductsComponent implements OnInit {
     });
 
     // categoryInformation
-    this._stateManagementService.itemCategoryClickedBroadcast$.subscribe((data) => {
-      this.currentCategory = data?.categoryLabel;
+    this._stateManagementService.itemCategoryClickedBroadcast$.subscribe((categoryInformation) => {
+      // flush existing data in variables before assigning values
+      this.currentCategoryLabel = null;
+      this.currentSubcategoryInfo = [];
 
-      //@todo: also pass slug info
-      this.subcategories = data?.product_subcategories.map(element => element.subcategoryLabel);
+      console.log('categoryInformation', categoryInformation);
+
+      // assigning category label
+      this.currentCategoryLabel = categoryInformation?.categoryLabel;
+
+      // console.log('currentCategoryLabel', this.currentCategoryLabel);
+
+
+      // creating currentSubcategoryInfo [to be used in UI]
+      categoryInformation?.product_subcategories?.forEach(element => {
+        
+        // create an temporary object and push onto currentSubcategoryInfo
+        let subcategoryLabel = element?.subcategoryLabel;
+        let subcategorySlug = element?.subcategorySlug;
+        let subcategoryWeightage = element?.weightage;
+
+        let subcategoryHolder = { subcategoryLabel, subcategorySlug, subcategoryWeightage };
+
+        this.currentSubcategoryInfo.push(subcategoryHolder)
+      });
+
+      // console.log('currentSubcategoryInfo', this.currentSubcategoryInfo);
     });
+
 
   }
 

@@ -55,7 +55,7 @@ export class MainNavComponent implements OnInit {
 
   menuItemClicked(categoryInformation: any) {
     // pass-on category details via BS [to products page]
-    this._stateManagementService.updateItemCategoryClicked(categoryInformation);
+    this._stateManagementService.updateItemCategoryClicked(categoryInformation, 'lastItemCategoryClicked');
   }
 
 }

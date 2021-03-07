@@ -44,7 +44,7 @@ export class HomepageComponent implements OnInit {
   subcategoryClicked(categoryInformation: any, subcategoryData: any){
 
     // pass-on category details via BS [to products page]
-    this._stateManagementService.updateItemCategoryClicked(categoryInformation);
+    this._stateManagementService.updateItemCategoryClicked(categoryInformation, 'lastItemCategoryClicked');
     
     //navigate to products page
     const categoryRoute = categoryInformation?.route;

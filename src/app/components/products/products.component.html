@@ -1,7 +1,7 @@
 <div class="products px-3" [ngClass]="{'large-screen-product-layout': !(isHandset$ | async)}">
   <div class='subsection-dropdown text-center'>
     <mat-form-field appearance="outline" style="width:100%">
-      <mat-label>{{currentCategory}}</mat-label>
+      <mat-label>{{currentCategoryLabel}}</mat-label>
       <mat-select>
         <mat-option [value]="option" *ngFor="let option of subcategories">{{ option }}</mat-option>
       </mat-select>
