@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { StateManagementService, UtilsService } from 'src/app/services';
-import { browserData } from 'src/assets/data/inbrowser-data'
+import { browserData, ProductInformation } from 'src/assets/data/inbrowser-data'
 
 @Component({
   selector: 'app-products',
@@ -24,6 +24,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   currentSubcategoryInfo: Array<any> = [];
   currentSubcategoryValue: string;
   activeSubcategorySlug: string;
+  productsCatlogue: Array<any> = [];
 
   constructor(
     private _route: ActivatedRoute,
@@ -82,7 +83,37 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.currentSubcategoryValue = event?.value;
 
     // change the route parameter [in-sync with the drop-down value]
-    const routeCommand = (!!this.activeSubcategorySlug) ? `../${this.currentSubcategoryValue}` : `${this.currentSubcategoryValue}`;
+    this.updateRouteParams(this.currentSubcategoryValue);
+
+    // the subcategory products list
+    this.updateSubcategoryProductsList(this.currentSubcategoryValue);
+  }
+
+  async updateSubcategoryProductsList(subcategorySlug: string) {
+
+    // aync data fetch
+    const subcategoryData: any = await this.getSubcategoryProductsList(subcategorySlug);
+    this.productsCatlogue = subcategoryData?.products;
+
+    console.log('subcategoryData', subcategoryData);
+
+  }
+
+  // actual async request
+  getSubcategoryProductsList(subcategorySlug: string) {
+    return new Promise((resolve, reject) => {
+      // actual http api-call here [async]
+
+      setTimeout(() => {
+        const dataPlaceholder = ProductInformation?.productSubcategories[subcategorySlug];
+        resolve(dataPlaceholder);
+      }, 1000)
+
+    });
+  }
+
+  updateRouteParams(subcategorySlug: string) {
+    const routeCommand = (!!this.activeSubcategorySlug) ? `../${subcategorySlug}` : `${subcategorySlug}`;
 
     const updatedRoute = this._router.createUrlTree([routeCommand], { relativeTo: this._route }).toString();
 

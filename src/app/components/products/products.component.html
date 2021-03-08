@@ -3,13 +3,14 @@
     <mat-form-field appearance="outline" style="width:100%">
       <mat-label>{{currentCategoryLabel}}</mat-label>
       <mat-select [value]="currentSubcategoryValue" (selectionChange)='subcategoryValueChanged($event)'>
-        <mat-option [value]="option.subcategorySlug" *ngFor="let option of currentSubcategoryInfo">{{ option.subcategoryLabel }}</mat-option>
+        <mat-option [value]="option.subcategorySlug" *ngFor="let option of currentSubcategoryInfo">{{
+          option.subcategoryLabel }}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <div class="whatsapp-cta px-2 mt-2" *ngIf="!(isHandset$ | async)">
-      <a class="btn btn-whatsapp-style" href="https://wa.me/{{whatsAppContactNumber}}?text={{whatsAppEnquiryTextPrimary}}"
-        target="_blank">
+      <a class="btn btn-whatsapp-style"
+        href="https://wa.me/{{whatsAppContactNumber}}?text={{whatsAppEnquiryTextPrimary}}" target="_blank">
         <section class="d-flex align-items-center">
           <img src="assets/images/whatsapp.svg" alt="whatsapp">
           <span class="px-2 fs-12">{{whatsAppButtonLabelPrimary}}</span>
@@ -18,10 +19,8 @@
     </div>
   </div>
   <div class="product-catlogue" [ngClass]="{'large-screen-product-catlogue': !(isHandset$ | async)}">
-    <app-product-card></app-product-card>
-    <app-product-card></app-product-card>
-    <app-product-card></app-product-card>
-    <app-product-card></app-product-card>
-    <app-product-card></app-product-card>
+    <div class="product-wrapper" *ngFor="let product of productsCatlogue">
+      <app-product-card [productDetail]="product" ></app-product-card>
+    </div>
   </div>
 </div>
