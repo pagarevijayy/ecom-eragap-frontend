@@ -22,25 +22,25 @@ export class browserData {
                 {
                     "subcategoryLabel": "Xyz Beads",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
-                    "subcategorySlug": "bone-beads",
+                    "subcategorySlug": "XYZ-beads",
                     "weightage": 0
                 },
                 {
                     "subcategoryLabel": "ABC Beads",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
-                    "subcategorySlug": "bone-beads",
+                    "subcategorySlug": "abc-beads",
                     "weightage": 0
                 },
                 {
-                    "subcategoryLabel": "Clay Beads",
+                    "subcategoryLabel": "Special Beads",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
-                    "subcategorySlug": "clay-beads",
+                    "subcategorySlug": "special-beads",
                     "weightage": 0
                 },
                 {
-                    "subcategoryLabel": "Bone Beads",
+                    "subcategoryLabel": "LMA Beads",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
-                    "subcategorySlug": "bone-beads",
+                    "subcategorySlug": "lma-beads",
                     "weightage": 0
                 },
             ]
@@ -52,21 +52,21 @@ export class browserData {
             "weightage": 0,
             "product_subcategories": [
                 {
-                    "subcategoryLabel": "Main pendants",
+                    "subcategoryLabel": "Special pendants",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
-                    "subcategorySlug": "main-pendants",
+                    "subcategorySlug": "special-pendants",
                     "weightage": 0
                 },
                 {
-                    "subcategoryLabel": "ABC Beads",
+                    "subcategoryLabel": "Bombay pendants",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
-                    "subcategorySlug": "bone-beads",
+                    "subcategorySlug": "bombay-pendants",
                     "weightage": 0
                 },
                 {
-                    "subcategoryLabel": "Xyz Beads",
+                    "subcategoryLabel": "NY pendants",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
-                    "subcategorySlug": "bone-beads",
+                    "subcategorySlug": "ny-pendants",
                     "weightage": 0
                 }
             ]
@@ -78,21 +78,21 @@ export class browserData {
             "weightage": 0,
             "product_subcategories": [
                 {
-                    "subcategoryLabel": "Default jewllery",
+                    "subcategoryLabel": "MLK jewllery",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
-                    "subcategorySlug": "default-jewellery",
+                    "subcategorySlug": "mlk-jewellery",
                     "weightage": 0
                 },
                 {
-                    "subcategoryLabel": "Xyz Beads",
+                    "subcategoryLabel": "Carot 24",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
-                    "subcategorySlug": "bone-beads",
+                    "subcategorySlug": "carot-24",
                     "weightage": 0
                 },
                 {
-                    "subcategoryLabel": "Main pendants",
+                    "subcategoryLabel": "Tasha paris",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
-                    "subcategorySlug": "main-pendants",
+                    "subcategorySlug": "tasha-paris",
                     "weightage": 0
                 }
             ]
@@ -104,21 +104,21 @@ export class browserData {
             "weightage": 0,
             "product_subcategories": [
                 {
-                    "subcategoryLabel": "Main tools & kit",
+                    "subcategoryLabel": "AG kit",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
-                    "subcategorySlug": "main-tools-and-kit",
+                    "subcategorySlug": "ag-kit",
                     "weightage": 0
                 },
                 {
-                    "subcategoryLabel": "Bone Beads",
+                    "subcategoryLabel": "VK tools",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
-                    "subcategorySlug": "bone-beads",
+                    "subcategorySlug": "vk-tools",
                     "weightage": 0
                 },
                 {
-                    "subcategoryLabel": "Default jewllery",
+                    "subcategoryLabel": "Raja kit",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
-                    "subcategorySlug": "default-jewellery",
+                    "subcategorySlug": "raja-kit",
                     "weightage": 0
                 }
             ]

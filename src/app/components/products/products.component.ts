@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { StateManagementService, UtilsService } from 'src/app/services';
 import { browserData } from 'src/assets/data/inbrowser-data'
@@ -20,15 +20,14 @@ export class ProductsComponent implements OnInit, OnDestroy {
   whatsAppContactNumber = browserData?.whatsAppDataContent?.whatsAppContactNumber;
 
   currentCategoryRoute: string;
-  activeSubcategorySlug: string;
   currentCategoryLabel: string;
   currentSubcategoryInfo: Array<any> = [];
-
-  subcategories: Array<any> = [];
-
+  currentSubcategoryValue: string;
+  activeSubcategorySlug: string;
 
   constructor(
     private _route: ActivatedRoute,
+    private _router: Router,
     private _utilService: UtilsService,
     private _stateManagementService: StateManagementService,
   ) { }
@@ -39,6 +38,9 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this._route.params.subscribe((params) => {
       this.currentCategoryRoute = params['categoryRoute'];
       this.activeSubcategorySlug = params['subcategorySlug'];
+
+      // set default subcategory value
+      this.currentSubcategoryValue = this.activeSubcategorySlug;
     });
 
     // add a new rxjs subscription. || reason: subcribe to categoryInformation
@@ -75,6 +77,17 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   }
 
+  subcategoryValueChanged(event: any) {
+    // assign new subcategory value
+    this.currentSubcategoryValue = event?.value;
+
+    // change the route parameter [in-sync with the drop-down value]
+    const routeCommand = (!!this.activeSubcategorySlug) ? `../${this.currentSubcategoryValue}` : `${this.currentSubcategoryValue}`;
+
+    const updatedRoute = this._router.createUrlTree([routeCommand], { relativeTo: this._route }).toString();
+
+    this._router.navigateByUrl(updatedRoute);
+  }
 
   ngOnDestroy(): void {
     this.rxSubscription.unsubscribe();

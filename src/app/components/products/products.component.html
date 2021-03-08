@@ -2,8 +2,8 @@
   <div class='subsection-dropdown text-center'>
     <mat-form-field appearance="outline" style="width:100%">
       <mat-label>{{currentCategoryLabel}}</mat-label>
-      <mat-select>
-        <mat-option [value]="option" *ngFor="let option of subcategories">{{ option }}</mat-option>
+      <mat-select [value]="currentSubcategoryValue" (selectionChange)='subcategoryValueChanged($event)'>
+        <mat-option [value]="option.subcategorySlug" *ngFor="let option of currentSubcategoryInfo">{{ option.subcategoryLabel }}</mat-option>
       </mat-select>
     </mat-form-field>
 
