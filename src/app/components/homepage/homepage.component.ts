@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UtilsService } from 'src/app/services';
+import { StateManagementService, UtilsService } from 'src/app/services';
+
+import { browserData } from 'src/assets/data/inbrowser-data'
 
 @Component({
   selector: 'app-homepage',
@@ -9,57 +11,67 @@ import { UtilsService } from 'src/app/services';
 })
 export class HomepageComponent implements OnInit {
 
-  sectionAHeading: string = 'Natural Beads Collection';
-  sectionBHeading: string = 'Pendants Collection';
-  sectionCHeading: string = 'Jewellery component';
-
-  transformationLayoutOne = [
-    { width: "100vw" }
-  ];
-
-  lqip = { active: true, quality: 1 };
-
-  showcaseImages = [
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/prod-6_N3T0c8dM9.jpg'
-    },
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/prod-5_Bmvc6No5S.jpg'
-    },
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/product-4_IMTJrTZIW.webp'
-    },
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/product-3_rOFYI3OS2.jpg'
-    },
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/product-1_tbE8TJhRa.webp'
-    },
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/product-2_kMPTyfcDi.jpg'
-    },
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/prod-5_Bmvc6No5S.jpg'
-    },
-    {
-      name: 'image identifier',
-      url: 'https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/product-4_IMTJrTZIW.webp'
-    },
-  ];
-
+  // variable declaration and assignment
+  homepageItems: any;
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
 
+  // @todo: move this kinda stuff into data-service
+  carouselLargeScreen: Array<any> = browserData.carouselLargeScreen;
+  carouselSmallScreen: Array<any> = browserData.carouselSmallScreen;
 
-  constructor(private _utilService: UtilsService) { }
+  whatsAppButtonLabelSecondary = browserData?.whatsAppDataContent?.buttonLabelSecondary;
+  whatsAppEnquiryTextPrimary = browserData?.whatsAppDataContent?.enquiryTextPrimary;
+  whatsAppContactNumber = browserData?.whatsAppDataContent?.whatsAppContactNumber;
+
+  storeEmailAddress = browserData?.storeInformation?.emailAddress;
+  storeContactNumber = browserData?.storeInformation?.contactNumber;
+  storeAddressLineOne = browserData?.storeInformation?.addressLineOne;
+  storeAddressLineTwo = browserData?.storeInformation?.addressLineTwo;
+
+  constructor(
+    private _utilService: UtilsService,
+    private _stateManagementService: StateManagementService,
+  ) { }
 
   ngOnInit(): void {
+    // get homepage data
+    this._stateManagementService.homepageItemsBroadcast$.subscribe((data) => {
+      this.homepageItems = data;
+      // console.log('from homepage component[homepageItems]', this.homepageItems);
+    });
+  }
+
+  subcategoryClicked(categoryInformation: any, subcategoryData: any){
+
+    // pass-on category details via BS [to products page]
+    this._stateManagementService.updateItemCategoryClicked(categoryInformation, 'lastItemCategoryClicked');
+    
+    //navigate to products page
+    const categoryRoute = categoryInformation?.route;
+    const subcategorySlug = subcategoryData?.subcategorySlug;
+    const destinationRoute = `products/${categoryRoute}/${subcategorySlug}`
+    
+    this._utilService.navigationRoute(destinationRoute);
   }
 
 }
+
+
+/* layouts meta:
+    1. attractive page layout: [view 4-1-2-3 repeat]
+        - large screen
+            4 layout - min. 6 cards
+            1 layout - min. 3 cards
+            2 layout - min. 2 cards
+            3 layout - min. 3 cards
+
+        - mobile screen
+            4 layout - min. 4 cards
+            1 layout - min. 2 cards
+            2 layout - min. 2 cards
+            3 layout - min. 3 cards
+  
+
+    2. --- for only one/no sub-category - directly show products [how? -- solve]
+    3. Atleast have 2 subcategories
+*/

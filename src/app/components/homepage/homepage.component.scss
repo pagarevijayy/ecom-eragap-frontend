@@ -44,6 +44,7 @@
     }
   }
 
+  // wrapper-design and wrapper-design-stretched are used alternatively
   .wrapper-design {
     margin: 2em -1em;
     background: #fff;
@@ -57,7 +58,7 @@
     }
   }
 
-  .wrapper-design-elongated {
+  .wrapper-design-stretched {
     margin: auto -1em;
     background: #fff;
     border-radius: 0;
@@ -105,7 +106,27 @@
 }
 
 
-//  layouts: mobile screen [larger screen]
+//  Layouts: 
+
+//  The difference is only for mobile screens, in larger screens they appear similar.
+/* layouts meta:
+    1. attractive page layout: [view 4-1-2-3 repeat]
+        - large screen
+            4 layout - min. 6 cards
+            1 layout - min. 3 cards
+            2 layout - min. 2 cards
+            3 layout - min. 3 cards
+          [conclusion: atleast 3 cards in a row and 6 cards for grid]
+
+        - mobile screen
+            4 layout - min. 4 cards
+            1 layout - min. 2 cards
+            2 layout - min. 2 cards
+            3 layout - min. 3 cards
+          [conclusion: atleast 2 cards in a row or whatever minimum req.]
+        
+        => General rule of thumb: keep atleast 3 cards in a row.
+*/
 
 // 1.0 FLEX: single card+ 
 .layout-single-card-flex {
@@ -167,7 +188,7 @@
   }
 }
 
-// 2.1 GRID: Four cards 
+// 2.1 GRID: Four cards [gotta be even number]
 .layout-four-cards-grid {
   display: grid;
   grid-gap: 1em;
@@ -192,26 +213,27 @@
   }
 }
 
-// 2.1 GRID: six cards 
-.layout-six-cards-grid {
-  display: grid;
-  grid-gap: 1em;
-  grid-template-rows: repeat(2, 1fr);
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-  overflow-x: auto;
-  max-width: 960px;
-  margin-right: auto;
-  margin-left: auto;
+// 2.1 GRID: six cards (works fine, but deprecated for now!)
 
-  &.smaller-screen-grid-A {
-    grid-auto-columns: calc(33% - 0.625em);
-  }
+// .layout-six-cards-grid {
+//   display: grid;
+//   grid-gap: 1em;
+//   grid-template-rows: repeat(2, 1fr);
+//   grid-auto-flow: column;
+//   grid-auto-columns: 1fr;
+//   overflow-x: auto;
+//   max-width: 960px;
+//   margin-right: auto;
+//   margin-left: auto;
 
-  .showcase-card {
-    // background-color: aquamarine;
-    // height: 145px;
-    border-radius: 4px;
-    width: 100%;
-  }
-}
+//   &.smaller-screen-grid-A {
+//     grid-auto-columns: calc(33% - 0.625em);
+//   }
+
+//   .showcase-card {
+//     // background-color: aquamarine;
+//     // height: 145px;
+//     border-radius: 4px;
+//     width: 100%;
+//   }
+// }

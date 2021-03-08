@@ -1,40 +1,36 @@
 <div class="home-page text-center px-3 pb-2 primary-text">
-    <!-- bootstrap carousel -->
+    <!-- homepage: carousel[bootstrap] -->
     <section class="carousel-banner">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner border-radius-8 mobile-carousel" *ngIf="(isHandset$ | async)">
-                <div class="carousel-item active" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://images.unsplash.com/photo-1510229955695-588e1612a69b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=751&q=80"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://images.unsplash.com/photo-1523252012848-c22188792c27?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://images.unsplash.com/photo-1548925081-d5087ef8f683?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"
-                        class="d-block w-100" alt="...">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+            <!-- small-screen carousel slider and images -->
+            <div class="small-screen-carousel" *ngIf="(isHandset$ | async)">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{i}}" [ngClass]="{'active': i === 0 }"
+                        *ngFor="let item of carouselSmallScreen; let i = index"></li>
+                </ol>
+                <div class="carousel-inner border-radius-8 mobile-carousel">
+                    <div class="carousel-item" [ngClass]="{'active': i === 0 }"
+                        *ngFor="let item of carouselSmallScreen; let i = index">
+                        <img src="{{item}}" class="d-block w-100" alt="carousel-image">
+                    </div>
                 </div>
             </div>
-            <div class="carousel-inner border-radius-8" *ngIf="!(isHandset$ | async)">
-                <div class="carousel-item active" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/carousel-1_Bi3IshONp.jpg"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/carousel-3_p-1jMlTZ9m.jpg"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" [ngClass]="{'carousel-item-lg-screen': !(isHandset$ | async)}">
-                    <img src="https://ik.imagekit.io/pagarevijayytech/ecom-demo-project/carousel-2_N0vvEThjJ.jpg"
-                        class="d-block w-100" alt="...">
+
+            <!-- large-screen carousel slider and images -->
+            <div class="large-screen-carousel" *ngIf="!(isHandset$ | async)">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{i}}" [ngClass]="{'active': i === 0 }"
+                        *ngFor="let item of carouselLargeScreen; let i = index"></li>
+                </ol>
+                <div class="carousel-inner border-radius-8">
+                    <div class="carousel-item carousel-item-lg-screen" [ngClass]="{'active': i === 0 }"
+                        *ngFor="let item of carouselLargeScreen; let i = index">
+                        <img src="{{item}}" class="d-block w-100" alt="carousel-image">
+                    </div>
                 </div>
             </div>
+
+            <!-- carousel arrow buttons -->
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -46,74 +42,51 @@
         </div>
     </section>
 
-    <!-- section A [gridTypeA] -->
-    <div class="wrapper-design">
-        <section [ngClass]="{'m-padding-wrapper ': (isHandset$ | async)}">
-            <h5 class="py-3 fs-18">{{sectionAHeading}}</h5>
-            <div class="layout-four-cards-grid" [ngClass]="{'smaller-screen-grid-A': isHandset$ | async}">
+    <!-- Layout dynamic -->
+    <div [ngClass]="{'wrapper-design': (i % 2 == 0), 'wrapper-design-stretched': (i % 2 != 0)}"
+        *ngFor="let item of homepageItems; let i = index">
 
-                <img class="showcase-card lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}"
-                    *ngFor="let item of showcaseImages" data-srcset="{{item.url}}?tr=w-190 190w,
-                {{item.url}}?tr=w-350 350w,
-                {{item.url}}?tr=w-550 550w" sizes="(max-width: 600px) 50vw, 33vw">
+        <section [ngClass]="{'m-padding-wrapper ': (isHandset$ | async)}">
+            <h5 class="py-3 fs-18">{{item?.displayTitle}}</h5>
+
+            <!-- layout style -->
+            <div [ngClass]="{
+                'layout-four-cards-grid': (i % 4 == 0),
+                'smaller-screen-grid-A': ((isHandset$ | async) && (i % 4 == 0)),
+                'layout-single-card-flex': (i % 4 == 1),
+                'layout-two-cards-flex': (i % 4 == 2),
+                'layout-three-cards-flex': (i % 4 == 3)
+                }"> 
+                <!-- actual image -->
+                <img class="lazyload cursor-pointer" 
+                    [ngClass]="{'showcase-card': (i % 4 == 0),
+                                'showcase-card-long': (i % 4 != 0)
+                                }" 
+                    *ngFor="let subcategory of item?.product_subcategories"
+                    src="{{subcategory?.displayPictureUrl}}?tr=bl-6" 
+                    data-src="{{subcategory?.displayPictureUrl}}"
+                    data-srcset="{{subcategory?.displayPictureUrl}}?tr=w-190 190w,
+                    {{subcategory?.displayPictureUrl}}?tr=w-350 350w,
+                    {{subcategory?.displayPictureUrl}}?tr=w-550 550w" 
+                    sizes="(max-width: 600px) 50vw, 33vw"
+                    (click)="subcategoryClicked(item, subcategory)"
+                    >
             </div>
         </section>
     </div>
 
-
-    <!-- section B [gridTypeB]-->
-    <div class="wrapper-design-elongated">
-        <section [ngClass]="{'m-padding-wrapper ': (isHandset$ | async)}">
-            <h5 class="py-3 fs-18"> Specials</h5>
-            <div class="layout-single-card-flex">
-                <img class="showcase-card-long lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}"
-                    *ngFor="let item of showcaseImages" data-srcset="{{item.url}}?tr=w-190 190w,
-                     {{item.url}}?tr=w-350 350w,
-                     {{item.url}}?tr=w-550 550w" sizes="(max-width: 600px) 50vw, 33vw">
-            </div>
-        </section>
-    </div>
-
-
-
-    <!-- section B [gridTypeB]-->
-    <div class="wrapper-design">
-        <section [ngClass]="{'m-padding-wrapper ': (isHandset$ | async)}">
-            <h5 class="py-3 fs-18"> Section B</h5>
-            <div class="layout-two-cards-flex">
-                <img class="showcase-card-long lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}"
-                    *ngFor="let item of showcaseImages" data-srcset="{{item.url}}?tr=w-190 190w,
-                        {{item.url}}?tr=w-350 350w,
-                        {{item.url}}?tr=w-550 550w" sizes="(max-width: 600px) 50vw, 33vw">
-            </div>
-        </section>
-    </div>
-
-
-    <!-- section B [gridTypeB]-->
-    <div class="wrapper-design-elongated">
-        <section [ngClass]="{'m-padding-wrapper ': (isHandset$ | async)}">
-            <h5 class="py-3 fs-18"> Section B</h5>
-            <div class="layout-three-cards-flex">
-                <img class="showcase-card-long lazyload" src="{{item.url}}?tr=bl-6" data-src="{{item.url}}"
-                    *ngFor="let item of showcaseImages" data-srcset="{{item.url}}?tr=w-190 190w,
-                            {{item.url}}?tr=w-350 350w,
-                            {{item.url}}?tr=w-550 550w" sizes="(max-width: 600px) 50vw, 33vw">
-            </div>
-        </section>
-    </div>
-
+    <!-- homepage: whatsapp CTA -->
     <div class="whatsapp-cta p-3 my-4">
-        <a class="btn btn-whatsapp-style" href="https://wa.me/919029559131?text=Hi! I wanted to know more about your product and services.
-        Can we have a word?" target="_blank">
+        <a class="btn btn-whatsapp-style"
+            href="https://wa.me/{{whatsAppContactNumber}}?text={{whatsAppEnquiryTextPrimary}}" target="_blank">
             <section class="d-flex align-items-center">
                 <img src="assets/images/whatsapp.svg" alt="whatsapp">
-                <span class="px-2 fs-12"> Looking for something else? Let us know!</span>
+                <span class="px-2 fs-12"> {{whatsAppButtonLabelSecondary}}</span>
             </section>
         </a>
     </div>
 
-    <!-- homepage footer section  -->
+    <!-- homepage: footer section  -->
     <div class="footer-styling row no-gutters py-4">
         <!-- section: Contact Map -->
         <section class="col-sm">
@@ -124,20 +97,19 @@
             <div class="map-responsive px-3">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.496996454471!2d72.8273140143462!3d18.953645987158186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce22c9c02f19%3A0x4dd039fcbfb34267!2sShree%20Sai%20Krupa%20Beads!5e0!3m2!1sen!2sin!4v1612943851170!5m2!1sen!2sin"
-                    frameborder="0" class='map-style' allowfullscreen="" aria-hidden="false"
-                    tabindex="0">
+                    frameborder="0" class='map-style' allowfullscreen="" aria-hidden="false" tabindex="0">
                 </iframe>
             </div>
             <aside class="pt-3 fs-12">
-                <span class="d-block">Shroff Mansion, 65/71 Shop No: 14 </span>
-                <span class="d-block">3rd Bhoiwada Ln, Bhuleshwar, Mumbai-04</span>
+                <span class="d-block">{{storeAddressLineOne}} </span>
+                <span class="d-block">{{storeAddressLineTwo}}</span>
             </aside>
         </section>
         <!-- section: Footer content -->
         <section class="col-sm">
             <div class='center-css-box'>
                 <div [ngClass]="{'pt-4': (isHandset$ | async)}">
-                    <h5 class="fs-18"  *ngIf="!(isHandset$ | async)" > follow us:</h5>
+                    <h5 class="fs-18" *ngIf="!(isHandset$ | async)"> follow us:</h5>
                     <div class="pt-1">
                         <span class="px-2">
                             <i class="fa fa-facebook cursor-pointer" aria-hidden="true"></i>
@@ -150,8 +122,8 @@
                         </span>
                     </div>
                     <aside class="py-3">
-                        <span class="d-block fs-12"> 90xxxx9131</span>
-                        <span class="d-block fs-12 pt-1">ssk_store@gmail.com </span>
+                        <span class="d-block fs-12"> {{storeContactNumber}}</span>
+                        <span class="d-block fs-12 pt-1">{{storeEmailAddress}} </span>
                     </aside>
                 </div>
             </div>

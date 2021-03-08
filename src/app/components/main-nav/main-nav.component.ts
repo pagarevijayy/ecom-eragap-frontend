@@ -1,9 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { UtilsService } from 'src/app/services';
 import { Router } from '@angular/router';
-import { DummyData } from 'src/assets/data'
+import { Observable } from 'rxjs';
+
+import { StateManagementService, UtilsService } from 'src/app/services';
+import { browserData } from 'src/assets/data/inbrowser-data'
 
 @Component({
   selector: 'app-main-nav',
@@ -11,41 +12,50 @@ import { DummyData } from 'src/assets/data'
   styleUrls: ['./main-nav.component.scss']
 })
 
-export class MainNavComponent {
+export class MainNavComponent implements OnInit {
   @ViewChild('drawer') sideNavDrawer: MatSidenav;
 
-  storeName: string = 'SSK Beads';
-  menuItems: Array<any> = DummyData.categories;
-
-  enquiryPrefillMessage: string = `Hi! I wanted to know more about your product and services.
-                                 Can we have a word?`;
-  whatsappBtnLabel: string = 'Contact for Business Enquiry';
-  copyright_text: string = '© Shree Sai Krupa Beads';
-
+  homepageItems: any
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
+
+
+  // @todo: move this stuff to data-service
+  storeName: string = browserData?.storeInformation?.storeName;
+  copyrightText = browserData?.footerContent?.copyrightText;
+
+  whatsAppButtonLabelPrimary = browserData?.whatsAppDataContent?.buttonLabelPrimary;
+  whatsAppEnquiryTextPrimary = browserData?.whatsAppDataContent?.enquiryTextPrimary;
+  whatsAppContactNumber = browserData?.whatsAppDataContent?.whatsAppContactNumber;
 
   constructor(
     private _utilService: UtilsService,
+    private _stateManagementService: StateManagementService,
     private _router: Router
   ) { }
 
-  redirectRoute(isCategory: boolean, routeName: string) {
-    if (isCategory) {
-      this._router.navigate([`/product/${routeName}`]);
-      // close side nav drawer after routing
+  ngOnInit(): void {
+    // get homepage data
+    this._stateManagementService.homepageItemsBroadcast$.subscribe((data) => {
+      this.homepageItems = data;
+      // console.log('from main-nav component[homepageItems]', this.homepageItems);
+    });
+  }
+
+  navigationRoute(navigateToProductsPage: boolean, routeName: string) {
+    if (navigateToProductsPage) {
+      // navigate to products page and close the menu drawer
+      this._router.navigate([`/products/${routeName}`]);
       this.sideNavDrawer.close();
-    } else {
-      this._router.navigate([`${routeName}`]);
+      return
     }
 
+    // navigate directly to the specified route.
+    this._router.navigate([`${routeName}`]);
+  }
+
+  menuItemClicked(categoryInformation: any) {
+    // pass-on category details via BS [to products page]
+    this._stateManagementService.updateItemCategoryClicked(categoryInformation, 'lastItemCategoryClicked');
   }
 
 }
-
-// todo -
-// 1. get menu list via API [categories]
-// 2. latest arrivals -- new api
-// 3. toolbar menu items for large screen
-
-// bug -
-// 1. [DRAWER RESPONSIVENESS] if drawer is opened in handset mode and stretched to larger screens drawer must close 

@@ -4,8 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ImagekitioAngularModule } from 'imagekitio-angular';
-
 // material
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -47,10 +45,6 @@ import { ProductCardComponent } from './components/utils/product-card/product-ca
     MatFormFieldModule,
     MatSelectModule,
     MatCardModule,
-    ImagekitioAngularModule.forRoot({
-      urlEndpoint: "https://ik.imagekit.io/pagarevijayytech",
-      publicKey: "public_3ql3vfN95NVN6yT0DkH12qMZi3I="
-    })
   ],
   providers: [],
   bootstrap: [AppComponent]
