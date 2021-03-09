@@ -11,25 +11,25 @@ export class browserData {
                     "subcategoryLabel": "Clay Beads",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
                     "subcategorySlug": "clay-beads",
-                    "weightage": 0
+                    "weightage": 10
                 },
                 {
                     "subcategoryLabel": "Bone Beads",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
                     "subcategorySlug": "bone-beads",
-                    "weightage": 0
+                    "weightage": 31
                 },
                 {
                     "subcategoryLabel": "Xyz Beads",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
                     "subcategorySlug": "XYZ-beads",
-                    "weightage": 0
+                    "weightage": 15
                 },
                 {
                     "subcategoryLabel": "ABC Beads",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
                     "subcategorySlug": "abc-beads",
-                    "weightage": 0
+                    "weightage": 1
                 },
                 {
                     "subcategoryLabel": "Special Beads",
@@ -145,6 +145,7 @@ export class browserData {
         enquiryTextPrimary: `Hi! I wanted to know more about your product and services. Can we have a word?`
     };
 
+    // remember to update the title bar in index.html
     static storeInformation = {
         storeName: "Eragap",
         contactNumber: 7972071550,
@@ -166,73 +167,141 @@ export class browserData {
 
 }
 
-// actual graphql response:
-
-// {
-//     "data": {
-//         "productCategories": [
-//             {
-//                 "categoryLabel": "beads",
-//                 "route": "beads",
-//                 "displayTitle": "special beads collection",
-//                 "weightage": 0,
-//                 "product_subcategories": [
-//                     {
-//                         "subcategoryLabel": "Clay Beads",
-//                         "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
-//                         "subcategorySlug": "clay-beads",
-//                         "weightage": 0
-//                     },
-//                     {
-//                         "subcategoryLabel": "Bone Beads",
-//                         "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
-//                         "subcategorySlug": "bone-beads",
-//                         "weightage": 0
-//                     }
-//                 ]
-//             },
-//             {
-//                 "categoryLabel": "Pendants",
-//                 "route": "pendant",
-//                 "displayTitle": "Special Pendants",
-//                 "weightage": 0,
-//                 "product_subcategories": [
-//                     {
-//                         "subcategoryLabel": "Main pendants",
-//                         "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
-//                         "subcategorySlug": "main-pendants",
-//                         "weightage": 0
-//                     }
-//                 ]
-//             },
-//             {
-//                 "categoryLabel": "Jewellery",
-//                 "route": "jewellery",
-//                 "displayTitle": "Jewllery Collection",
-//                 "weightage": 0,
-//                 "product_subcategories": [
-//                     {
-//                         "subcategoryLabel": "Default jewllery",
-//                         "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
-//                         "subcategorySlug": "default-jewellery",
-//                         "weightage": 0
-//                     }
-//                 ]
-//             },
-//             {
-//                 "categoryLabel": "Tools & Kit",
-//                 "route": "tools-and-kit",
-//                 "displayTitle": "Tools and kit",
-//                 "weightage": 0,
-//                 "product_subcategories": [
-//                     {
-//                         "subcategoryLabel": "Main tools & kit",
-//                         "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
-//                         "subcategorySlug": "main-tools-and-kit",
-//                         "weightage": 0
-//                     }
-//                 ]
-//             }
-//         ]
-//     }
-// }
+export class ProductInformation {
+    static productSubcategories: any = {
+        'clay-beads': {
+            "subcategoryLabel": "clay beads",
+            "subcategorySlug": "clay-beads",
+            "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
+            "description": "Main category - Beads, Subcategory - Crystal Beads",
+            "weightage": 0,
+            "products": [
+                {
+                    "title": "A1 bead",
+                    "description": "This is not a bead, lmao.",
+                    "productSlug": "a1-bead",
+                    "QtyPrice": [
+                        {
+                            "qty": 256,
+                            "price": 900,
+                            "weightage": 10
+                        },
+                        {
+                            "qty": 150,
+                            "price": 750,
+                            "weightage": 17
+                        }
+                    ],
+                    "Color": [],
+                    "ImageUrl": [
+                        {
+                            "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
+                            "weightage": null,
+                            "description": "master image"
+                        }
+                    ]
+                },
+                {
+                    "title": "BY1 bead",
+                    "description": "This lorem ipsum is not a bead, lmao.",
+                    "productSlug": "by1-bead",
+                    "QtyPrice": [
+                        {
+                            "qty": 256,
+                            "price": 900,
+                            "weightage": 0
+                        },
+                        {
+                            "qty": 150,
+                            "price": 750,
+                            "weightage": 0
+                        }
+                    ],
+                    "Color": [],
+                    "ImageUrl": [
+                        {
+                            "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-5_Bmvc6No5S.jpg",
+                            "weightage": null,
+                            "description": "master image"
+                        }
+                    ]
+                },
+                {
+                    "title": "Lorem ipsun",
+                    "description": "This is a placeholder not a bead, lmao.",
+                    "productSlug": "lorem-ipsum",
+                    "QtyPrice": [
+                        {
+                            "qty": 256,
+                            "price": 900,
+                            "weightage": 0
+                        },
+                        {
+                            "qty": 150,
+                            "price": 750,
+                            "weightage": 0
+                        }
+                    ],
+                    "Color": [],
+                    "ImageUrl": [
+                        {
+                            "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg",
+                            "weightage": null,
+                            "description": "master image"
+                        }
+                    ]
+                },
+                {
+                    "title": "klmo bead",
+                    "description": "Okay got ya this is not a bead, lmao.",
+                    "productSlug": "a1-bead",
+                    "QtyPrice": [
+                        {
+                            "qty": 256,
+                            "price": 900,
+                            "weightage": 0
+                        },
+                        {
+                            "qty": 150,
+                            "price": 750,
+                            "weightage": 0
+                        }
+                    ],
+                    "Color": [],
+                    "ImageUrl": [
+                        {
+                            "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
+                            "weightage": null,
+                            "description": "master image"
+                        }
+                    ]
+                },
+                {
+                    "title": "aplha bead",
+                    "description": "This is not a bead, lmao.",
+                    "productSlug": "a1-bead",
+                    "QtyPrice": [
+                        {
+                            "qty": 256,
+                            "price": 900,
+                            "weightage": 0
+                        },
+                        {
+                            "qty": 150,
+                            "price": 750,
+                            "weightage": 0
+                        }
+                    ],
+                    "Color": [],
+                    "ImageUrl": [
+                        {
+                            "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
+                            "weightage": null,
+                            "description": "master image"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

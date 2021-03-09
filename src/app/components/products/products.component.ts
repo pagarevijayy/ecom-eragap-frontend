@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { StateManagementService, UtilsService } from 'src/app/services';
-import { browserData } from 'src/assets/data/inbrowser-data'
+import { browserData, ProductInformation } from 'src/assets/data/inbrowser-data'
 
 @Component({
   selector: 'app-products',
@@ -24,6 +24,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   currentSubcategoryInfo: Array<any> = [];
   currentSubcategoryValue: string;
   activeSubcategorySlug: string;
+  productsCatlogue: Array<any> = [];
 
   constructor(
     private _route: ActivatedRoute,
@@ -34,16 +35,13 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    // get routing details [route and slug]
+    // get route param values [categoryRoute and subcategorySlug]
     this._route.params.subscribe((params) => {
       this.currentCategoryRoute = params['categoryRoute'];
       this.activeSubcategorySlug = params['subcategorySlug'];
-
-      // set default subcategory value
-      this.currentSubcategoryValue = this.activeSubcategorySlug;
     });
 
-    // add a new rxjs subscription. || reason: subcribe to categoryInformation
+    // subcribe to categoryInformation
     this.rxSubscription.add(
       this._stateManagementService.itemCategoryClickedBroadcast$.subscribe((categoryInformation) => {
         // flush existing data in variables before assigning values
@@ -71,18 +69,62 @@ export class ProductsComponent implements OnInit, OnDestroy {
           this.currentSubcategoryInfo.push(subcategoryHolder)
         });
 
-        // console.log('currentSubcategoryInfo', this.currentSubcategoryInfo);
       })
     );
+
+
+    // sort the subcategory data as per its weightage
+    this._utilService.sortWeightageMaximum(this.currentSubcategoryInfo, 'subcategoryWeightage');
+
+    // assign default drop-down value [available slug or max weight subcategory]
+    (!!this.activeSubcategorySlug) ? this.currentSubcategoryValue = this.activeSubcategorySlug : this.currentSubcategoryValue = this.currentSubcategoryInfo[0]?.subcategorySlug;
+    
+    // sync routing with assigned drop-drop value
+    this.updateRouteParams(this.currentSubcategoryValue);
+
+    // get the subcategory products list
+    this.updateSubcategoryProductsList(this.currentSubcategoryValue);
+
+    console.log('[oninit] currentSubcategoryInfo', this.currentSubcategoryInfo);
 
   }
 
   subcategoryValueChanged(event: any) {
     // assign new subcategory value
     this.currentSubcategoryValue = event?.value;
-
+    
     // change the route parameter [in-sync with the drop-down value]
-    const routeCommand = (!!this.activeSubcategorySlug) ? `../${this.currentSubcategoryValue}` : `${this.currentSubcategoryValue}`;
+    this.updateRouteParams(this.currentSubcategoryValue);
+
+    // get the subcategory products list
+    this.updateSubcategoryProductsList(this.currentSubcategoryValue);
+  }
+
+  async updateSubcategoryProductsList(subcategorySlug: string) {
+
+    // aync data fetch
+    const subcategoryData: any = await this.getSubcategoryProductsList(subcategorySlug);
+    this.productsCatlogue = subcategoryData?.products;
+
+    console.log('subcategoryData', subcategoryData);
+
+  }
+
+  // actual async request
+  getSubcategoryProductsList(subcategorySlug: string) {
+    return new Promise((resolve, reject) => {
+      // actual http api-call here [async]
+
+      setTimeout(() => {
+        const dataPlaceholder = ProductInformation?.productSubcategories[subcategorySlug];
+        resolve(dataPlaceholder);
+      }, 1000)
+
+    });
+  }
+
+  updateRouteParams(subcategorySlug: string) {
+    const routeCommand = (!!this.activeSubcategorySlug) ? `../${subcategorySlug}` : `${subcategorySlug}`;
 
     const updatedRoute = this._router.createUrlTree([routeCommand], { relativeTo: this._route }).toString();
 
