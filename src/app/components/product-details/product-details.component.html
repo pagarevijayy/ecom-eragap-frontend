@@ -6,8 +6,8 @@
         </div>
         <div class="product-content-wrapper" [ngClass]="{'px-5': !(isHandset$ | async)}">
             <div class="product-header mt-3">
-                <span class="d-block fs-18">50 Pcs Crystal Bead Special</span>
-                <span class="d-block fs-14 secondary-text pt-1">Crytal Bead</span>
+                <span class="d-block fs-18">{{productTitle}}</span>
+                <span class="d-block fs-14 secondary-text pt-1">{{productSubcategoryLabel}}</span>
             </div>
             <div class="product-content fs-14 my-3">
                 <div class='label'>
@@ -47,10 +47,7 @@
                 </div>
                 <div class="details fs-12 pt-3">
                     <span class='d-block'>
-                        lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, id.
-                    </span>
-                    <span class="d-block pt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium tempore est
+                        {{productDescription}}
                     </span>
                 </div>
             </div>
