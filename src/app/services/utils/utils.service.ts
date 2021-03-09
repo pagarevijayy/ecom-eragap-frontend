@@ -23,6 +23,7 @@ export class UtilsService {
 
   // sort an array according to maximum weightage
   sortWeightageMaximum( sortDataArray: Array<any>, comparisionKeyLabel: string){
+    if (sortDataArray?.length > 1)
     return sortDataArray.sort((firstElement, secondElement) => secondElement[comparisionKeyLabel] - firstElement[comparisionKeyLabel]);
   }
 

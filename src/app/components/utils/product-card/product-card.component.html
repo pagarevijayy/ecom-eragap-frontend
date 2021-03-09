@@ -1,11 +1,16 @@
 <mat-card class="product-card text-center">
-    <img mat-card-image
-        src="{{productImageURL}}">
+    <img class="lazyload" mat-card-image
+    src="{{productImageURL}}?tr=bl-6" 
+    data-src="{{productImageURL}}"
+    data-srcset="{{productImageURL}}?tr=w-190 190w,
+    {{productImageURL}}?tr=w-350 350w,
+    {{productImageURL}}?tr=w-550 550w" 
+    sizes="(max-width: 600px) 50vw, 33vw">
     <mat-card-content class="fs-12 mb-1">
         <span class="d-block"> {{productTitle}}</span>
         <span class="d-block pt-2"> ₹{{productPrize}} </span>
     </mat-card-content>
     <mat-card-actions class="mb-1">
-        <button mat-stroked-button style="background-color: blanchedalmond;" (click)="navigateProductDetailsPage();">{{buttonLabel}}</button>
+        <button mat-stroked-button style="background-color: blanchedalmond;" (click)="navigateProductDetailsPage()">{{buttonLabel}}</button>
     </mat-card-actions>
 </mat-card>

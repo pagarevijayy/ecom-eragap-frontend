@@ -184,12 +184,12 @@ export class ProductInformation {
                         {
                             "qty": 256,
                             "price": 900,
-                            "weightage": 0
+                            "weightage": 10
                         },
                         {
                             "qty": 150,
                             "price": 750,
-                            "weightage": 0
+                            "weightage": 17
                         }
                     ],
                     "Color": [],

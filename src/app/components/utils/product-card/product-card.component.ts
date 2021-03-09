@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { UtilsService } from 'src/app/services';
 
 @Component({
   selector: 'app-product-card',
@@ -16,7 +16,7 @@ export class ProductCardComponent implements OnInit {
   productImageURL: string;
 
   constructor(
-    private _router: Router
+    private _utilService: UtilsService,
   ) { }
 
   ngOnInit(): void {
@@ -25,15 +25,21 @@ export class ProductCardComponent implements OnInit {
 
   assignVariableData() {
 
-    this.productTitle = this.productDetail?.title;
+    // console.log('productDetail', this.productDetail);
     
-    // price and image data needs to be updated using weightage param
+    this.productTitle = this.productDetail?.title;
+
+    // sort the price-quantity and image url data as per its weightage
+    this._utilService.sortWeightageMaximum(this.productDetail?.QtyPrice, 'weightage');
+    this._utilService.sortWeightageMaximum(this.productDetail?.ImageUrl, 'weightage');
+
+    // price and image data 
     this.productPrize = this.productDetail?.QtyPrice[0]?.price;
     this.productImageURL = this.productDetail?.ImageUrl[0]?.imgURL;
   }
 
   navigateProductDetailsPage() {
-    this._router.navigate([`/products/beads/some-slug/xyz`]);
+    this._utilService.navigationRoute(`products/beads/some-slug/xyz`);
   }
 
 }
