@@ -11,25 +11,25 @@ export class browserData {
                     "subcategoryLabel": "Clay Beads",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
                     "subcategorySlug": "clay-beads",
-                    "weightage": 0
+                    "weightage": 10
                 },
                 {
                     "subcategoryLabel": "Bone Beads",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
                     "subcategorySlug": "bone-beads",
-                    "weightage": 0
+                    "weightage": 31
                 },
                 {
                     "subcategoryLabel": "Xyz Beads",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
                     "subcategorySlug": "XYZ-beads",
-                    "weightage": 0
+                    "weightage": 15
                 },
                 {
                     "subcategoryLabel": "ABC Beads",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
                     "subcategorySlug": "abc-beads",
-                    "weightage": 0
+                    "weightage": 1
                 },
                 {
                     "subcategoryLabel": "Special Beads",

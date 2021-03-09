@@ -35,16 +35,13 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    // get routing details [route and slug]
+    // get route param values [categoryRoute and subcategorySlug]
     this._route.params.subscribe((params) => {
       this.currentCategoryRoute = params['categoryRoute'];
       this.activeSubcategorySlug = params['subcategorySlug'];
-
-      // set default subcategory value
-      this.currentSubcategoryValue = this.activeSubcategorySlug;
     });
 
-    // add a new rxjs subscription. || reason: subcribe to categoryInformation
+    // subcribe to categoryInformation
     this.rxSubscription.add(
       this._stateManagementService.itemCategoryClickedBroadcast$.subscribe((categoryInformation) => {
         // flush existing data in variables before assigning values
@@ -72,20 +69,34 @@ export class ProductsComponent implements OnInit, OnDestroy {
           this.currentSubcategoryInfo.push(subcategoryHolder)
         });
 
-        // console.log('currentSubcategoryInfo', this.currentSubcategoryInfo);
       })
     );
+
+
+    // sort the subcategory data as per its weightage
+    this._utilService.sortWeightageMaximum(this.currentSubcategoryInfo, 'subcategoryWeightage');
+
+    // assign default drop-down value [available slug or max weight subcategory]
+    (!!this.activeSubcategorySlug) ? this.currentSubcategoryValue = this.activeSubcategorySlug : this.currentSubcategoryValue = this.currentSubcategoryInfo[0]?.subcategorySlug;
+    
+    // sync routing with assigned drop-drop value
+    this.updateRouteParams(this.currentSubcategoryValue);
+
+    // get the subcategory products list
+    this.updateSubcategoryProductsList(this.currentSubcategoryValue);
+
+    console.log('[oninit] currentSubcategoryInfo', this.currentSubcategoryInfo);
 
   }
 
   subcategoryValueChanged(event: any) {
     // assign new subcategory value
     this.currentSubcategoryValue = event?.value;
-
+    
     // change the route parameter [in-sync with the drop-down value]
     this.updateRouteParams(this.currentSubcategoryValue);
 
-    // the subcategory products list
+    // get the subcategory products list
     this.updateSubcategoryProductsList(this.currentSubcategoryValue);
   }
 

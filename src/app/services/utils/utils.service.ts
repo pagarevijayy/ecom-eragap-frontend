@@ -21,6 +21,11 @@ export class UtilsService {
     private _router: Router
   ) { }
 
+  // sort an array according to maximum weightage
+  sortWeightageMaximum( sortDataArray: Array<any>, comparisionKeyLabel: string){
+    return sortDataArray.sort((firstElement, secondElement) => secondElement[comparisionKeyLabel] - firstElement[comparisionKeyLabel]);
+  }
+
   // encrypt and set data into session storage
   setDataIntoSessionStorage(data: any, keyLabel: string) {
     // @todo: edge case error handling
@@ -44,6 +49,7 @@ export class UtilsService {
     return null;
   }
 
+  // used for navigation
   navigationRoute(routeName: string) {
     // navigate to the specified route.
     this._router.navigate([`/${routeName}`]);

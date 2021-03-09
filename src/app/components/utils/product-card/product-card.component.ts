@@ -25,7 +25,7 @@ export class ProductCardComponent implements OnInit {
 
   assignVariableData() {
 
-    this.productTitle = this.productDetail.title;
+    this.productTitle = this.productDetail?.title;
     
     // price and image data needs to be updated using weightage param
     this.productPrize = this.productDetail?.QtyPrice[0]?.price;
