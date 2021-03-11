@@ -10,10 +10,10 @@
                 <span class="d-block fs-14 secondary-text pt-1">{{productSubcategoryLabel}}</span>
             </div>
             <div class="product-content fs-14 my-3">
-                <div class='label'>
+                <div class='vertically-centered-grid-item'>
                     <span>Available colors</span>
                 </div>
-                <div>
+                <div class='vertically-centered-grid-item'>
                     <span class='dot-container'>
                         <span class="dot" style="background-color: #3668a1"></span>
                     </span>
@@ -23,18 +23,27 @@
                     <span class='dot-container'>
                         <span class="dot" style="background-color: #EB5757"></span>
                     </span>
-    
+
                 </div>
-                <div class='label'>
+                <div class='vertically-centered-grid-item'>
                     <span>Quantiy</span>
                 </div>
-                <div>3 threads </div>
-                <div class='label'>
+                <div class='vertically-centered-grid-item'>
+                    <mat-form-field appearance="outline" style="width:100%">
+                        <mat-label>customize quantity</mat-label>
+                        <mat-select [value]="currentProductQuantityApplied"
+                            (selectionChange)='quantityValueChanged($event)'>
+                            <mat-option [value]="option.qty" *ngFor="let option of productQtyPrice">
+                                {{ option.qty }} piece(s)</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class='vertically-centered-grid-item'>
                     <span>Price</span>
                 </div>
-                <div>
+                <div class='vertically-centered-grid-item'>
                     <span class='font-weight-bold'>
-                        ₹550
+                        ₹{{currentProductPriceApplied}}
                     </span>
                 </div>
             </div>

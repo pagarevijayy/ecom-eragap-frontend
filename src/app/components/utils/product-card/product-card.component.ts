@@ -52,7 +52,7 @@ export class ProductCardComponent implements OnInit {
   }
 
   navigateProductDetailsPage() {
-    console.log('productDetail', this.productDetail);
+    // console.log('productDetail', this.productDetail);
 
     const routeURL = `products/${this.currentCategoryRoute}/${this.currentSubcategorySlug}/${this.activeProductSlug}`
     this._utilService.navigationRoute(routeURL);

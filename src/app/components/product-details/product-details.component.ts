@@ -23,6 +23,8 @@ export class ProductDetailsComponent implements OnInit {
   currentCategoryRoute: string;
   currentSubcategorySlug: string;
   currentProductSlug: string;
+  currentProductQuantityApplied: string;
+  currentProductPriceApplied: string;
 
   constructor(
     private _route: ActivatedRoute,
@@ -44,7 +46,6 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   async setProductDetails(productSlug: string) {
-    console.log('this.currentProductSlug', productSlug);
 
     // aync data fetch
     const productData: any = await this.getProductDetails(productSlug);
@@ -57,7 +58,19 @@ export class ProductDetailsComponent implements OnInit {
     this.productQtyPrice = productData?.QtyPrice;
     this.productSubcategoryLabel = productData?.product_subcategory?.subcategoryLabel;
 
-    console.log('productData', productData);
+    this._utilService.sortWeightageMaximum(this.productQtyPrice, 'weightage');
+
+    this.currentProductQuantityApplied = this.productQtyPrice[0]?.qty;
+    this.currentProductPriceApplied = this.productQtyPrice[0]?.price;
+
+  }
+
+  quantityValueChanged(event: any) {
+
+    const updatedQuantityValue = event?.value;
+
+    const updatedQtyPriceObject = this.productQtyPrice.find(item => item?.qty === updatedQuantityValue);
+    this.currentProductPriceApplied = updatedQtyPriceObject?.price;
 
   }
 
