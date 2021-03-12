@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { StateManagementService, UtilsService } from 'src/app/services';
 
@@ -27,10 +28,12 @@ export class HomepageComponent implements OnInit {
   storeContactNumber = browserData?.storeInformation?.contactNumber;
   storeAddressLineOne = browserData?.storeInformation?.addressLineOne;
   storeAddressLineTwo = browserData?.storeInformation?.addressLineTwo;
+  storeGoogleMapLocationURL = browserData?.storeInformation?.googleMapsLocationURL;
 
   constructor(
     private _utilService: UtilsService,
     private _stateManagementService: StateManagementService,
+    public _sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
@@ -52,6 +55,14 @@ export class HomepageComponent implements OnInit {
     const destinationRoute = `products/${categoryRoute}/${subcategorySlug}`
     
     this._utilService.navigationRoute(destinationRoute);
+  }
+
+  mailMe(){
+    window.open(`mailto:${this.storeEmailAddress}`, "_blank");
+  }
+
+  callMe(){
+    window.open(`tel:${this.storeContactNumber}`, "_blank");
   }
 
 }

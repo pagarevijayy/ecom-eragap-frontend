@@ -56,21 +56,16 @@
                 'layout-single-card-flex': (i % 4 == 1),
                 'layout-two-cards-flex': (i % 4 == 2),
                 'layout-three-cards-flex': (i % 4 == 3)
-                }"> 
+                }">
                 <!-- actual image -->
-                <img class="lazyload cursor-pointer" 
-                    [ngClass]="{'showcase-card': (i % 4 == 0),
+                <img class="lazyload cursor-pointer" [ngClass]="{'showcase-card': (i % 4 == 0),
                                 'showcase-card-long': (i % 4 != 0)
-                                }" 
-                    *ngFor="let subcategory of item?.product_subcategories"
-                    src="{{subcategory?.displayPictureUrl}}?tr=bl-6" 
-                    data-src="{{subcategory?.displayPictureUrl}}"
+                                }" *ngFor="let subcategory of item?.product_subcategories"
+                    src="{{subcategory?.displayPictureUrl}}?tr=bl-6" data-src="{{subcategory?.displayPictureUrl}}"
                     data-srcset="{{subcategory?.displayPictureUrl}}?tr=w-190 190w,
                     {{subcategory?.displayPictureUrl}}?tr=w-350 350w,
-                    {{subcategory?.displayPictureUrl}}?tr=w-550 550w" 
-                    sizes="(max-width: 600px) 50vw, 33vw"
-                    (click)="subcategoryClicked(item, subcategory)"
-                    >
+                    {{subcategory?.displayPictureUrl}}?tr=w-550 550w" sizes="(max-width: 600px) 50vw, 33vw"
+                    (click)="subcategoryClicked(item, subcategory)">
             </div>
         </section>
     </div>
@@ -95,9 +90,8 @@
                 <span class="d-block text-rules"> visit us!</span>
             </div>
             <div class="map-responsive px-3">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.496996454471!2d72.8273140143462!3d18.953645987158186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce22c9c02f19%3A0x4dd039fcbfb34267!2sShree%20Sai%20Krupa%20Beads!5e0!3m2!1sen!2sin!4v1612943851170!5m2!1sen!2sin"
-                    frameborder="0" class='map-style' allowfullscreen="" aria-hidden="false" tabindex="0">
+                <iframe [src]="_sanitizer.bypassSecurityTrustResourceUrl(storeGoogleMapLocationURL)" frameborder="0" class='map-style' allowfullscreen=""
+                    aria-hidden="false" tabindex="0">
                 </iframe>
             </div>
             <aside class="pt-3 fs-12">
@@ -122,8 +116,8 @@
                         </span>
                     </div>
                     <aside class="py-3">
-                        <span class="d-block fs-12"> {{storeContactNumber}}</span>
-                        <span class="d-block fs-12 pt-1">{{storeEmailAddress}} </span>
+                        <span class="d-block fs-12 cursor-pointer" (click)="callMe()"> {{storeContactNumber}}</span>
+                        <span class="d-block fs-12 pt-2 cursor-pointer" (click)="mailMe()">{{storeEmailAddress}} </span>
                     </aside>
                 </div>
             </div>
