@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UtilsService } from 'src/app/services';
 
 @Component({
@@ -12,11 +13,16 @@ export class ProductCardComponent implements OnInit {
   buttonLabel: string = 'Check details'
 
   productTitle: string;
-  productPrize: string;
+  productPrice: string;
   productImageURL: string;
+  currentCategoryRoute: string;
+  currentSubcategorySlug: string;
+  activeProductSlug: string;
+
 
   constructor(
     private _utilService: UtilsService,
+    private _route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -25,21 +31,31 @@ export class ProductCardComponent implements OnInit {
 
   assignVariableData() {
 
+    // get route param values [categoryRoute and subcategorySlug]
+    this._route.params.subscribe((params) => {
+      this.currentCategoryRoute = params['categoryRoute'];
+      this.currentSubcategorySlug = params['subcategorySlug'];
+    });
+
     // console.log('productDetail', this.productDetail);
-    
+
     this.productTitle = this.productDetail?.title;
+    this.activeProductSlug = this.productDetail?.productSlug;
 
     // sort the price-quantity and image url data as per its weightage
     this._utilService.sortWeightageMaximum(this.productDetail?.QtyPrice, 'weightage');
     this._utilService.sortWeightageMaximum(this.productDetail?.ImageUrl, 'weightage');
 
     // price and image data 
-    this.productPrize = this.productDetail?.QtyPrice[0]?.price;
+    this.productPrice = this.productDetail?.QtyPrice[0]?.price;
     this.productImageURL = this.productDetail?.ImageUrl[0]?.imgURL;
   }
 
   navigateProductDetailsPage() {
-    this._utilService.navigationRoute(`products/beads/some-slug/xyz`);
+    // console.log('productDetail', this.productDetail);
+
+    const routeURL = `products/${this.currentCategoryRoute}/${this.currentSubcategorySlug}/${this.activeProductSlug}`
+    this._utilService.navigationRoute(routeURL);
   }
 
 }

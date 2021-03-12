@@ -1,45 +1,47 @@
 <div class="product-container px-3">
     <div class="product-details my-3" [ngClass]="{'large-screen-details-layout': !(isHandset$ | async)}">
-        <div class="product-image">
+        <div class="product-image lazyload">
             <img class="img-style"
-                src="https://cdn2.storehippo.com/s/5bf5074adb08ee03812b17be/5fdb4d3929efee08cd9299b5/cmc-32-640x640.JPG">
+                src="{{currentProductImageShowcased}}">
         </div>
         <div class="product-content-wrapper" [ngClass]="{'px-5': !(isHandset$ | async)}">
             <div class="product-header mt-3">
-                <span class="d-block fs-18">50 Pcs Crystal Bead Special</span>
-                <span class="d-block fs-14 secondary-text pt-1">Crytal Bead</span>
+                <span class="d-block fs-18">{{productTitle}}</span>
+                <span class="d-block fs-14 secondary-text pt-1">{{productSubcategoryLabel}}</span>
             </div>
             <div class="product-content fs-14 my-3">
-                <div class='label'>
+                <div class='vertically-centered-grid-item' *ngIf="colorOptionExists">
                     <span>Available colors</span>
                 </div>
-                <div>
-                    <span class='dot-container'>
-                        <span class="dot" style="background-color: #3668a1"></span>
+                <div class='vertically-centered-grid-item' *ngIf="colorOptionExists">
+                    <span class='dot-container' *ngFor="let colorItem of productColor">
+                        <span class="dot"  [style.background-color]="colorItem?.colorCode"></span>
                     </span>
-                    <span class='dot-container'>
-                        <span class="dot" style="background-color: #A6E4B3"></span>
-                    </span>
-                    <span class='dot-container'>
-                        <span class="dot" style="background-color: #EB5757"></span>
-                    </span>
-    
                 </div>
-                <div class='label'>
+                <div class='vertically-centered-grid-item'>
                     <span>Quantiy</span>
                 </div>
-                <div>3 threads </div>
-                <div class='label'>
+                <div class='vertically-centered-grid-item'>
+                    <mat-form-field appearance="outline" style="width:100%">
+                        <mat-label>customize quantity</mat-label>
+                        <mat-select [value]="currentProductQuantityApplied"
+                            (selectionChange)='quantityValueChanged($event)'>
+                            <mat-option [value]="option.qty" *ngFor="let option of productQtyPrice">
+                                {{ option.qty }} piece(s)</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class='vertically-centered-grid-item'>
                     <span>Price</span>
                 </div>
-                <div>
+                <div class='vertically-centered-grid-item'>
                     <span class='font-weight-bold'>
-                        ₹550
+                        ₹{{currentProductPriceApplied}}
                     </span>
                 </div>
             </div>
             <div class="product-cta text-center my-3">
-                <button mat-stroked-button style="background-color: blanchedalmond; width:50%;">Buy Now</button>
+                <button mat-stroked-button style="background-color: blanchedalmond; width:50%;" (click)="buyNowClicked()">Buy Now</button>
             </div>
             <div class="product-description p-3 my-4">
                 <div class="label">
@@ -47,10 +49,7 @@
                 </div>
                 <div class="details fs-12 pt-3">
                     <span class='d-block'>
-                        lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, id.
-                    </span>
-                    <span class="d-block pt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium tempore est
+                        {{productDescription}}
                     </span>
                 </div>
             </div>

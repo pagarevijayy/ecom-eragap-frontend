@@ -85,7 +85,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
     // get the subcategory products list
     this.updateSubcategoryProductsList(this.currentSubcategoryValue);
 
-    console.log('[oninit] currentSubcategoryInfo', this.currentSubcategoryInfo);
+    // console.log('[oninit] currentSubcategoryInfo', this.currentSubcategoryInfo);
 
   }
 
@@ -106,7 +106,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
     const subcategoryData: any = await this.getSubcategoryProductsList(subcategorySlug);
     this.productsCatlogue = subcategoryData?.products;
 
-    console.log('subcategoryData', subcategoryData);
+    // console.log('subcategoryData', subcategoryData);
 
   }
 

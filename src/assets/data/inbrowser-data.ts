@@ -304,4 +304,50 @@ export class ProductInformation {
             ]
         }
     }
+
+    static products: any = {
+        'a1-bead': {
+            "title": "A1 bead",
+            "description": "This is not a bead, lmao.",
+            "rating": 2,
+            "productSlug": "a1-bead",
+            "product_subcategory": {
+                "subcategoryLabel": "crystal beads"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 256,
+                    "price": 900,
+                    "weightage": 10
+                },
+                {
+                    "qty": 150,
+                    "price": 750,
+                    "weightage": 40
+                }
+            ],
+            "Color": [
+                {
+                    "colorTitle": "red",
+                    "colorCode": "#f2411b"
+                },
+                {
+                    "colorTitle": "green",
+                    "colorCode": "#25f21b"
+                },
+                {
+                    "colorTitle": "green",
+                    "colorCode": "#c41bf2"
+                }
+            ],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
+                    "weightage": null,
+                    "description": "master image"
+                }
+            ]
+        }
+    }
+
 }
