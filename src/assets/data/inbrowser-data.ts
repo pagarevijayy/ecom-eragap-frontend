@@ -112,7 +112,13 @@ export class ProductInformation {
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-5_Bmvc6No5S.jpg",
                     "subcategorySlug": "ny-pendants",
                     "weightage": 0
-                }
+                },
+                {
+                    "subcategoryLabel": "Pendant AZ",
+                    "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
+                    "subcategorySlug": "pendant-az",
+                    "weightage": 0
+                },
             ]
         },
         {
@@ -163,6 +169,18 @@ export class ProductInformation {
                     "subcategoryLabel": "Raja kit",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
                     "subcategorySlug": "raja-kit",
+                    "weightage": 0
+                },
+                {
+                    "subcategoryLabel": "Alpha kit",
+                    "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
+                    "subcategorySlug": "alpha-kit",
+                    "weightage": 0
+                },
+                {
+                    "subcategoryLabel": "Beta kit",
+                    "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-5_Bmvc6No5S.jpg",
+                    "subcategorySlug": "beta-kit",
                     "weightage": 0
                 }
             ]

@@ -58,14 +58,18 @@
                 'layout-three-cards-flex': (i % 4 == 3)
                 }">
                 <!-- actual image -->
-                <img class="lazyload cursor-pointer" [ngClass]="{'showcase-card': (i % 4 == 0),
-                                'showcase-card-long': (i % 4 != 0)
-                                }" *ngFor="let subcategory of item?.product_subcategories"
-                    src="{{subcategory?.displayPictureUrl}}?tr=bl-6" data-src="{{subcategory?.displayPictureUrl}}"
-                    data-srcset="{{subcategory?.displayPictureUrl}}?tr=w-190 190w,
-                    {{subcategory?.displayPictureUrl}}?tr=w-350 350w,
-                    {{subcategory?.displayPictureUrl}}?tr=w-550 550w" sizes="(max-width: 600px) 50vw, 33vw"
+                <div class="image-wrapper cursor-pointer" *ngFor="let subcategory of item?.product_subcategories"
                     (click)="subcategoryClicked(item, subcategory)">
+                    <img class="lazyload cursor-pointer"
+                        [ngClass]="{'showcase-card': (i % 4 == 0), 'showcase-card-long': (i % 4 != 0)}"
+                        src="{{subcategory?.displayPictureUrl}}?tr=bl-6" data-src="{{subcategory?.displayPictureUrl}}"
+                        data-srcset="{{subcategory?.displayPictureUrl}}?tr=w-190 190w,
+                            {{subcategory?.displayPictureUrl}}?tr=w-350 350w,
+                            {{subcategory?.displayPictureUrl}}?tr=w-550 550w" sizes="(max-width: 600px) 50vw, 25vw">
+                    <div class="image-title-overlay">
+                        <span>{{subcategory?.subcategoryLabel}}</span>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -90,8 +94,8 @@
                 <span class="d-block text-rules"> visit us!</span>
             </div>
             <div class="map-responsive px-3">
-                <iframe [src]="_sanitizer.bypassSecurityTrustResourceUrl(storeGoogleMapLocationURL)" frameborder="0" class='map-style' allowfullscreen=""
-                    aria-hidden="false" tabindex="0">
+                <iframe [src]="_sanitizer.bypassSecurityTrustResourceUrl(storeGoogleMapLocationURL)" frameborder="0"
+                    class='map-style' allowfullscreen="" aria-hidden="false" tabindex="0">
                 </iframe>
             </div>
             <aside class="pt-3 fs-12">
