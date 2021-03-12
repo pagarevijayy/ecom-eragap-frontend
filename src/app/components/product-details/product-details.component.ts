@@ -28,6 +28,8 @@ export class ProductDetailsComponent implements OnInit {
   currentProductImageShowcased: string;
   colorOptionExists: boolean;
 
+  whatsAppContactNumber = browserData?.whatsAppDataContent?.whatsAppContactNumber;
+
   constructor(
     private _route: ActivatedRoute,
     private _utilService: UtilsService
@@ -77,10 +79,21 @@ export class ProductDetailsComponent implements OnInit {
 
   quantityValueChanged(event: any) {
 
-    const updatedQuantityValue = event?.value;
+    this.currentProductQuantityApplied = event?.value;
 
-    const updatedQtyPriceObject = this.productQtyPrice.find(item => item?.qty === updatedQuantityValue);
+    const updatedQtyPriceObject = this.productQtyPrice.find(item => item?.qty === this.currentProductQuantityApplied);
     this.currentProductPriceApplied = updatedQtyPriceObject?.price;
+
+  }
+
+  buyNowClicked() {
+    const currentURL = location?.href;
+
+    const whatsappBuyNowMessage = `Hi, I'm interested in buying the product '${this.productTitle}' from the '${this.productSubcategoryLabel}' subcategory. Price: ₹${this.currentProductPriceApplied}. Quantity: ${this.currentProductQuantityApplied} piece(s). The reference URL: ${currentURL}`
+    
+     console.log('whatsappBuyNowMessage', whatsappBuyNowMessage);
+
+     window.open(`https://wa.me/${this.whatsAppContactNumber}?text=${whatsappBuyNowMessage}`, "_blank");
 
   }
 
