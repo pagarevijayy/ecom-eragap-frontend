@@ -19,7 +19,6 @@ export class browserData {
         enquiryTextPrimary: `Hi! I wanted to know more about your product and services. Can we have a word?`
     };
 
-    // remember to update embeded maps in homepage component
     static storeInformation = {
         storeName: "Eragap Co.",
         faviconURL: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛍️</text></svg>",
@@ -34,9 +33,9 @@ export class browserData {
     };
 
     static footerContent = {
-        copyrightText: "© Eragap Tech Company",
+        copyrightText: "© Sample Store Name",
         copyright: "Copyright ©",
-        claimName: "Eragap Co.",
+        claimName: "Sample Store Name.",
         allRightsReserved: "All Rights Reserved",
         // copyrightYear: "This should be dynamic. Done via javascript in browser"
     }
