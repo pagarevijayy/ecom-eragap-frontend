@@ -1,5 +1,48 @@
 export class browserData {
 
+    static carouselLargeScreen: Array<any> = [
+        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-1_Bi3IshONp.jpg',
+        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-3_p-1jMlTZ9m.jpg',
+        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-2_N0vvEThjJ.jpg'
+    ];
+
+    static carouselSmallScreen: Array<any> = [
+        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-1_9hLMRUm9bS.webp',
+        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-3__zfmRXYjhF.webp',
+        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-2_Cl6oj1OGRD.webp'
+    ];
+
+    static whatsAppDataContent = {
+        whatsAppContactNumber: 917972071550,
+        buttonLabelPrimary: `Contact for Business Enquiry`,
+        buttonLabelSecondary: "Looking for something else? Let us know!",
+        enquiryTextPrimary: `Hi! I wanted to know more about your product and services. Can we have a word?`
+    };
+
+    // remember to update the title bar in index.html
+    static storeInformation = {
+        storeName: "Eragap Co.",
+        faviconURL: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛍️</text></svg>",
+        contactNumber: 7972071550,
+        emailAddress: "eragaptech@gmail.com",
+        addressLineOne: "Sector 1, Shantinagar",
+        addressLineTwo: "Miraroad (E), Thane 401107",
+        socialFacebook: "urlhere",
+        socialInstagram: null,
+        socialTwitter: null,
+    };
+
+    static footerContent = {
+        copyrightText: "© Eragap Tech Company",
+        copyright: "Copyright ©",
+        claimName: "Eragap Co.",
+        allRightsReserved: "All Rights Reserved",
+        // copyrightYear: "This should be dynamic. Done via javascript in browser"
+    }
+
+}
+
+export class ProductInformation {
     static productCategories: Array<any> = [
         {
             "categoryLabel": "beads",
@@ -126,48 +169,6 @@ export class browserData {
 
     ];
 
-    static carouselLargeScreen: Array<any> = [
-        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-1_Bi3IshONp.jpg',
-        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-3_p-1jMlTZ9m.jpg',
-        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-2_N0vvEThjJ.jpg'
-    ];
-
-    static carouselSmallScreen: Array<any> = [
-        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-1_9hLMRUm9bS.webp',
-        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-3__zfmRXYjhF.webp',
-        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-2_Cl6oj1OGRD.webp'
-    ];
-
-    static whatsAppDataContent = {
-        whatsAppContactNumber: 917972071550,
-        buttonLabelPrimary: `Contact for Business Enquiry`,
-        buttonLabelSecondary: "Looking for something else? Let us know!",
-        enquiryTextPrimary: `Hi! I wanted to know more about your product and services. Can we have a word?`
-    };
-
-    // remember to update the title bar in index.html
-    static storeInformation = {
-        storeName: "Eragap",
-        contactNumber: 7972071550,
-        emailAddress: "eragaptech@gmail.com",
-        addressLineOne: "Sector 1, Shantinagar",
-        addressLineTwo: "Miraroad (E), Thane 401107",
-        socialFacebook: "urlhere",
-        socialInstagram: null,
-        socialTwitter: null,
-    };
-
-    static footerContent = {
-        copyrightText: "© Eragap Tech Company",
-        copyright: "Copyright ©",
-        claimName: "Eragap Co.",
-        allRightsReserved: "All Rights Reserved",
-        // copyrightYear: "This should be dynamic. Done via javascript in browser"
-    }
-
-}
-
-export class ProductInformation {
     static productSubcategories: any = {
         'clay-beads': {
             "subcategoryLabel": "clay beads",

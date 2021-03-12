@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { browserData } from 'src/assets/data/inbrowser-data'
+import { Title } from '@angular/platform-browser';
+import { browserData, ProductInformation } from 'src/assets/data/inbrowser-data'
 import { StateManagementService, UtilsService } from './services';
 
 @Component({
@@ -13,14 +14,20 @@ export class AppComponent implements OnInit {
 
   footerText = this.getProjectFooterText();
 
+  favIcon: HTMLLinkElement = document.querySelector('#appIcon');
+
   constructor(
     private _utilService: UtilsService,
     private _stateManagementService: StateManagementService,
+    private _titleService: Title
   ) { }
 
   ngOnInit(): void {
     // homepage data
     this.setHomepageData();
+
+    //set index page title
+    this.setIndexHtmlHeaderElements();
   }
 
   async setHomepageData() {
@@ -38,7 +45,7 @@ export class AppComponent implements OnInit {
       // actual http api-call here [async]
 
       setTimeout(() => {
-        const dataPlaceholder = browserData?.productCategories;
+        const dataPlaceholder = ProductInformation?.productCategories;
         resolve(dataPlaceholder);
       }, 1000)
 
@@ -55,8 +62,15 @@ export class AppComponent implements OnInit {
 
     return `${copyrightSymbol} ${currentYear} ${copyrightClaimName} ${copyrightRightReserved}`;
   }
-}
 
-// responsibilities:
-// 1. set footer text
-// 2. get homepage data
+  setIndexHtmlHeaderElements() {
+    
+    // set title
+    const newTitle = browserData?.storeInformation?.storeName;
+    this._titleService.setTitle(newTitle);
+
+    //set favicon [use either url or emoji svg]
+    const faviconURL =  browserData?.storeInformation?.faviconURL;
+    this.favIcon.href = faviconURL;
+  }
+}
