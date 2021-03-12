@@ -10,20 +10,13 @@
                 <span class="d-block fs-14 secondary-text pt-1">{{productSubcategoryLabel}}</span>
             </div>
             <div class="product-content fs-14 my-3">
-                <div class='vertically-centered-grid-item'>
+                <div class='vertically-centered-grid-item' *ngIf="colorOptionExists">
                     <span>Available colors</span>
                 </div>
-                <div class='vertically-centered-grid-item'>
-                    <span class='dot-container'>
-                        <span class="dot" style="background-color: #3668a1"></span>
+                <div class='vertically-centered-grid-item' *ngIf="colorOptionExists">
+                    <span class='dot-container' *ngFor="let colorItem of productColor">
+                        <span class="dot"  [style.background-color]="colorItem?.colorCode"></span>
                     </span>
-                    <span class='dot-container'>
-                        <span class="dot" style="background-color: #A6E4B3"></span>
-                    </span>
-                    <span class='dot-container'>
-                        <span class="dot" style="background-color: #EB5757"></span>
-                    </span>
-
                 </div>
                 <div class='vertically-centered-grid-item'>
                     <span>Quantiy</span>

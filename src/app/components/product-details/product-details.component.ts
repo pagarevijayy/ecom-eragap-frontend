@@ -26,6 +26,7 @@ export class ProductDetailsComponent implements OnInit {
   currentProductQuantityApplied: string;
   currentProductPriceApplied: string;
   currentProductImageShowcased: string;
+  colorOptionExists: boolean;
 
   constructor(
     private _route: ActivatedRoute,
@@ -66,6 +67,12 @@ export class ProductDetailsComponent implements OnInit {
     this.currentProductPriceApplied = this.productQtyPrice[0]?.price;
 
     this.currentProductImageShowcased = this.productImageURL[0]?.imgURL;
+
+    this.colorOptionExists = !!this.productColor?.length;
+
+    console.log('productColor', this.productColor);
+    console.log('colorOptionExists', this.colorOptionExists);
+
   }
 
   quantityValueChanged(event: any) {

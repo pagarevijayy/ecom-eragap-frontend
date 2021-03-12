@@ -326,7 +326,20 @@ export class ProductInformation {
                     "weightage": 40
                 }
             ],
-            "Color": [],
+            "Color": [
+                {
+                    "colorTitle": "red",
+                    "colorCode": "#f2411b"
+                },
+                {
+                    "colorTitle": "green",
+                    "colorCode": "#25f21b"
+                },
+                {
+                    "colorTitle": "green",
+                    "colorCode": "#c41bf2"
+                }
+            ],
             "ImageUrl": [
                 {
                     "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
