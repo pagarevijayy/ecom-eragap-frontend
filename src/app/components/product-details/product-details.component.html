@@ -1,8 +1,8 @@
 <div class="product-container px-3">
     <div class="product-details my-3" [ngClass]="{'large-screen-details-layout': !(isHandset$ | async)}">
-        <div class="product-image">
+        <div class="product-image lazyload">
             <img class="img-style"
-                src="https://cdn2.storehippo.com/s/5bf5074adb08ee03812b17be/5fdb4d3929efee08cd9299b5/cmc-32-640x640.JPG">
+                src="{{currentProductImageShowcased}}">
         </div>
         <div class="product-content-wrapper" [ngClass]="{'px-5': !(isHandset$ | async)}">
             <div class="product-header mt-3">

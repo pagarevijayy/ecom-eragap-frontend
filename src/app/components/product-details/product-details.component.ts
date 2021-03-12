@@ -25,6 +25,7 @@ export class ProductDetailsComponent implements OnInit {
   currentProductSlug: string;
   currentProductQuantityApplied: string;
   currentProductPriceApplied: string;
+  currentProductImageShowcased: string;
 
   constructor(
     private _route: ActivatedRoute,
@@ -59,10 +60,12 @@ export class ProductDetailsComponent implements OnInit {
     this.productSubcategoryLabel = productData?.product_subcategory?.subcategoryLabel;
 
     this._utilService.sortWeightageMaximum(this.productQtyPrice, 'weightage');
+    this._utilService.sortWeightageMaximum(this.productImageURL, 'weightage');
 
     this.currentProductQuantityApplied = this.productQtyPrice[0]?.qty;
     this.currentProductPriceApplied = this.productQtyPrice[0]?.price;
 
+    this.currentProductImageShowcased = this.productImageURL[0]?.imgURL;
   }
 
   quantityValueChanged(event: any) {
