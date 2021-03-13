@@ -11,7 +11,8 @@ import { browserData, ProductInformation } from 'src/assets/data/inbrowser-data'
 })
 export class ProductDetailsComponent implements OnInit {
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
-
+  isLoading = true;
+  
   productTitle: string;
   productDescription: string
   productSubcategoryLabel: string
@@ -50,6 +51,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   async setProductDetails(productSlug: string) {
+    this.isLoading = true;
 
     // aync data fetch
     const productData: any = await this.getProductDetails(productSlug);
@@ -72,9 +74,7 @@ export class ProductDetailsComponent implements OnInit {
 
     this.colorOptionExists = !!this.productColor?.length;
 
-    console.log('productColor', this.productColor);
-    console.log('colorOptionExists', this.colorOptionExists);
-
+    this.isLoading = false;
   }
 
   quantityValueChanged(event: any) {

@@ -13,6 +13,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   private rxSubscription: Subscription = new Subscription();
 
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
+  isLoading = true;
 
   // @todo: move this stuff to data-service
   whatsAppButtonLabelPrimary = browserData?.whatsAppDataContent?.buttonLabelPrimary;
@@ -78,7 +79,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
     // assign default drop-down value [available slug or max weight subcategory]
     (!!this.activeSubcategorySlug) ? this.currentSubcategoryValue = this.activeSubcategorySlug : this.currentSubcategoryValue = this.currentSubcategoryInfo[0]?.subcategorySlug;
-    
+
     // sync routing with assigned drop-drop value
     this.updateRouteParams(this.currentSubcategoryValue);
 
@@ -92,7 +93,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   subcategoryValueChanged(event: any) {
     // assign new subcategory value
     this.currentSubcategoryValue = event?.value;
-    
+
     // change the route parameter [in-sync with the drop-down value]
     this.updateRouteParams(this.currentSubcategoryValue);
 
@@ -103,8 +104,14 @@ export class ProductsComponent implements OnInit, OnDestroy {
   async updateSubcategoryProductsList(subcategorySlug: string) {
 
     // aync data fetch
+    this.isLoading = true;
     const subcategoryData: any = await this.getSubcategoryProductsList(subcategorySlug);
     this.productsCatlogue = subcategoryData?.products;
+
+    // hide loader
+    if (!!this.productsCatlogue?.length) {
+      this.isLoading = false;
+    }
 
     // console.log('subcategoryData', subcategoryData);
 

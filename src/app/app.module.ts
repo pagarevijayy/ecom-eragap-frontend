@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 
 // material
 import { LayoutModule } from '@angular/cdk/layout';
@@ -14,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card'; 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 // components
 import { AppComponent } from './app.component';
@@ -36,6 +38,7 @@ import { ProductCardComponent } from './components/utils/product-card/product-ca
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    CommonModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -45,6 +48,7 @@ import { ProductCardComponent } from './components/utils/product-card/product-ca
     MatFormFieldModule,
     MatSelectModule,
     MatCardModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

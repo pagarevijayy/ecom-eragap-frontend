@@ -7,9 +7,9 @@ export class browserData {
     ];
 
     static carouselSmallScreen: Array<any> = [
+        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-2_Cl6oj1OGRD.webp',
         'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-1_9hLMRUm9bS.webp',
-        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-3__zfmRXYjhF.webp',
-        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-2_Cl6oj1OGRD.webp'
+        'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-3__zfmRXYjhF.webp'
     ];
 
     static whatsAppDataContent = {
@@ -54,7 +54,7 @@ export class ProductInformation {
                     "subcategoryLabel": "Clay Beads",
                     "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
                     "subcategorySlug": "clay-beads",
-                    "weightage": 10
+                    "weightage": 100
                 },
                 {
                     "subcategoryLabel": "Bone Beads",

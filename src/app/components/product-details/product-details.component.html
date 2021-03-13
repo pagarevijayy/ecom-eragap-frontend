@@ -1,8 +1,13 @@
 <div class="product-container px-3">
+    <div class="loading-view text-center secondary-text" *ngIf="isLoading">
+        <div class="loading-spinner-wrapper" >
+            <mat-spinner [diameter]="30"></mat-spinner>
+        </div>
+        <div> <small> loading product details...</small> </div>
+    </div>
     <div class="product-details my-3" [ngClass]="{'large-screen-details-layout': !(isHandset$ | async)}">
         <div class="product-image lazyload">
-            <img class="img-style"
-                src="{{currentProductImageShowcased}}">
+            <img class="img-style" src="{{currentProductImageShowcased}}">
         </div>
         <div class="product-content-wrapper" [ngClass]="{'px-5': !(isHandset$ | async)}">
             <div class="product-header mt-3">
@@ -15,7 +20,7 @@
                 </div>
                 <div class='vertically-centered-grid-item' *ngIf="colorOptionExists">
                     <span class='dot-container' *ngFor="let colorItem of productColor">
-                        <span class="dot"  [style.background-color]="colorItem?.colorCode"></span>
+                        <span class="dot" [style.background-color]="colorItem?.colorCode"></span>
                     </span>
                 </div>
                 <div class='vertically-centered-grid-item'>
@@ -41,7 +46,8 @@
                 </div>
             </div>
             <div class="product-cta text-center my-3">
-                <button mat-stroked-button style="background-color: blanchedalmond; width:50%;" (click)="buyNowClicked()">Buy Now</button>
+                <button mat-stroked-button style="background-color: blanchedalmond; width:50%;"
+                    (click)="buyNowClicked()">Buy Now</button>
             </div>
             <div class="product-description p-3 my-4">
                 <div class="label">
