@@ -56,6 +56,8 @@ export class ProductDetailsComponent implements OnInit {
     // aync data fetch
     const productData: any = await this.getProductDetails(productSlug);
 
+    // @todo: take some decision whether product exist or not [render views accordingly]
+
     // assign product value
     this.productTitle = productData?.title;
     this.productDescription = productData?.description;
@@ -67,6 +69,7 @@ export class ProductDetailsComponent implements OnInit {
     this._utilService.sortWeightageMaximum(this.productQtyPrice, 'weightage');
     this._utilService.sortWeightageMaximum(this.productImageURL, 'weightage');
 
+    // @fix later: this arrray[0] will give error if array is undefined/null
     this.currentProductQuantityApplied = this.productQtyPrice[0]?.qty;
     this.currentProductPriceApplied = this.productQtyPrice[0]?.price;
 
@@ -91,8 +94,6 @@ export class ProductDetailsComponent implements OnInit {
 
     const whatsappBuyNowMessage = `Hi, I'm interested in buying the product '${this.productTitle}' from the '${this.productSubcategoryLabel}' subcategory. Price: ₹${this.currentProductPriceApplied}. Quantity: ${this.currentProductQuantityApplied} piece(s). The reference URL: ${currentURL}`
     
-     console.log('whatsappBuyNowMessage', whatsappBuyNowMessage);
-
      window.open(`https://wa.me/${this.whatsAppContactNumber}?text=${whatsappBuyNowMessage}`, "_blank");
 
   }

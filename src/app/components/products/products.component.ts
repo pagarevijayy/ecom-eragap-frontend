@@ -50,12 +50,8 @@ export class ProductsComponent implements OnInit, OnDestroy {
         this.currentCategoryLabel = null;
         this.currentSubcategoryInfo = [];
 
-        // console.log('categoryInformation', categoryInformation);
-
         // assigning category label
         this.currentCategoryLabel = categoryInformation?.categoryLabel;
-
-        // console.log('currentCategoryLabel', this.currentCategoryLabel);
 
 
         // creating currentSubcategoryInfo [to be used in UI]
@@ -87,7 +83,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
     // get the subcategory products list
     this.updateSubcategoryProductsList(this.currentSubcategoryValue);
 
-    // console.log('[oninit] currentSubcategoryInfo', this.currentSubcategoryInfo);
 
   }
 
@@ -111,8 +106,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
     const subcategoryData: any = await this.getSubcategoryProductsList(subcategorySlug);
     this.productsCatlogue = subcategoryData?.products;
 
-    console.log('this.productsCatlogue', this.productsCatlogue);
-
 
     // view manipulation
     if (this.productsCatlogue?.length > 0) {
@@ -125,7 +118,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
       this.productsAvailable = false;
     }
 
-    // console.log('subcategoryData', subcategoryData);
 
   }
 
@@ -152,7 +144,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.rxSubscription.unsubscribe();
-    console.log('load status', this.isLoading);
   }
 
 }
