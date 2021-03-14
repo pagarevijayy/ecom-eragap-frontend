@@ -32,7 +32,10 @@ export class AppComponent implements OnInit {
 
   async setHomepageData() {
     this.homepageItems = await this.getHomepageData();
-    // console.log('app component [data received via. api]:', this.homepageItems);
+    console.log('app component [data received via. api]:', this.homepageItems);
+
+    // sort the category data as per its weightage
+    this._utilService.sortWeightageMaximum(this.homepageItems, 'weightage');
 
     // assign the data to a BS [also store in session storage]
     this._stateManagementService.updateHomepageItems(this.homepageItems, 'homepageItems');
