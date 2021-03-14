@@ -901,45 +901,652 @@ export class ProductInformation {
     }
 
     static products: any = {
-        'a1-bead': {
-            "title": "A1 bead",
-            "description": "This is not a bead, lmao.",
-            "rating": 2,
-            "productSlug": "a1-bead",
+        "bxy-bead": {
+            "title": "BXY bead",
+            "description": " dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint oc",
+            "rating": 0,
+            "productSlug": "bxy-bead",
             "product_subcategory": {
-                "subcategoryLabel": "crystal beads"
+                "subcategoryLabel": "Bone Beads"
             },
             "QtyPrice": [
                 {
-                    "qty": 256,
-                    "price": 900,
-                    "weightage": 10
+                    "qty": 5,
+                    "price": 200,
+                    "weightage": 0
                 },
                 {
-                    "qty": 150,
-                    "price": 750,
-                    "weightage": 40
+                    "qty": 10,
+                    "price": 355,
+                    "weightage": 1
                 }
             ],
             "Color": [
                 {
-                    "colorTitle": "red",
-                    "colorCode": "#f2411b"
+                    "colorTitle": "orange",
+                    "colorCode": "#E37D71"
                 },
                 {
-                    "colorTitle": "green",
-                    "colorCode": "#25f21b"
+                    "colorTitle": "purple",
+                    "colorCode": "#995FFA"
                 },
                 {
-                    "colorTitle": "green",
-                    "colorCode": "#c41bf2"
+                    "colorTitle": "yellow",
+                    "colorCode": "#FDCF53"
                 }
             ],
             "ImageUrl": [
                 {
                     "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
                     "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "ayzb-bead": {
+            "title": "AYZB bead",
+            "description": "labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dol",
+            "rating": 0,
+            "productSlug": "ayzb-bead",
+            "product_subcategory": {
+                "subcategoryLabel": "Bone Beads"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 1,
+                    "price": 5,
+                    "weightage": 0
+                },
+                {
+                    "qty": 5,
+                    "price": 20,
+                    "weightage": 0
+                },
+                {
+                    "qty": 10,
+                    "price": 30,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "three-bead": {
+            "title": "three bead",
+            "description": "lla pariatur. Excepteur sint occaecat cupidatat non proident, s",
+            "rating": 0,
+            "productSlug": "three-bead",
+            "product_subcategory": {
+                "subcategoryLabel": "Bone Beads"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 5,
+                    "price": 599,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-5_Bmvc6No5S.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "placeholder-label": {
+            "title": "placeholder label",
+            "description": "m ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati",
+            "rating": 0,
+            "productSlug": "placeholder-label",
+            "product_subcategory": {
+                "subcategoryLabel": "Bone Beads"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 100,
+                    "price": 1999,
+                    "weightage": 0
+                },
+                {
+                    "qty": 200,
+                    "price": 3500,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "fifth-bead": {
+            "title": "fifth bead",
+            "description": "e irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui offic",
+            "rating": 0,
+            "productSlug": "fifth-bead",
+            "product_subcategory": {
+                "subcategoryLabel": "Bone Beads"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 3,
+                    "price": 60,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "am-clay-bead": {
+            "title": "am clay bead",
+            "description": "por incididunt ut labore et dolore magna aliqua. Ut enim a",
+            "rating": 0,
+            "productSlug": "am-clay-bead",
+            "product_subcategory": {
+                "subcategoryLabel": "Clay Beads"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 15,
+                    "price": 599,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "another-clay-bead": {
+            "title": "another clay bead",
+            "description": "i ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint ",
+            "rating": 0,
+            "productSlug": "another-clay-bead",
+            "product_subcategory": {
+                "subcategoryLabel": "Clay Beads"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 3,
+                    "price": 499,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "ssk-special": {
+            "title": "SSK special",
+            "description": "This is the special ssk bead.",
+            "rating": 5,
+            "productSlug": "ssk-special",
+            "product_subcategory": {
+                "subcategoryLabel": "Special jewllery"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 300,
+                    "price": 75,
+                    "weightage": 0
+                }
+            ],
+            "Color": [
+                {
+                    "colorTitle": "grey",
+                    "colorCode": "#666"
+                }
+            ],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg",
+                    "weightage": null,
                     "description": "master image"
+                }
+            ]
+        },
+        "necklace-special": {
+            "title": "Necklace",
+            "description": "This is a beautiful necklace.",
+            "rating": 0,
+            "productSlug": "necklace-special",
+            "product_subcategory": {
+                "subcategoryLabel": "Special jewllery"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 1,
+                    "price": 75000,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "only-prod": {
+            "title": "only prod",
+            "description": "ectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable so",
+            "rating": 0,
+            "productSlug": "only-prod",
+            "product_subcategory": {
+                "subcategoryLabel": "PQR jewellery"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 1,
+                    "price": 488,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "a1-pendants": {
+            "title": "A1 pendants",
+            "description": "Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going throug",
+            "rating": 0,
+            "productSlug": "a1-pendants",
+            "product_subcategory": {
+                "subcategoryLabel": "Special pendants"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 1,
+                    "price": 230,
+                    "weightage": 0
+                },
+                {
+                    "qty": 5,
+                    "price": 800,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
+                    "weightage": null,
+                    "description": "ipsum"
+                }
+            ]
+        },
+        "wonderful-pendant-akz": {
+            "title": "Wonderful pendant akz",
+            "description": "ubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theo",
+            "rating": 0,
+            "productSlug": "wonderful-pendant-akz",
+            "product_subcategory": {
+                "subcategoryLabel": "Special pendants"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 1,
+                    "price": 1500,
+                    "weightage": 1
+                },
+                {
+                    "qty": 2,
+                    "price": 2800,
+                    "weightage": 0
+                }
+            ],
+            "Color": [
+                {
+                    "colorTitle": "wheatish",
+                    "colorCode": "#B89F84"
+                },
+                {
+                    "colorTitle": "violet",
+                    "colorCode": "#836BB3"
+                }
+            ],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "coolest-pendant": {
+            "title": "Coolest pendant",
+            "description": "ted. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompa",
+            "rating": 0,
+            "productSlug": "coolest-pendant",
+            "product_subcategory": {
+                "subcategoryLabel": "Special pendants"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 3,
+                    "price": 199,
+                    "weightage": 0
+                },
+                {
+                    "qty": 15,
+                    "price": 2666,
+                    "weightage": 10
+                },
+                {
+                    "qty": 10,
+                    "price": 456,
+                    "weightage": 1
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "some-product": {
+            "title": "Some product",
+            "description": "hrough the cites of the word in classical literature, discovered th",
+            "rating": 0,
+            "productSlug": "some-product",
+            "product_subcategory": {
+                "subcategoryLabel": "Special pendants"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 5,
+                    "price": 1665.98,
+                    "weightage": 0
+                }
+            ],
+            "Color": [
+                {
+                    "colorTitle": "red",
+                    "colorCode": "#B32F4F"
+                }
+            ],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "awesome-agh": {
+            "title": "Awesome ahg",
+            "description": "k like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model t",
+            "rating": 0,
+            "productSlug": "awesome-agh",
+            "product_subcategory": {
+                "subcategoryLabel": "AGH Pendants"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 10,
+                    "price": 999,
+                    "weightage": 0
+                }
+            ],
+            "Color": [
+                {
+                    "colorTitle": "blue",
+                    "colorCode": "#1D8CB3"
+                }
+            ],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "smk-product-pend": {
+            "title": "SMK product pend",
+            "description": "as been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it t",
+            "rating": 0,
+            "productSlug": "smk-product-pend",
+            "product_subcategory": {
+                "subcategoryLabel": "AGH Pendants"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 5,
+                    "price": 799,
+                    "weightage": 0
+                },
+                {
+                    "qty": 15,
+                    "price": 1999,
+                    "weightage": 1
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-5_Bmvc6No5S.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "bombay-special": {
+            "title": "Bombay special",
+            "description": "the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset she",
+            "rating": 0,
+            "productSlug": "bombay-special",
+            "product_subcategory": {
+                "subcategoryLabel": "Bombay Pendants"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 1,
+                    "price": 8880,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "kjl-one": {
+            "title": "kjl one",
+            "description": "00s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five cent",
+            "rating": 0,
+            "productSlug": "kjl-one",
+            "product_subcategory": {
+                "subcategoryLabel": "KJL Pendants"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 7,
+                    "price": 999,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-6_N3T0c8dM9.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "two-impt-product": {
+            "title": "two impt product",
+            "description": "w use Lorem Ipsum as their default model text, and a search for",
+            "rating": null,
+            "productSlug": "two-impt-product",
+            "product_subcategory": {
+                "subcategoryLabel": "KJL Pendants"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 1,
+                    "price": 255,
+                    "weightage": 0
+                },
+                {
+                    "qty": 20,
+                    "price": 2000,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "placeholder-name": {
+            "title": "placeholder name",
+            "description": "going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the L",
+            "rating": 0,
+            "productSlug": "placeholder-name",
+            "product_subcategory": {
+                "subcategoryLabel": "KJL Pendants"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 3,
+                    "price": 699,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "beautiful-earrings": {
+            "title": "Beautiful Earrings",
+            "description": "These are a beautiful earrings",
+            "rating": 5,
+            "productSlug": "beautiful-earrings",
+            "product_subcategory": {
+                "subcategoryLabel": "Special tools & kit"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 2,
+                    "price": 700,
+                    "weightage": 0
+                },
+                {
+                    "qty": 1,
+                    "price": 550,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-5_Bmvc6No5S.jpg",
+                    "weightage": null,
+                    "description": "lorem"
+                }
+            ]
+        },
+        "another-tool-kit": {
+            "title": "Another tool kit",
+            "description": " consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exce",
+            "rating": 0,
+            "productSlug": "another-tool-kit",
+            "product_subcategory": {
+                "subcategoryLabel": "Special tools & kit"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 4,
+                    "price": 199,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        },
+        "ag-kit-blender": {
+            "title": "AG kit blender",
+            "description": "um dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco labor",
+            "rating": 0,
+            "productSlug": "ag-kit-blender",
+            "product_subcategory": {
+                "subcategoryLabel": "AG kit"
+            },
+            "QtyPrice": [
+                {
+                    "qty": 3,
+                    "price": 499,
+                    "weightage": 0
+                },
+                {
+                    "qty": 5,
+                    "price": 999,
+                    "weightage": 0
+                }
+            ],
+            "Color": [],
+            "ImageUrl": [
+                {
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg",
+                    "weightage": null,
+                    "description": null
                 }
             ]
         }

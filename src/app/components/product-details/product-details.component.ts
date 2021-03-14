@@ -56,6 +56,10 @@ export class ProductDetailsComponent implements OnInit {
     // aync data fetch
     const productData: any = await this.getProductDetails(productSlug);
 
+    console.log('productData', productData);
+
+    // @todo: take some decision whether product exist or not [render views accordingly]
+
     // assign product value
     this.productTitle = productData?.title;
     this.productDescription = productData?.description;
@@ -67,6 +71,7 @@ export class ProductDetailsComponent implements OnInit {
     this._utilService.sortWeightageMaximum(this.productQtyPrice, 'weightage');
     this._utilService.sortWeightageMaximum(this.productImageURL, 'weightage');
 
+    // @fix later: this arrray[0] will give error if array is undefined/null
     this.currentProductQuantityApplied = this.productQtyPrice[0]?.qty;
     this.currentProductPriceApplied = this.productQtyPrice[0]?.price;
 

@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
       setTimeout(() => {
         const dataPlaceholder = ProductInformation?.productCategories;
         resolve(dataPlaceholder);
-      }, 3000)
+      }, 2000)
 
     });
   }
