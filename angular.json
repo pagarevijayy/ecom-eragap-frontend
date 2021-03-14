@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "front-ssk-beads": {
+    "ecom-frontend-eragap": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/front-ssk-beads",
+            "outputPath": "dist/ecom-frontend-eragap",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,19 +69,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "front-ssk-beads:build",
+            "browserTarget": "ecom-frontend-eragap:build",
             "aot": true
           },
           "configurations": {
             "production": {
-              "browserTarget": "front-ssk-beads:build:production"
+              "browserTarget": "ecom-frontend-eragap:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "front-ssk-beads:build"
+            "browserTarget": "ecom-frontend-eragap:build"
           }
         },
         "test": {
@@ -121,15 +121,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "front-ssk-beads:serve"
+            "devServerTarget": "ecom-frontend-eragap:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "front-ssk-beads:serve:production"
+              "devServerTarget": "ecom-frontend-eragap:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "front-ssk-beads"
+  "defaultProject": "ecom-frontend-eragap"
 }
