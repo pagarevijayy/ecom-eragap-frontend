@@ -14,6 +14,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
   isLoading = true;
+  productsAvailable = false;
 
   // @todo: move this stuff to data-service
   whatsAppButtonLabelPrimary = browserData?.whatsAppDataContent?.buttonLabelPrimary;
@@ -105,12 +106,23 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
     // aync data fetch
     this.isLoading = true;
+    this.productsAvailable = false;
+
     const subcategoryData: any = await this.getSubcategoryProductsList(subcategorySlug);
     this.productsCatlogue = subcategoryData?.products;
 
-    // hide loader
-    if (!!this.productsCatlogue?.length) {
+    console.log('this.productsCatlogue', this.productsCatlogue);
+
+
+    // view manipulation
+    if (this.productsCatlogue?.length > 0) {
+      // products are available - generate products catlogue view
       this.isLoading = false;
+      this.productsAvailable = true;
+    } else if (this.productsCatlogue?.length === 0){
+      // products unavailable - generate no product available view
+      this.isLoading = false;
+      this.productsAvailable = false;
     }
 
     // console.log('subcategoryData', subcategoryData);
@@ -140,6 +152,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.rxSubscription.unsubscribe();
+    console.log('load status', this.isLoading);
   }
 
 }

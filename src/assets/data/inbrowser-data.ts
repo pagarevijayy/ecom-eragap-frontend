@@ -321,7 +321,15 @@ export class ProductInformation {
                     ]
                 }
             ]
-        }
+        },
+        'XYZ-beads': {
+            "subcategoryLabel": "clay beads",
+            "subcategorySlug": "clay-beads",
+            "displayPictureUrl": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
+            "description": "Main category - Beads, Subcategory - Crystal Beads",
+            "weightage": 0,
+            "products": [ ]
+        },
     }
 
     static products: any = {
