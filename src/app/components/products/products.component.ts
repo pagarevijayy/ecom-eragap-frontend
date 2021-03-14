@@ -13,6 +13,8 @@ export class ProductsComponent implements OnInit, OnDestroy {
   private rxSubscription: Subscription = new Subscription();
 
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
+  isLoading = true;
+  productsAvailable = false;
 
   // @todo: move this stuff to data-service
   whatsAppButtonLabelPrimary = browserData?.whatsAppDataContent?.buttonLabelPrimary;
@@ -78,7 +80,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
     // assign default drop-down value [available slug or max weight subcategory]
     (!!this.activeSubcategorySlug) ? this.currentSubcategoryValue = this.activeSubcategorySlug : this.currentSubcategoryValue = this.currentSubcategoryInfo[0]?.subcategorySlug;
-    
+
     // sync routing with assigned drop-drop value
     this.updateRouteParams(this.currentSubcategoryValue);
 
@@ -92,7 +94,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   subcategoryValueChanged(event: any) {
     // assign new subcategory value
     this.currentSubcategoryValue = event?.value;
-    
+
     // change the route parameter [in-sync with the drop-down value]
     this.updateRouteParams(this.currentSubcategoryValue);
 
@@ -103,8 +105,25 @@ export class ProductsComponent implements OnInit, OnDestroy {
   async updateSubcategoryProductsList(subcategorySlug: string) {
 
     // aync data fetch
+    this.isLoading = true;
+    this.productsAvailable = false;
+
     const subcategoryData: any = await this.getSubcategoryProductsList(subcategorySlug);
     this.productsCatlogue = subcategoryData?.products;
+
+    console.log('this.productsCatlogue', this.productsCatlogue);
+
+
+    // view manipulation
+    if (this.productsCatlogue?.length > 0) {
+      // products are available - generate products catlogue view
+      this.isLoading = false;
+      this.productsAvailable = true;
+    } else if (this.productsCatlogue?.length === 0){
+      // products unavailable - generate no product available view
+      this.isLoading = false;
+      this.productsAvailable = false;
+    }
 
     // console.log('subcategoryData', subcategoryData);
 
@@ -133,6 +152,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.rxSubscription.unsubscribe();
+    console.log('load status', this.isLoading);
   }
 
 }

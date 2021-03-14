@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { StateManagementService, UtilsService } from 'src/app/services';
 
@@ -14,6 +15,7 @@ export class HomepageComponent implements OnInit {
   // variable declaration and assignment
   homepageItems: any;
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
+  isLoading = true;
 
   // @todo: move this kinda stuff into data-service
   carouselLargeScreen: Array<any> = browserData.carouselLargeScreen;
@@ -27,31 +29,47 @@ export class HomepageComponent implements OnInit {
   storeContactNumber = browserData?.storeInformation?.contactNumber;
   storeAddressLineOne = browserData?.storeInformation?.addressLineOne;
   storeAddressLineTwo = browserData?.storeInformation?.addressLineTwo;
+  storeGoogleMapLocationURL = browserData?.storeInformation?.googleMapsLocationURL;
 
   constructor(
     private _utilService: UtilsService,
     private _stateManagementService: StateManagementService,
+    public _sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
+
     // get homepage data
     this._stateManagementService.homepageItemsBroadcast$.subscribe((data) => {
       this.homepageItems = data;
       // console.log('from homepage component[homepageItems]', this.homepageItems);
+
+      if (!!this.homepageItems?.length) {
+        this.isLoading = false;
+      }
     });
   }
 
-  subcategoryClicked(categoryInformation: any, subcategoryData: any){
+  subcategoryClicked(categoryInformation: any, subcategoryData: any) {
 
     // pass-on category details via BS [to products page]
     this._stateManagementService.updateItemCategoryClicked(categoryInformation, 'lastItemCategoryClicked');
-    
+
     //navigate to products page
     const categoryRoute = categoryInformation?.route;
     const subcategorySlug = subcategoryData?.subcategorySlug;
     const destinationRoute = `products/${categoryRoute}/${subcategorySlug}`
-    
+
     this._utilService.navigationRoute(destinationRoute);
+  }
+
+  mailMe() {
+    window.open(`mailto:${this.storeEmailAddress}`, "_blank");
+  }
+
+  callMe() {
+    window.open(`tel:${this.storeContactNumber}`, "_blank");
   }
 
 }
@@ -70,7 +88,7 @@ export class HomepageComponent implements OnInit {
             1 layout - min. 2 cards
             2 layout - min. 2 cards
             3 layout - min. 3 cards
-  
+
 
     2. --- for only one/no sub-category - directly show products [how? -- solve]
     3. Atleast have 2 subcategories

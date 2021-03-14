@@ -18,9 +18,25 @@
       </a>
     </div>
   </div>
-  <div class="product-catlogue" [ngClass]="{'large-screen-product-catlogue': !(isHandset$ | async)}">
-    <div class="product-wrapper" *ngFor="let product of productsCatlogue">
-      <app-product-card [productDetail]="product" ></app-product-card>
+  <div class="products-view-wrapper">
+    <!-- loading spinner -->
+    <div class="loading-spinner-wrapper" *ngIf="isLoading">
+      <mat-spinner [diameter]="30"></mat-spinner>
+    </div>
+    <div class="products-unavailable" *ngIf="!productsAvailable && !isLoading">
+      <div class="illustration-wrapper">
+        <img src="/assets/images/product_unavailable.svg" alt="no-products-available" height="250px">
+      </div>
+      <div class='copy-for-unavailble secondary-text text-center pt-3'>
+        <small class="d-block">No Product Available! 😔</small>
+        <small class="d-block pt-1">Whatsapp us?</small>
+      </div>
+    </div>
+    <!-- products -->
+    <div class="product-catlogue" *ngIf="productsAvailable && !isLoading" [ngClass]="{'large-screen-product-catlogue': !(isHandset$ | async)}">
+      <div class="product-wrapper" *ngFor="let product of productsCatlogue">
+        <app-product-card [productDetail]="product"></app-product-card>
+      </div>
     </div>
   </div>
 </div>

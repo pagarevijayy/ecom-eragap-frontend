@@ -44,6 +44,39 @@
     }
   }
 
+  .image-wrapper {
+    position: relative;
+    display: inline-block;
+    
+    .image-title-overlay {
+      border-radius: 4px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 25%;
+      background: linear-gradient(to bottom, #1a191900, #040c0c75);
+      opacity: 1;
+      transition: opacity 500ms ease-in-out;
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-weight: 500;
+      }
+    }
+
+    &:hover {
+      .image-title-overlay {
+        background: linear-gradient(to bottom, #1a19190e, #040c0c75);
+        opacity: 1;
+      }
+    }
+  }
+
   // wrapper-design and wrapper-design-stretched are used alternatively
   .wrapper-design {
     margin: 2em -1em;
