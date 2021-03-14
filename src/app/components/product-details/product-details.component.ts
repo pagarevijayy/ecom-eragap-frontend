@@ -56,8 +56,6 @@ export class ProductDetailsComponent implements OnInit {
     // aync data fetch
     const productData: any = await this.getProductDetails(productSlug);
 
-    console.log('productData', productData);
-
     // @todo: take some decision whether product exist or not [render views accordingly]
 
     // assign product value
@@ -96,8 +94,6 @@ export class ProductDetailsComponent implements OnInit {
 
     const whatsappBuyNowMessage = `Hi, I'm interested in buying the product '${this.productTitle}' from the '${this.productSubcategoryLabel}' subcategory. Price: ₹${this.currentProductPriceApplied}. Quantity: ${this.currentProductQuantityApplied} piece(s). The reference URL: ${currentURL}`
     
-     console.log('whatsappBuyNowMessage', whatsappBuyNowMessage);
-
      window.open(`https://wa.me/${this.whatsAppContactNumber}?text=${whatsappBuyNowMessage}`, "_blank");
 
   }

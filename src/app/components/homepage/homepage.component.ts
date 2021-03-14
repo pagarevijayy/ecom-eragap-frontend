@@ -43,7 +43,6 @@ export class HomepageComponent implements OnInit {
     // get homepage data
     this._stateManagementService.homepageItemsBroadcast$.subscribe((data) => {
       this.homepageItems = data;
-      // console.log('from homepage component[homepageItems]', this.homepageItems);
 
       if (!!this.homepageItems?.length) {
         this.isLoading = false;

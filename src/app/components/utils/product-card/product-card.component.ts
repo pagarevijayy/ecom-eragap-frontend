@@ -37,8 +37,6 @@ export class ProductCardComponent implements OnInit {
       this.currentSubcategorySlug = params['subcategorySlug'];
     });
 
-    // console.log('productDetail', this.productDetail);
-
     this.productTitle = this.productDetail?.title;
     this.activeProductSlug = this.productDetail?.productSlug;
 
@@ -52,8 +50,7 @@ export class ProductCardComponent implements OnInit {
   }
 
   navigateProductDetailsPage() {
-    // console.log('productDetail', this.productDetail);
-
+    
     const routeURL = `products/${this.currentCategoryRoute}/${this.currentSubcategorySlug}/${this.activeProductSlug}`
     this._utilService.navigationRoute(routeURL);
   }
