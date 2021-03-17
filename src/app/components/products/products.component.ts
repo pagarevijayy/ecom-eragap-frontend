@@ -72,7 +72,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
 
     // sort the subcategory data as per its weightage
-    this._utilService.sortWeightageMaximum(this.currentSubcategoryInfo, 'subcategoryWeightage');
+    this.currentSubcategoryInfo = this._utilService.sortWeightageMaximum(this.currentSubcategoryInfo, 'subcategoryWeightage');
 
     // assign default drop-down value [available slug or max weight subcategory]
     (!!this.activeSubcategorySlug) ? this.currentSubcategoryValue = this.activeSubcategorySlug : this.currentSubcategoryValue = this.currentSubcategoryInfo[0]?.subcategorySlug;

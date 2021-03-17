@@ -3,7 +3,6 @@ import { HttpClient, HttpResponse } from "@angular/common/http";
 import { Observable } from 'rxjs';
 
 import { Apollo } from "apollo-angular";
-import gql from "graphql-tag";
 
 
 @Injectable({
@@ -36,8 +35,8 @@ export class BaseProviderService {
 
   // 2. GraphQL request
 
-  graphqlRequest(queryObject: object): Observable<any> {
-    return this._apollo.query<any>({ query: gql` ${queryObject}` })
+  graphqlRequest(queryObject: any): Observable<any> {
+    return this._apollo.query<any>(queryObject)
   }
 
 }

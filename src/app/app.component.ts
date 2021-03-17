@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { browserData, ProductInformation } from 'src/assets/data/inbrowser-data'
-import { StateManagementService, UtilsService } from './services';
+import { StateManagementService, UnifiedApiService, UtilsService } from './services';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +19,8 @@ export class AppComponent implements OnInit {
   constructor(
     private _utilService: UtilsService,
     private _stateManagementService: StateManagementService,
-    private _titleService: Title
+    private _titleService: Title,
+    private _unifiedService: UnifiedApiService
   ) { }
 
   ngOnInit(): void {
@@ -34,11 +35,11 @@ export class AppComponent implements OnInit {
     this.homepageItems = await this.getHomepageData();
 
     // sort the category data as per its weightage
-    this._utilService.sortWeightageMaximum(this.homepageItems, 'weightage');
+    this.homepageItems = this._utilService.sortWeightageMaximum(this.homepageItems, 'weightage');
 
     // assign the data to a BS [also store in session storage]
     this._stateManagementService.updateHomepageItems(this.homepageItems, 'homepageItems');
-    
+
   }
 
   // actual async request
@@ -46,17 +47,36 @@ export class AppComponent implements OnInit {
     return new Promise((resolve, reject) => {
       // actual http api-call here [async]
 
-      setTimeout(() => {
-        const dataPlaceholder = ProductInformation?.productCategories;
-        resolve(dataPlaceholder);
-      }, 2000)
+      this._unifiedService.graphqlGetHomepageData().subscribe((gqlResponse: any) => {
+        console.log('graphql data:', gqlResponse);
+        console.log('graphql data length:', gqlResponse?.data?.productCategories?.length);
+
+
+        if (gqlResponse?.data?.productCategories && gqlResponse?.data?.productCategories?.length > 0) {
+          const categoryData = gqlResponse?.data?.productCategories;
+          resolve(categoryData);
+        }
+
+        //else some error condition 
+        // @todo: handle it later
+
+      }, (error) => {
+        // @todo: do a better error handling
+        console.log('graphql error:', error);
+      })
+
+      // In-browser data:
+      // setTimeout(() => {
+      //   const dataPlaceholder = ProductInformation?.productCategories;
+      //   resolve(dataPlaceholder);
+      // }, 2000)
 
     });
   }
 
   getProjectFooterText() {
     // @todo: move this kinda stuff into data service.
-    
+
     const currentYear = new Date().getFullYear();
     const copyrightSymbol = browserData?.footerContent?.copyright;
     const copyrightClaimName = browserData?.footerContent?.claimName;
@@ -66,13 +86,13 @@ export class AppComponent implements OnInit {
   }
 
   setIndexHtmlHeaderElements() {
-    
+
     // set title
     const newTitle = browserData?.storeInformation?.storeName;
     this._titleService.setTitle(newTitle);
 
     //set favicon [use either url or emoji svg]
-    const faviconURL =  browserData?.storeInformation?.faviconURL;
+    const faviconURL = browserData?.storeInformation?.faviconURL;
     this.favIcon.href = faviconURL;
   }
 }

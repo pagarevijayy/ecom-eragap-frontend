@@ -66,8 +66,8 @@ export class ProductDetailsComponent implements OnInit {
     this.productQtyPrice = productData?.QtyPrice;
     this.productSubcategoryLabel = productData?.product_subcategory?.subcategoryLabel;
 
-    this._utilService.sortWeightageMaximum(this.productQtyPrice, 'weightage');
-    this._utilService.sortWeightageMaximum(this.productImageURL, 'weightage');
+    this.productQtyPrice = this._utilService.sortWeightageMaximum(this.productQtyPrice, 'weightage');
+    this.productImageURL = this._utilService.sortWeightageMaximum(this.productImageURL, 'weightage');
 
     // @fix later: this arrray[0] will give error if array is undefined/null
     this.currentProductQuantityApplied = this.productQtyPrice[0]?.qty;
