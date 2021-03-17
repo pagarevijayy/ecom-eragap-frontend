@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // material
 import { LayoutModule } from '@angular/cdk/layout';
@@ -12,10 +13,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import {MatFormFieldModule} from '@angular/material/form-field'; 
-import {MatSelectModule} from '@angular/material/select';
-import {MatCardModule} from '@angular/material/card'; 
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 // components
 import { AppComponent } from './app.component';
@@ -24,6 +25,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductCardComponent } from './components/utils/product-card/product-card.component';
+import { InterceptorService } from './services';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import { ProductCardComponent } from './components/utils/product-card/product-ca
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     CommonModule,
     LayoutModule,
     MatToolbarModule,
@@ -48,9 +52,16 @@ import { ProductCardComponent } from './components/utils/product-card/product-ca
     MatFormFieldModule,
     MatSelectModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    GraphQLModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
