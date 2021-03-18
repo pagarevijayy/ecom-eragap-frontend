@@ -48,21 +48,17 @@ export class AppComponent implements OnInit {
       // actual http api-call here [async]
 
       this._unifiedService.graphqlGetHomepageData().subscribe((gqlResponse: any) => {
-        console.log('graphql data:', gqlResponse);
-        console.log('graphql data length:', gqlResponse?.data?.productCategories?.length);
-
 
         if (gqlResponse?.data?.productCategories && gqlResponse?.data?.productCategories?.length > 0) {
           const categoryData = gqlResponse?.data?.productCategories;
           resolve(categoryData);
         }
-
-        //else some error condition 
-        // @todo: handle it later
+        //else 
+        // @todo: some error condition; handle it later
 
       }, (error) => {
         // @todo: do a better error handling
-        console.log('graphql error:', error);
+        console.log('graphql error [homepage]:', error);
       })
 
       // In-browser data:

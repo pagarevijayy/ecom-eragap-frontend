@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
-import { StateManagementService, UtilsService } from 'src/app/services';
+import { StateManagementService, UnifiedApiService, UtilsService } from 'src/app/services';
 import { browserData, ProductInformation } from 'src/assets/data/inbrowser-data'
 
 @Component({
@@ -33,6 +33,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
     private _router: Router,
     private _utilService: UtilsService,
     private _stateManagementService: StateManagementService,
+    private _unifiedService: UnifiedApiService
   ) { }
 
   ngOnInit(): void {
@@ -125,11 +126,25 @@ export class ProductsComponent implements OnInit, OnDestroy {
   getSubcategoryProductsList(subcategorySlug: string) {
     return new Promise((resolve, reject) => {
       // actual http api-call here [async]
+      this._unifiedService.graphqlGetSubcategoryData(subcategorySlug).subscribe((gqlResponse: any) => {
+        
+        if (gqlResponse?.data?.productSubcategories && gqlResponse?.data?.productSubcategories?.length > 0) {
+          const subcategoryData = gqlResponse?.data?.productSubcategories[0];
+          resolve(subcategoryData);
+        }
+        //else 
+        // @todo: some error condition; handle it later
 
-      setTimeout(() => {
-        const dataPlaceholder = ProductInformation?.productSubcategories[subcategorySlug];
-        resolve(dataPlaceholder);
-      }, 1000)
+      }, (error) => {
+        // @todo: do a better error handling
+        console.log('graphql error[product subcategory]:', error);
+      })
+
+      // in-browser data usage
+      // setTimeout(() => {
+      //   const dataPlaceholder = ProductInformation?.productSubcategories[subcategorySlug];
+      //   resolve(dataPlaceholder);
+      // }, 1000)
 
     });
   }

@@ -9,6 +9,7 @@ import { BaseProviderService } from '../base-provider/base-provider.service';
 export class UnifiedApiService {
 
   // REST and GraphQL backend server calls for data using base-provider
+  // Currently going live only with graphQL
 
   constructor(
     private _baseProviderService: BaseProviderService
@@ -35,4 +36,79 @@ export class UnifiedApiService {
 
     return this._baseProviderService.graphqlRequest(queryObject)
   }
+
+  graphqlGetSubcategoryData(subcategorySlug: string) {
+    const queryObject = {
+      query: gql`
+      {
+        productSubcategories( 
+            where: { subcategorySlug: "${subcategorySlug}" }
+            ){
+          subcategoryLabel
+          subcategorySlug
+          displayPictureUrl
+          description
+          weightage
+          products{ 
+            title
+            description
+            productSlug
+            QtyPrice{
+              qty
+              price
+              weightage
+            }
+            Color{
+              colorTitle
+              colorCode
+            }
+            ImageUrl{
+              imgURL
+              weightage
+              description
+            }
+          }
+        }
+      }`
+    }
+
+    return this._baseProviderService.graphqlRequest(queryObject)
+  }
+
+  graphqlGetProductDetails(productSlug: string) {
+    const queryObject = {
+      query: gql`
+      {
+        products ( 
+            where: { productSlug: "${productSlug}" }
+        ){ 
+          title
+          description
+          rating
+          productSlug
+          product_subcategory{
+            subcategoryLabel
+          }
+          QtyPrice{
+            qty
+            price
+            weightage
+          }
+          Color{
+            colorTitle
+            colorCode
+          }
+          ImageUrl{
+            imgURL
+            weightage
+            description
+          }
+        }
+    }`
+    }
+
+    return this._baseProviderService.graphqlRequest(queryObject)
+  }
+
+
 }

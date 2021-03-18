@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UtilsService } from 'src/app/services';
+import { UnifiedApiService, UtilsService } from 'src/app/services';
 import { browserData, ProductInformation } from 'src/assets/data/inbrowser-data'
 
 @Component({
@@ -33,7 +33,8 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     private _route: ActivatedRoute,
-    private _utilService: UtilsService
+    private _utilService: UtilsService,
+    private _unifiedService: UnifiedApiService
   ) { }
 
   ngOnInit(): void {
@@ -102,11 +103,26 @@ export class ProductDetailsComponent implements OnInit {
   getProductDetails(productSlug: string) {
     return new Promise((resolve, reject) => {
       // actual http api-call here [async]
+      this._unifiedService.graphqlGetProductDetails(productSlug).subscribe((gqlResponse: any) => {
 
-      setTimeout(() => {
-        const dataPlaceholder = ProductInformation?.products[productSlug];
-        resolve(dataPlaceholder);
-      }, 1000)
+        if (gqlResponse?.data?.products && gqlResponse?.data?.products?.length > 0) {
+          const productData = gqlResponse?.data?.products[0];
+          resolve(productData);
+        }
+
+        //else 
+        // @todo: some error condition; handle it later
+
+      }, (error) => {
+        // @todo: do a better error handling
+        console.log('graphql error[product subcategory]:', error);
+      })
+
+      // in-browser data usage
+      // setTimeout(() => {
+      //   const dataPlaceholder = ProductInformation?.products[productSlug];
+      //   resolve(dataPlaceholder);
+      // }, 1000)
 
     });
   }
