@@ -46,26 +46,31 @@ export class AppComponent implements OnInit {
   getHomepageData() {
     return new Promise((resolve, reject) => {
       // actual http api-call here [async]
+      const shouldUseInBrowserData: boolean = !!browserData?.storeInformation?.useInBrowserProductData;
 
-      this._unifiedService.graphqlGetHomepageData().subscribe((gqlResponse: any) => {
+      if (shouldUseInBrowserData) {
+        // In-browser data:
+        setTimeout(() => {
+          const dataPlaceholder = ProductInformation?.productCategories;
+          resolve(dataPlaceholder);
+        }, 1000);
 
-        if (gqlResponse?.data?.productCategories && gqlResponse?.data?.productCategories?.length > 0) {
-          const categoryData = gqlResponse?.data?.productCategories;
-          resolve(categoryData);
-        }
-        //else 
-        // @todo: some error condition; handle it later
+      } else {
+        this._unifiedService.graphqlGetHomepageData().subscribe((gqlResponse: any) => {
 
-      }, (error) => {
-        // @todo: do a better error handling
-        console.log('graphql error [homepage]:', error);
-      })
+          if (gqlResponse?.data?.productCategories && gqlResponse?.data?.productCategories?.length > 0) {
+            const categoryData = gqlResponse?.data?.productCategories;
+            resolve(categoryData);
+          }
+          //else 
+          // @todo: some error condition; handle it later
 
-      // In-browser data:
-      // setTimeout(() => {
-      //   const dataPlaceholder = ProductInformation?.productCategories;
-      //   resolve(dataPlaceholder);
-      // }, 2000)
+        }, (error) => {
+          // @todo: do a better error handling
+          console.log('graphql error [homepage]:', error);
+        });
+
+      }
 
     });
   }

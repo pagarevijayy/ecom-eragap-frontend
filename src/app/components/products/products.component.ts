@@ -113,7 +113,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
       // products are available - generate products catlogue view
       this.isLoading = false;
       this.productsAvailable = true;
-    } else if (this.productsCatlogue?.length === 0){
+    } else if (this.productsCatlogue?.length === 0) {
       // products unavailable - generate no product available view
       this.isLoading = false;
       this.productsAvailable = false;
@@ -126,25 +126,30 @@ export class ProductsComponent implements OnInit, OnDestroy {
   getSubcategoryProductsList(subcategorySlug: string) {
     return new Promise((resolve, reject) => {
       // actual http api-call here [async]
-      this._unifiedService.graphqlGetSubcategoryData(subcategorySlug).subscribe((gqlResponse: any) => {
-        
-        if (gqlResponse?.data?.productSubcategories && gqlResponse?.data?.productSubcategories?.length > 0) {
-          const subcategoryData = gqlResponse?.data?.productSubcategories[0];
-          resolve(subcategoryData);
-        }
-        //else 
-        // @todo: some error condition; handle it later
+      const shouldUseInBrowserData: boolean = !!browserData?.storeInformation?.useInBrowserProductData;
 
-      }, (error) => {
-        // @todo: do a better error handling
-        console.log('graphql error[product subcategory]:', error);
-      })
+      if (shouldUseInBrowserData) {
+        // in-browser data usage
+        setTimeout(() => {
+          const dataPlaceholder = ProductInformation?.productSubcategories[subcategorySlug];
+          resolve(dataPlaceholder);
+        }, 1000)
 
-      // in-browser data usage
-      // setTimeout(() => {
-      //   const dataPlaceholder = ProductInformation?.productSubcategories[subcategorySlug];
-      //   resolve(dataPlaceholder);
-      // }, 1000)
+      } else {
+        this._unifiedService.graphqlGetSubcategoryData(subcategorySlug).subscribe((gqlResponse: any) => {
+
+          if (gqlResponse?.data?.productSubcategories && gqlResponse?.data?.productSubcategories?.length > 0) {
+            const subcategoryData = gqlResponse?.data?.productSubcategories[0];
+            resolve(subcategoryData);
+          }
+          //else 
+          // @todo: some error condition; handle it later
+
+        }, (error) => {
+          // @todo: do a better error handling
+          console.log('graphql error[product subcategory]:', error);
+        })
+      }
 
     });
   }

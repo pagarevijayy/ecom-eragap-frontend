@@ -12,7 +12,7 @@ import { browserData, ProductInformation } from 'src/assets/data/inbrowser-data'
 export class ProductDetailsComponent implements OnInit {
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
   isLoading = true;
-  
+
   productTitle: string;
   productDescription: string
   productSubcategoryLabel: string
@@ -94,8 +94,8 @@ export class ProductDetailsComponent implements OnInit {
     const currentURL = location?.href;
 
     const whatsappBuyNowMessage = `Hi, I'm interested in buying the product '${this.productTitle}' from the '${this.productSubcategoryLabel}' subcategory. Price: ₹${this.currentProductPriceApplied}. Quantity: ${this.currentProductQuantityApplied} piece(s). The reference URL: ${currentURL}`
-    
-     window.open(`https://wa.me/${this.whatsAppContactNumber}?text=${whatsappBuyNowMessage}`, "_blank");
+
+    window.open(`https://wa.me/${this.whatsAppContactNumber}?text=${whatsappBuyNowMessage}`, "_blank");
 
   }
 
@@ -103,26 +103,30 @@ export class ProductDetailsComponent implements OnInit {
   getProductDetails(productSlug: string) {
     return new Promise((resolve, reject) => {
       // actual http api-call here [async]
-      this._unifiedService.graphqlGetProductDetails(productSlug).subscribe((gqlResponse: any) => {
+      const shouldUseInBrowserData: boolean = !!browserData?.storeInformation?.useInBrowserProductData;
 
-        if (gqlResponse?.data?.products && gqlResponse?.data?.products?.length > 0) {
-          const productData = gqlResponse?.data?.products[0];
-          resolve(productData);
-        }
+      if (shouldUseInBrowserData) {
+        // in-browser data usage
+        setTimeout(() => {
+          const dataPlaceholder = ProductInformation?.products[productSlug];
+          resolve(dataPlaceholder);
+        }, 1000)
+      } else {
+        this._unifiedService.graphqlGetProductDetails(productSlug).subscribe((gqlResponse: any) => {
 
-        //else 
-        // @todo: some error condition; handle it later
+          if (gqlResponse?.data?.products && gqlResponse?.data?.products?.length > 0) {
+            const productData = gqlResponse?.data?.products[0];
+            resolve(productData);
+          }
 
-      }, (error) => {
-        // @todo: do a better error handling
-        console.log('graphql error[product subcategory]:', error);
-      })
+          //else 
+          // @todo: some error condition; handle it later
 
-      // in-browser data usage
-      // setTimeout(() => {
-      //   const dataPlaceholder = ProductInformation?.products[productSlug];
-      //   resolve(dataPlaceholder);
-      // }, 1000)
+        }, (error) => {
+          // @todo: do a better error handling
+          console.log('graphql error[product subcategory]:', error);
+        })
+      }
 
     });
   }
