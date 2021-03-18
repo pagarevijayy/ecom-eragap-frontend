@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UtilsService } from 'src/app/services';
+import { UnifiedApiService, UtilsService } from 'src/app/services';
 import { browserData, ProductInformation } from 'src/assets/data/inbrowser-data'
 
 @Component({
@@ -12,7 +12,7 @@ import { browserData, ProductInformation } from 'src/assets/data/inbrowser-data'
 export class ProductDetailsComponent implements OnInit {
   isHandset$: Observable<boolean> = this._utilService.isHandset$;
   isLoading = true;
-  
+
   productTitle: string;
   productDescription: string
   productSubcategoryLabel: string
@@ -33,7 +33,8 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     private _route: ActivatedRoute,
-    private _utilService: UtilsService
+    private _utilService: UtilsService,
+    private _unifiedService: UnifiedApiService
   ) { }
 
   ngOnInit(): void {
@@ -66,8 +67,8 @@ export class ProductDetailsComponent implements OnInit {
     this.productQtyPrice = productData?.QtyPrice;
     this.productSubcategoryLabel = productData?.product_subcategory?.subcategoryLabel;
 
-    this._utilService.sortWeightageMaximum(this.productQtyPrice, 'weightage');
-    this._utilService.sortWeightageMaximum(this.productImageURL, 'weightage');
+    this.productQtyPrice = this._utilService.sortWeightageMaximum(this.productQtyPrice, 'weightage');
+    this.productImageURL = this._utilService.sortWeightageMaximum(this.productImageURL, 'weightage');
 
     // @fix later: this arrray[0] will give error if array is undefined/null
     this.currentProductQuantityApplied = this.productQtyPrice[0]?.qty;
@@ -93,8 +94,8 @@ export class ProductDetailsComponent implements OnInit {
     const currentURL = location?.href;
 
     const whatsappBuyNowMessage = `Hi, I'm interested in buying the product '${this.productTitle}' from the '${this.productSubcategoryLabel}' subcategory. Price: ₹${this.currentProductPriceApplied}. Quantity: ${this.currentProductQuantityApplied} piece(s). The reference URL: ${currentURL}`
-    
-     window.open(`https://wa.me/${this.whatsAppContactNumber}?text=${whatsappBuyNowMessage}`, "_blank");
+
+    window.open(`https://wa.me/${this.whatsAppContactNumber}?text=${whatsappBuyNowMessage}`, "_blank");
 
   }
 
@@ -102,11 +103,30 @@ export class ProductDetailsComponent implements OnInit {
   getProductDetails(productSlug: string) {
     return new Promise((resolve, reject) => {
       // actual http api-call here [async]
+      const shouldUseInBrowserData: boolean = !!browserData?.storeInformation?.useInBrowserProductData;
 
-      setTimeout(() => {
-        const dataPlaceholder = ProductInformation?.products[productSlug];
-        resolve(dataPlaceholder);
-      }, 1000)
+      if (shouldUseInBrowserData) {
+        // in-browser data usage
+        setTimeout(() => {
+          const dataPlaceholder = ProductInformation?.products[productSlug];
+          resolve(dataPlaceholder);
+        }, 1000)
+      } else {
+        this._unifiedService.graphqlGetProductDetails(productSlug).subscribe((gqlResponse: any) => {
+
+          if (gqlResponse?.data?.products && gqlResponse?.data?.products?.length > 0) {
+            const productData = gqlResponse?.data?.products[0];
+            resolve(productData);
+          }
+
+          //else 
+          // @todo: some error condition; handle it later
+
+        }, (error) => {
+          // @todo: do a better error handling
+          console.log('graphql error[product subcategory]:', error);
+        })
+      }
 
     });
   }

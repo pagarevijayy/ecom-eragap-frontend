@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
-import { StateManagementService, UtilsService } from 'src/app/services';
+import { StateManagementService, UnifiedApiService, UtilsService } from 'src/app/services';
 import { browserData, ProductInformation } from 'src/assets/data/inbrowser-data'
 
 @Component({
@@ -33,6 +33,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
     private _router: Router,
     private _utilService: UtilsService,
     private _stateManagementService: StateManagementService,
+    private _unifiedService: UnifiedApiService
   ) { }
 
   ngOnInit(): void {
@@ -72,7 +73,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
 
     // sort the subcategory data as per its weightage
-    this._utilService.sortWeightageMaximum(this.currentSubcategoryInfo, 'subcategoryWeightage');
+    this.currentSubcategoryInfo = this._utilService.sortWeightageMaximum(this.currentSubcategoryInfo, 'subcategoryWeightage');
 
     // assign default drop-down value [available slug or max weight subcategory]
     (!!this.activeSubcategorySlug) ? this.currentSubcategoryValue = this.activeSubcategorySlug : this.currentSubcategoryValue = this.currentSubcategoryInfo[0]?.subcategorySlug;
@@ -112,7 +113,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
       // products are available - generate products catlogue view
       this.isLoading = false;
       this.productsAvailable = true;
-    } else if (this.productsCatlogue?.length === 0){
+    } else if (this.productsCatlogue?.length === 0) {
       // products unavailable - generate no product available view
       this.isLoading = false;
       this.productsAvailable = false;
@@ -125,11 +126,30 @@ export class ProductsComponent implements OnInit, OnDestroy {
   getSubcategoryProductsList(subcategorySlug: string) {
     return new Promise((resolve, reject) => {
       // actual http api-call here [async]
+      const shouldUseInBrowserData: boolean = !!browserData?.storeInformation?.useInBrowserProductData;
 
-      setTimeout(() => {
-        const dataPlaceholder = ProductInformation?.productSubcategories[subcategorySlug];
-        resolve(dataPlaceholder);
-      }, 1000)
+      if (shouldUseInBrowserData) {
+        // in-browser data usage
+        setTimeout(() => {
+          const dataPlaceholder = ProductInformation?.productSubcategories[subcategorySlug];
+          resolve(dataPlaceholder);
+        }, 1000)
+
+      } else {
+        this._unifiedService.graphqlGetSubcategoryData(subcategorySlug).subscribe((gqlResponse: any) => {
+
+          if (gqlResponse?.data?.productSubcategories && gqlResponse?.data?.productSubcategories?.length > 0) {
+            const subcategoryData = gqlResponse?.data?.productSubcategories[0];
+            resolve(subcategoryData);
+          }
+          //else 
+          // @todo: some error condition; handle it later
+
+        }, (error) => {
+          // @todo: do a better error handling
+          console.log('graphql error[product subcategory]:', error);
+        })
+      }
 
     });
   }

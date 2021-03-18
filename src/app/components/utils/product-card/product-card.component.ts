@@ -41,16 +41,16 @@ export class ProductCardComponent implements OnInit {
     this.activeProductSlug = this.productDetail?.productSlug;
 
     // sort the price-quantity and image url data as per its weightage
-    this._utilService.sortWeightageMaximum(this.productDetail?.QtyPrice, 'weightage');
-    this._utilService.sortWeightageMaximum(this.productDetail?.ImageUrl, 'weightage');
+    let productDetailQtyPrice = this._utilService.sortWeightageMaximum(this.productDetail?.QtyPrice, 'weightage');
+    let productDetailImageUrl = this._utilService.sortWeightageMaximum(this.productDetail?.ImageUrl, 'weightage');
 
     // price and image data 
-    this.productPrice = this.productDetail?.QtyPrice[0]?.price;
-    this.productImageURL = this.productDetail?.ImageUrl[0]?.imgURL;
+    this.productPrice = productDetailQtyPrice[0]?.price;
+    this.productImageURL = productDetailImageUrl[0]?.imgURL;
   }
 
   navigateProductDetailsPage() {
-    
+
     const routeURL = `products/${this.currentCategoryRoute}/${this.currentSubcategorySlug}/${this.activeProductSlug}`
     this._utilService.navigationRoute(routeURL);
   }
