@@ -57,4 +57,8 @@ export class MainNavComponent implements OnInit {
     this._stateManagementService.updateItemCategoryClicked(categoryInformation, 'lastItemCategoryClicked');
   }
 
+  poweredByEragapTech(){
+    window.open(`https://eragap.co.in`, "_blank");
+  }
+
 }

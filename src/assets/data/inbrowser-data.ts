@@ -28,9 +28,9 @@ export class browserData {
         emailAddress: "eragaptech@gmail.com",
         addressLineOne: "Sector 1, Shantinagar",
         addressLineTwo: "Miraroad (E), Thane 401107",
-        socialFacebook: "urlhere",
-        socialInstagram: null,
-        socialTwitter: null,
+        socialFacebook: "https://eragap.co.in/",
+        socialInstagram: "https://eragap.co.in/",
+        socialTwitter: 'https://eragap.co.in/',
     };
 
     static footerContent = {
