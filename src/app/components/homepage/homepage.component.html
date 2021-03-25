@@ -112,7 +112,17 @@
         <section class="col-sm">
             <div class='center-css-box'>
                 <div [ngClass]="{'pt-4': (isHandset$ | async)}">
-                    <h5 class="fs-18" *ngIf="!(isHandset$ | async)"> follow us:</h5>
+                    <div class="ssk-beads-extra">
+                        <h5 class="fs-18" *ngIf="!(isHandset$ | async)"> contact info:</h5>
+                        <aside>—</aside>
+                        <div class="fs-12">
+                            <span class="d-block pt-2 mb-1 cursor-pointer" (click)="phoneCall_SSKextra(9821782844)">Narayan Khedekar: <span> 9821782844</span></span>
+                            <span class="d-block pt-2 mb-1 cursor-pointer" (click)="phoneCall_SSKextra(9029559131)">Mangesh Khedekar: <span> 9029559131</span></span>
+                            <span class="d-block pt-2 cursor-pointer" (click)="phoneCall_SSKextra(02222422971)">Office: <span>022-22422971</span></span>
+                        </div>
+                    </div>
+
+                    <!-- <h5 class="fs-18" *ngIf="!(isHandset$ | async)"> follow us:</h5>
                     <div class="pt-1">
                         <span class="px-2" *ngIf="!!storeFacebookURL">
                             <i class="fa fa-facebook cursor-pointer" (click)="socialMediaCTA('facebook')" aria-hidden="true"></i>
@@ -127,7 +137,7 @@
                     <aside class="py-3">
                         <span class="d-block fs-12 cursor-pointer" (click)="callMe()"> {{storeContactNumber}}</span>
                         <span class="d-block fs-12 pt-2 cursor-pointer" (click)="mailMe()">{{storeEmailAddress}} </span>
-                    </aside>
+                    </aside> -->
                 </div>
             </div>
         </section>

@@ -93,6 +93,10 @@ export class HomepageComponent implements OnInit {
     }
   }
 
+  phoneCall_SSKextra(phoneNumber: number){
+    window.open(`tel:${phoneNumber}`, "_blank");
+  }
+
 }
 
 
