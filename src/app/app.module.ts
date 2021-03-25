@@ -27,6 +27,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { ProductCardComponent } from './components/utils/product-card/product-card.component';
 import { InterceptorService } from './services';
 import { GraphQLModule } from './graphql.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import { GraphQLModule } from './graphql.module';
     MatSelectModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    GraphQLModule
+    GraphQLModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {
