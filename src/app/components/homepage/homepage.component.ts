@@ -30,6 +30,10 @@ export class HomepageComponent implements OnInit {
   storeAddressLineOne = browserData?.storeInformation?.addressLineOne;
   storeAddressLineTwo = browserData?.storeInformation?.addressLineTwo;
   storeGoogleMapLocationURL = browserData?.storeInformation?.googleMapsLocationURL;
+  storeFacebookURL = browserData?.storeInformation?.socialFacebook;
+  storeInstagramURL = browserData?.storeInformation?.socialInstagram;
+  storeTwitterURL = browserData?.storeInformation?.socialTwitter;
+
 
   constructor(
     private _utilService: UtilsService,
@@ -69,6 +73,24 @@ export class HomepageComponent implements OnInit {
 
   callMe() {
     window.open(`tel:${this.storeContactNumber}`, "_blank");
+  }
+
+  socialMediaCTA(platform: string) {
+    switch (platform) {
+      case 'facebook':
+        window.open(`${this.storeFacebookURL}`, "_blank");
+        break;
+
+      case 'instagram':
+        window.open(`${this.storeInstagramURL}`, "_blank");
+        break;
+      case 'twitter':
+        window.open(`${this.storeTwitterURL}`, "_blank");
+        break;
+
+      default:
+        break;
+    }
   }
 
 }

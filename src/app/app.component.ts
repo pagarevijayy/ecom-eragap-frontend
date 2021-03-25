@@ -96,4 +96,8 @@ export class AppComponent implements OnInit {
     const faviconURL = browserData?.storeInformation?.faviconURL;
     this.favIcon.href = faviconURL;
   }
+
+  poweredByEragapTech(){
+    window.open(`https://eragap.co.in`, "_blank");
+  }
 }
