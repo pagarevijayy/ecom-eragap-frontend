@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { SwUpdate } from '@angular/service-worker';
 import { browserData, ProductInformation } from 'src/assets/data/inbrowser-data'
 import { StateManagementService, UnifiedApiService, UtilsService } from './services';
 
@@ -20,8 +21,16 @@ export class AppComponent implements OnInit {
     private _utilService: UtilsService,
     private _stateManagementService: StateManagementService,
     private _titleService: Title,
-    private _unifiedService: UnifiedApiService
-  ) { }
+    private _unifiedService: UnifiedApiService,
+    private _updates: SwUpdate
+  ) {
+    //check if the code has an update and force trigger the new one.
+    this._updates.available.subscribe(event => {
+      if (!!event) {
+        this._updates.activateUpdate().then(() => window.location.assign(window.location.origin));
+      }
+    });
+  }
 
   ngOnInit(): void {
     // homepage data
@@ -97,7 +106,7 @@ export class AppComponent implements OnInit {
     this.favIcon.href = faviconURL;
   }
 
-  poweredByEragapTech(){
+  poweredByEragapTech() {
     window.open(`https://eragap.co.in`, "_blank");
   }
 }
