@@ -20,7 +20,7 @@ export class browserData {
     };
 
     static storeInformation = {
-        useInBrowserProductData: true,
+        useInBrowserProductData: false,
         storeName: "SSK Beads",
         faviconURL: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛍️</text></svg>",
         googleMapsLocationURL: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15093.98798465607!2d72.8295027!3d18.953646!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4dd039fcbfb34267!2sShree%20Sai%20Krupa%20Beads!5e0!3m2!1sen!2sin!4v1616690423462!5m2!1sen!2sin",
