@@ -25,7 +25,8 @@
             "aot": true,
             "assets": [
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              "src/_redirects"
             ],
             "styles": [
               "src/styles.scss",
@@ -96,7 +97,8 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              "src/_redirects"
             ],
             "styles": [
               "src/styles.scss",
