@@ -3,7 +3,7 @@
   "index": "/index.html",
   "assetGroups": [
     {
-      "name": "app",
+      "name": "app-files",
       "installMode": "prefetch",
       "resources": {
         "files": [
@@ -12,11 +12,13 @@
           "/manifest.webmanifest",
           "/*.css",
           "/*.js"
+        ],
+        "urls": [
         ]
       }
     },
     {
-      "name": "assets",
+      "name": "app-assets",
       "installMode": "lazy",
       "updateMode": "prefetch",
       "resources": {
@@ -24,6 +26,20 @@
           "/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "app-api-data",
+      "urls": [
+        "**/graphql"
+      ],
+      "cacheConfig": {
+        "maxSize": 20,
+        "maxAge": "2d",
+        "timeout": "7s",
+        "strategy": "freshness"
       }
     }
   ]
