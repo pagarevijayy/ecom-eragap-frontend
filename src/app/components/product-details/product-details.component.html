@@ -62,17 +62,18 @@
         </div>
     </div>
 
-    <!-- CHECK SIMILAR PRODUCTS feature OFF FOR NOW -->
-    <!-- <div class="other-products mt-3 mb-1 text-center">
+    <!-- CHECK SIMILAR PRODUCTS -->
+    <div class="other-products mt-3 mb-1 text-center" *ngIf="similarProducts?.length > 0">
         <section class='my-4'>
-            <span class='check-products secondary-text px-3'>Check similar products</span>
+            <span class='check-products secondary-text px-3 py-1'>Check similar products</span>
         </section>
-        <div class="recommended-products py-2" [ngClass]="{'large-screen-recommended-layout': !(isHandset$ | async)}">
-            <app-product-card class="suggestion-start"></app-product-card>
-            <app-product-card></app-product-card>
+        <div class="recommended-products py-2">
+            <div class="product-wrapper" *ngFor="let product of similarProducts; let i = index">
+              <app-product-card [productDetail]="product"></app-product-card>
+            </div>
         </div>
         <section class="find-more pt-4 pb-3">
             <button mat-stroked-button style="background-color: blanchedalmond;">Find More</button>
         </section>
-    </div> -->
+    </div>
 </div>

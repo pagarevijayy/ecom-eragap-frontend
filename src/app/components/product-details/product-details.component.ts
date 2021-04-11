@@ -20,6 +20,7 @@ export class ProductDetailsComponent implements OnInit {
   productColor: Array<any>;
   productImageURL: Array<any>;
   productQtyPrice: Array<any>;
+  similarProducts: Array<any> = [];
 
 
   currentCategoryRoute: string;
@@ -58,7 +59,6 @@ export class ProductDetailsComponent implements OnInit {
     // aync data fetch
     const productData: any = await this.getProductDetails(productSlug);
 
-    // console.log('productData', productData);
 
     // @todo: take some decision whether product exist or not [render views accordingly]
 
@@ -70,6 +70,7 @@ export class ProductDetailsComponent implements OnInit {
     this.productQtyPrice = productData?.QtyPrice;
     this.productSubcategoryLabel = productData?.product_subcategory?.subcategoryLabel;
     this.productQuantityUnitLabel = productData?.product_subcategory?.quantityUnitLabel || 'piece(s)';
+    this.similarProducts = productData?.similar_products;
 
     this.productQtyPrice = this._utilService.sortWeightageMaximum(this.productQtyPrice, 'weightage');
     this.productImageURL = this._utilService.sortWeightageMaximum(this.productImageURL, 'weightage');

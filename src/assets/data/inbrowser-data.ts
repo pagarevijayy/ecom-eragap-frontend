@@ -1186,8 +1186,139 @@ export class ProductInformation {
             "rating": 0,
             "productSlug": "a1-pendants",
             "product_subcategory": {
-                "subcategoryLabel": "Special pendants"
+                "subcategoryLabel": "Special pendants",
+                "quantityUnitLabel": "pieces"
             },
+            "similar_products":[
+              {
+                  "__typename": "Product",
+                  "title": "Coolest pendant",
+                  "description": "ted. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompa",
+                  "productSlug": "coolest-pendant",
+                  "QtyPrice": [
+                      {
+                          "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                          "qty": 3,
+                          "price": 199,
+                          "weightage": 0
+                      },
+                      {
+                          "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                          "qty": 15,
+                          "price": 2666,
+                          "weightage": 10
+                      },
+                      {
+                          "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                          "qty": 10,
+                          "price": 456,
+                          "weightage": 1
+                      }
+                  ],
+                  "Color": [],
+                  "ImageUrl": [
+                      {
+                          "__typename": "ComponentImageUrlJsonImageUrl",
+                          "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
+                          "weightage": null,
+                          "description": null
+                      }
+                  ]
+              },
+              {
+                  "__typename": "Product",
+                  "title": "Some product",
+                  "description": "hrough the cites of the word in classical literature, discovered th",
+                  "productSlug": "some-product",
+                  "QtyPrice": [
+                      {
+                          "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                          "qty": 5,
+                          "price": 1665.98,
+                          "weightage": 0
+                      }
+                  ],
+                  "Color": [
+                      {
+                          "__typename": "ComponentProductColorJsonProductColor",
+                          "colorTitle": "red",
+                          "colorCode": "#B32F4F"
+                      }
+                  ],
+                  "ImageUrl": [
+                      {
+                          "__typename": "ComponentImageUrlJsonImageUrl",
+                          "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg",
+                          "weightage": null,
+                          "description": null
+                      }
+                  ]
+              },
+              {
+                "__typename": "Product",
+                "title": "Coolest pendant",
+                "description": "ted. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompa",
+                "productSlug": "coolest-pendant",
+                "QtyPrice": [
+                    {
+                        "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                        "qty": 3,
+                        "price": 199,
+                        "weightage": 0
+                    },
+                    {
+                        "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                        "qty": 15,
+                        "price": 2666,
+                        "weightage": 10
+                    },
+                    {
+                        "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                        "qty": 10,
+                        "price": 456,
+                        "weightage": 1
+                    }
+                ],
+                "Color": [],
+                "ImageUrl": [
+                    {
+                        "__typename": "ComponentImageUrlJsonImageUrl",
+                        "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
+                        "weightage": null,
+                        "description": null
+                    }
+                ]
+            },
+        {
+            "__typename": "Product",
+            "title": "Some product",
+            "description": "hrough the cites of the word in classical literature, discovered th",
+            "productSlug": "some-product",
+            "QtyPrice": [
+                {
+                    "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                    "qty": 5,
+                    "price": 1665.98,
+                    "weightage": 0
+                }
+            ],
+            "Color": [
+                {
+                    "__typename": "ComponentProductColorJsonProductColor",
+                    "colorTitle": "red",
+                    "colorCode": "#B32F4F"
+                }
+            ],
+            "ImageUrl": [
+                {
+                    "__typename": "ComponentImageUrlJsonImageUrl",
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        }
+            ],
             "QtyPrice": [
                 {
                     "qty": 1,
