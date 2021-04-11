@@ -15,7 +15,8 @@ export class ProductDetailsComponent implements OnInit {
 
   productTitle: string;
   productDescription: string
-  productSubcategoryLabel: string
+  productSubcategoryLabel: string;
+  productQuantityUnitLabel: string;
   productColor: Array<any>;
   productImageURL: Array<any>;
   productQtyPrice: Array<any>;
@@ -57,6 +58,8 @@ export class ProductDetailsComponent implements OnInit {
     // aync data fetch
     const productData: any = await this.getProductDetails(productSlug);
 
+    // console.log('productData', productData);
+
     // @todo: take some decision whether product exist or not [render views accordingly]
 
     // assign product value
@@ -66,6 +69,7 @@ export class ProductDetailsComponent implements OnInit {
     this.productImageURL = productData?.ImageUrl;
     this.productQtyPrice = productData?.QtyPrice;
     this.productSubcategoryLabel = productData?.product_subcategory?.subcategoryLabel;
+    this.productQuantityUnitLabel = productData?.product_subcategory?.quantityUnitLabel || 'piece(s)';
 
     this.productQtyPrice = this._utilService.sortWeightageMaximum(this.productQtyPrice, 'weightage');
     this.productImageURL = this._utilService.sortWeightageMaximum(this.productImageURL, 'weightage');
@@ -93,7 +97,7 @@ export class ProductDetailsComponent implements OnInit {
   buyNowClicked() {
     const currentURL = location?.href;
 
-    const whatsappBuyNowMessage = `Hi, I'm interested in buying the product '${this.productTitle}' from the '${this.productSubcategoryLabel}' subcategory. Price: ₹${this.currentProductPriceApplied}. Quantity: ${this.currentProductQuantityApplied} piece(s). The reference URL: ${currentURL}`
+    const whatsappBuyNowMessage = `Hi, I'm interested in buying the product '${this.productTitle}' from the '${this.productSubcategoryLabel}' subcategory. Price: ₹${this.currentProductPriceApplied}. Quantity: ${this.currentProductQuantityApplied} ${this.productQuantityUnitLabel}. The reference URL: ${currentURL}`
 
     window.open(`https://wa.me/${this.whatsAppContactNumber}?text=${whatsappBuyNowMessage}`, "_blank");
 
@@ -119,7 +123,7 @@ export class ProductDetailsComponent implements OnInit {
             resolve(productData);
           }
 
-          //else 
+          //else
           // @todo: some error condition; handle it later
 
         }, (error) => {

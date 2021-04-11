@@ -234,13 +234,13 @@ export class ProductInformation {
                     ]
                 },
                 {
-                    "title": "AYZB bead",
+                    "title": "AYZB bone bead",
                     "description": "labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dol",
                     "productSlug": "ayzb-bead",
                     "QtyPrice": [
                         {
                             "qty": 1,
-                            "price": 5,
+                            "price": 50,
                             "weightage": 0
                         },
                         {
@@ -264,7 +264,7 @@ export class ProductInformation {
                     ]
                 },
                 {
-                    "title": "three bead",
+                    "title": "three bead long name goes here",
                     "description": "lla pariatur. Excepteur sint occaecat cupidatat non proident, s",
                     "productSlug": "three-bead",
                     "QtyPrice": [
@@ -945,7 +945,7 @@ export class ProductInformation {
             ]
         },
         "ayzb-bead": {
-            "title": "AYZB bead",
+            "title": "AYZB bone bead",
             "description": "labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dol",
             "rating": 0,
             "productSlug": "ayzb-bead",
@@ -955,7 +955,7 @@ export class ProductInformation {
             "QtyPrice": [
                 {
                     "qty": 1,
-                    "price": 5,
+                    "price": 50,
                     "weightage": 0
                 },
                 {
@@ -979,7 +979,7 @@ export class ProductInformation {
             ]
         },
         "three-bead": {
-            "title": "three bead",
+            "title": "three bead long name goes here",
             "description": "lla pariatur. Excepteur sint occaecat cupidatat non proident, s",
             "rating": 0,
             "productSlug": "three-bead",

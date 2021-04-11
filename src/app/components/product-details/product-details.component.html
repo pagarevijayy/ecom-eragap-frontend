@@ -32,7 +32,7 @@
                         <mat-select [value]="currentProductQuantityApplied"
                             (selectionChange)='quantityValueChanged($event)'>
                             <mat-option [value]="option.qty" *ngFor="let option of productQtyPrice">
-                                {{ option.qty }} piece(s)</mat-option>
+                                {{ option.qty }} {{productQuantityUnitLabel}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
