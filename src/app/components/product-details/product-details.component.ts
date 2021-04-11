@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UnifiedApiService, UtilsService } from 'src/app/services';
 import { browserData, ProductInformation } from 'src/assets/data/inbrowser-data'
@@ -34,15 +34,20 @@ export class ProductDetailsComponent implements OnInit {
   whatsAppContactNumber = browserData?.whatsAppDataContent?.whatsAppContactNumber;
 
   constructor(
-    private _route: ActivatedRoute,
+    private _router: Router,
+    private _activatedRoute: ActivatedRoute,
     private _utilService: UtilsService,
     private _unifiedService: UnifiedApiService
-  ) { }
+  ) {
+    this._router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+  }
 
   ngOnInit(): void {
 
     // get route param values [categoryRoute and subcategorySlug]
-    this._route.params.subscribe((params) => {
+    this._activatedRoute.params.subscribe((params) => {
       this.currentCategoryRoute = params['categoryRoute'];
       this.currentSubcategorySlug = params['subcategorySlug'];
       this.currentProductSlug = params['productSlug'];
@@ -102,6 +107,10 @@ export class ProductDetailsComponent implements OnInit {
 
     window.open(`https://wa.me/${this.whatsAppContactNumber}?text=${whatsappBuyNowMessage}`, "_blank");
 
+  }
+
+  findMoreSimilarProducts(){
+    this._router.navigate(['../'], {relativeTo: this._activatedRoute});
   }
 
   // actual async request
