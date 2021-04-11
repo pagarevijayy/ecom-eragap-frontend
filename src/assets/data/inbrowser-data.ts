@@ -196,7 +196,7 @@ export class ProductInformation {
             "weightage": 10,
             "products": [
                 {
-                    "title": "BXY bead",
+                    "title": "BXY bead this is the longest name ever for any product",
                     "description": " dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint oc",
                     "productSlug": "bxy-bead",
                     "QtyPrice": [
@@ -234,13 +234,13 @@ export class ProductInformation {
                     ]
                 },
                 {
-                    "title": "AYZB bead",
+                    "title": "AYZB bone bead",
                     "description": "labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dol",
                     "productSlug": "ayzb-bead",
                     "QtyPrice": [
                         {
                             "qty": 1,
-                            "price": 5,
+                            "price": 50,
                             "weightage": 0
                         },
                         {
@@ -264,7 +264,7 @@ export class ProductInformation {
                     ]
                 },
                 {
-                    "title": "three bead",
+                    "title": "three bead long name goes here",
                     "description": "lla pariatur. Excepteur sint occaecat cupidatat non proident, s",
                     "productSlug": "three-bead",
                     "QtyPrice": [
@@ -903,7 +903,7 @@ export class ProductInformation {
 
     static products: any = {
         "bxy-bead": {
-            "title": "BXY bead",
+            "title": "BXY bead this is the longest name ever for any product",
             "description": " dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint oc",
             "rating": 0,
             "productSlug": "bxy-bead",
@@ -945,7 +945,7 @@ export class ProductInformation {
             ]
         },
         "ayzb-bead": {
-            "title": "AYZB bead",
+            "title": "AYZB bone bead",
             "description": "labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dol",
             "rating": 0,
             "productSlug": "ayzb-bead",
@@ -955,7 +955,7 @@ export class ProductInformation {
             "QtyPrice": [
                 {
                     "qty": 1,
-                    "price": 5,
+                    "price": 50,
                     "weightage": 0
                 },
                 {
@@ -979,7 +979,7 @@ export class ProductInformation {
             ]
         },
         "three-bead": {
-            "title": "three bead",
+            "title": "three bead long name goes here",
             "description": "lla pariatur. Excepteur sint occaecat cupidatat non proident, s",
             "rating": 0,
             "productSlug": "three-bead",
@@ -1186,8 +1186,139 @@ export class ProductInformation {
             "rating": 0,
             "productSlug": "a1-pendants",
             "product_subcategory": {
-                "subcategoryLabel": "Special pendants"
+                "subcategoryLabel": "Special pendants",
+                "quantityUnitLabel": "pieces"
             },
+            "similar_products":[
+              {
+                  "__typename": "Product",
+                  "title": "Coolest pendant",
+                  "description": "ted. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompa",
+                  "productSlug": "coolest-pendant",
+                  "QtyPrice": [
+                      {
+                          "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                          "qty": 3,
+                          "price": 199,
+                          "weightage": 0
+                      },
+                      {
+                          "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                          "qty": 15,
+                          "price": 2666,
+                          "weightage": 10
+                      },
+                      {
+                          "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                          "qty": 10,
+                          "price": 456,
+                          "weightage": 1
+                      }
+                  ],
+                  "Color": [],
+                  "ImageUrl": [
+                      {
+                          "__typename": "ComponentImageUrlJsonImageUrl",
+                          "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
+                          "weightage": null,
+                          "description": null
+                      }
+                  ]
+              },
+              {
+                  "__typename": "Product",
+                  "title": "Some product",
+                  "description": "hrough the cites of the word in classical literature, discovered th",
+                  "productSlug": "some-product",
+                  "QtyPrice": [
+                      {
+                          "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                          "qty": 5,
+                          "price": 1665.98,
+                          "weightage": 0
+                      }
+                  ],
+                  "Color": [
+                      {
+                          "__typename": "ComponentProductColorJsonProductColor",
+                          "colorTitle": "red",
+                          "colorCode": "#B32F4F"
+                      }
+                  ],
+                  "ImageUrl": [
+                      {
+                          "__typename": "ComponentImageUrlJsonImageUrl",
+                          "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg",
+                          "weightage": null,
+                          "description": null
+                      }
+                  ]
+              },
+              {
+                "__typename": "Product",
+                "title": "Coolest pendant",
+                "description": "ted. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompa",
+                "productSlug": "coolest-pendant",
+                "QtyPrice": [
+                    {
+                        "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                        "qty": 3,
+                        "price": 199,
+                        "weightage": 0
+                    },
+                    {
+                        "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                        "qty": 15,
+                        "price": 2666,
+                        "weightage": 10
+                    },
+                    {
+                        "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                        "qty": 10,
+                        "price": 456,
+                        "weightage": 1
+                    }
+                ],
+                "Color": [],
+                "ImageUrl": [
+                    {
+                        "__typename": "ComponentImageUrlJsonImageUrl",
+                        "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
+                        "weightage": null,
+                        "description": null
+                    }
+                ]
+            },
+        {
+            "__typename": "Product",
+            "title": "Some product",
+            "description": "hrough the cites of the word in classical literature, discovered th",
+            "productSlug": "some-product",
+            "QtyPrice": [
+                {
+                    "__typename": "ComponentQtyPriceJsonProductQtyPrice",
+                    "qty": 5,
+                    "price": 1665.98,
+                    "weightage": 0
+                }
+            ],
+            "Color": [
+                {
+                    "__typename": "ComponentProductColorJsonProductColor",
+                    "colorTitle": "red",
+                    "colorCode": "#B32F4F"
+                }
+            ],
+            "ImageUrl": [
+                {
+                    "__typename": "ComponentImageUrlJsonImageUrl",
+                    "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-3_rOFYI3OS2.jpg",
+                    "weightage": null,
+                    "description": null
+                }
+            ]
+        }
+            ],
             "QtyPrice": [
                 {
                     "qty": 1,

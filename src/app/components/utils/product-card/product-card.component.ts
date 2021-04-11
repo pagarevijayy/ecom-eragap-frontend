@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UtilsService } from 'src/app/services';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-card',
@@ -10,6 +11,7 @@ import { UtilsService } from 'src/app/services';
 export class ProductCardComponent implements OnInit {
   @Input() productDetail: any;
 
+  isHandset$: Observable<boolean> = this._utilService.isHandset$;
   buttonLabel: string = 'Check details'
 
   productTitle: string;
@@ -44,7 +46,7 @@ export class ProductCardComponent implements OnInit {
     let productDetailQtyPrice = this._utilService.sortWeightageMaximum(this.productDetail?.QtyPrice, 'weightage');
     let productDetailImageUrl = this._utilService.sortWeightageMaximum(this.productDetail?.ImageUrl, 'weightage');
 
-    // price and image data 
+    // price and image data
     this.productPrice = productDetailQtyPrice[0]?.price;
     this.productImageURL = productDetailImageUrl[0]?.imgURL;
   }

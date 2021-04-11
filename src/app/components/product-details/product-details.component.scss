@@ -40,16 +40,17 @@
     }
 
     .recommended-products {
-      display: grid;
-      grid-gap: 0.65em;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin:0 -0.5rem;
 
-      &.large-screen-recommended-layout {
-        grid-gap: 1.5em;
-        grid-template-columns: repeat(6, 1fr);
-
-        .suggestion-start {
-          grid-column-start: 3;
+      .product-wrapper{
+        padding: 0.5rem;
+        max-width: 250px;
+        @media only screen and (max-width: 600px) {
+          flex: 1;
         }
       }
     }

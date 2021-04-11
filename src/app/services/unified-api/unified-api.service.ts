@@ -41,7 +41,7 @@ export class UnifiedApiService {
     const queryObject = {
       query: gql`
       {
-        productSubcategories( 
+        productSubcategories(
             where: { subcategorySlug: "${subcategorySlug}" }
             ){
           subcategoryLabel
@@ -49,7 +49,8 @@ export class UnifiedApiService {
           displayPictureUrl
           description
           weightage
-          products{ 
+          quantityUnitLabel
+          products{
             title
             description
             productSlug
@@ -79,15 +80,35 @@ export class UnifiedApiService {
     const queryObject = {
       query: gql`
       {
-        products ( 
+        products (
             where: { productSlug: "${productSlug}" }
-        ){ 
+        ){
           title
           description
           rating
           productSlug
           product_subcategory{
             subcategoryLabel
+            quantityUnitLabel
+          }
+          similar_products{
+            title
+            description
+            productSlug
+            QtyPrice{
+                qty
+                price
+                weightage
+            }
+            Color{
+                colorTitle
+                colorCode
+            }
+            ImageUrl{
+                imgURL
+                weightage
+                description
+            }
           }
           QtyPrice{
             qty

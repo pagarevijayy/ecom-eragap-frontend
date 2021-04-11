@@ -26,4 +26,17 @@
     flex-direction: column;
     height: 400px;
   }
+
+  .btn-wa-label{
+    padding: 0 1rem;
+    @media only screen and (min-width: 1152px) and (max-width: 1229px) {
+      padding: 0 1.5rem;
+    }
+    @media only screen and (min-width: 1230px) and (max-width: 1309px) {
+      padding: 0 2rem;
+    }
+    @media only screen and (min-width: 1310px) {
+      padding: 0 0.5rem;
+    }
+  }
 }
