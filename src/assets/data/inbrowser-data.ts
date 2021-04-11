@@ -196,7 +196,7 @@ export class ProductInformation {
             "weightage": 10,
             "products": [
                 {
-                    "title": "BXY bead",
+                    "title": "BXY bead this is the longest name ever for any product",
                     "description": " dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint oc",
                     "productSlug": "bxy-bead",
                     "QtyPrice": [
@@ -903,7 +903,7 @@ export class ProductInformation {
 
     static products: any = {
         "bxy-bead": {
-            "title": "BXY bead",
+            "title": "BXY bead this is the longest name ever for any product",
             "description": " dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint oc",
             "rating": 0,
             "productSlug": "bxy-bead",
