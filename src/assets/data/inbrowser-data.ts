@@ -218,7 +218,7 @@ export class ProductInformation {
                         },
                         {
                             "colorTitle": "purple",
-                            "colorCode": "#995FFA"
+                            "colorCode": "#8fd6e1"
                         },
                         {
                             "colorTitle": "yellow",
@@ -338,7 +338,7 @@ export class ProductInformation {
             "weightage": 0,
             "products": [
                 {
-                    "title": "am clay bead",
+                    "title": "This is a dummy clay bead",
                     "description": "por incididunt ut labore et dolore magna aliqua. Ut enim a",
                     "productSlug": "am-clay-bead",
                     "QtyPrice": [
@@ -376,7 +376,32 @@ export class ProductInformation {
                             "description": null
                         }
                     ]
-                }
+                },
+                    {
+                        "title": "2mm Clay Maroon Bead",
+                        "description": "all the data on the site is dummy - used only as a placeholder",
+                        "productSlug": "2mm-clay-marron-bead",
+                        "QtyPrice": [
+                            {
+                                "qty": 2,
+                                "price": 999,
+                                "weightage": 0
+                            },
+                            {
+                                "qty": 4,
+                                "price": 1799,
+                                "weightage": 1
+                            }
+                        ],
+                        "Color": [],
+                        "ImageUrl": [
+                            {
+                                "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-5_Bmvc6No5S.jpg",
+                                "weightage": null,
+                                "description": "master image"
+                            }
+                        ]
+                    }
             ]
         },
         "xyz-beads": {
@@ -910,6 +935,103 @@ export class ProductInformation {
             "product_subcategory": {
                 "subcategoryLabel": "Bone Beads"
             },
+            "similar_products":[
+              {
+                "title": "AYZB bone bead",
+                "description": "labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dol",
+                "productSlug": "ayzb-bead",
+                "QtyPrice": [
+                    {
+                        "qty": 1,
+                        "price": 50,
+                        "weightage": 0
+                    },
+                    {
+                        "qty": 5,
+                        "price": 20,
+                        "weightage": 0
+                    },
+                    {
+                        "qty": 10,
+                        "price": 30,
+                        "weightage": 0
+                    }
+                ],
+                "Color": [],
+                "ImageUrl": [
+                    {
+                        "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-1_tbE8TJhRa.webp",
+                        "weightage": null,
+                        "description": null
+                    }
+                ]
+            },
+            {
+                "title": "three bead long name goes here",
+                "description": "lla pariatur. Excepteur sint occaecat cupidatat non proident, s",
+                "productSlug": "three-bead",
+                "QtyPrice": [
+                    {
+                        "qty": 5,
+                        "price": 599,
+                        "weightage": 0
+                    }
+                ],
+                "Color": [],
+                "ImageUrl": [
+                    {
+                        "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-5_Bmvc6No5S.jpg",
+                        "weightage": null,
+                        "description": null
+                    }
+                ]
+            },
+            {
+                "title": "placeholder label",
+                "description": "m ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati",
+                "productSlug": "placeholder-label",
+                "QtyPrice": [
+                    {
+                        "qty": 100,
+                        "price": 1999,
+                        "weightage": 0
+                    },
+                    {
+                        "qty": 200,
+                        "price": 3500,
+                        "weightage": 0
+                    }
+                ],
+                "Color": [],
+                "ImageUrl": [
+                    {
+                        "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-4_IMTJrTZIW.webp",
+                        "weightage": null,
+                        "description": null
+                    }
+                ]
+            },
+            {
+                "title": "fifth bead",
+                "description": "e irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui offic",
+                "productSlug": "fifth-bead",
+                "QtyPrice": [
+                    {
+                        "qty": 3,
+                        "price": 60,
+                        "weightage": 0
+                    }
+                ],
+                "Color": [],
+                "ImageUrl": [
+                    {
+                        "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
+                        "weightage": null,
+                        "description": null
+                    }
+                ]
+            }
+            ],
             "QtyPrice": [
                 {
                     "qty": 5,
@@ -929,7 +1051,7 @@ export class ProductInformation {
                 },
                 {
                     "colorTitle": "purple",
-                    "colorCode": "#995FFA"
+                    "colorCode": "#8fd6e1"
                 },
                 {
                     "colorTitle": "yellow",
@@ -1056,13 +1178,60 @@ export class ProductInformation {
             ]
         },
         "am-clay-bead": {
-            "title": "am clay bead",
-            "description": "por incididunt ut labore et dolore magna aliqua. Ut enim a",
+            "title": "This is a dummy clay bead",
+            "description": "por incididunt ut labore et dolore magna aliqua. Ut enim a  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint",
             "rating": 0,
             "productSlug": "am-clay-bead",
             "product_subcategory": {
                 "subcategoryLabel": "Clay Beads"
             },
+            "similar_products": [
+                {
+                    "title": "another clay bead",
+                    "description": "i ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint ",
+                    "productSlug": "another-clay-bead",
+                    "QtyPrice": [
+                        {
+                            "qty": 3,
+                            "price": 499,
+                            "weightage": 0
+                        }
+                    ],
+                    "Color": [],
+                    "ImageUrl": [
+                        {
+                            "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/product-2_kMPTyfcDi.jpg",
+                            "weightage": null,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "title": "2mm Clay Maroon Bead",
+                    "description": "all the data on the site is dummy - used only as a placeholder",
+                    "productSlug": "2mm-clay-marron-bead",
+                    "QtyPrice": [
+                        {
+                            "qty": 2,
+                            "price": 999,
+                            "weightage": 0
+                        },
+                        {
+                            "qty": 4,
+                            "price": 1799,
+                            "weightage": 1
+                        }
+                    ],
+                    "Color": [],
+                    "ImageUrl": [
+                        {
+                            "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-5_Bmvc6No5S.jpg",
+                            "weightage": null,
+                            "description": "master image"
+                        }
+                    ]
+                }
+            ],
             "QtyPrice": [
                 {
                     "qty": 15,
@@ -1103,6 +1272,37 @@ export class ProductInformation {
                 }
             ]
         },
+        "2mm-clay-marron-bead":{
+          "title": "2mm Clay Maroon Bead",
+          "description": "all the data on the site is dummy - used only as a placeholder",
+          "rating": 0,
+          "productSlug": "2mm-clay-marron-bead",
+          "product_subcategory": {
+              "subcategoryLabel": "Clay Beads",
+              "quantityUnitLabel": null
+          },
+          "similar_products": [],
+          "QtyPrice": [
+              {
+                  "qty": 2,
+                  "price": 999,
+                  "weightage": 0
+              },
+              {
+                  "qty": 4,
+                  "price": 1799,
+                  "weightage": 1
+              }
+          ],
+          "Color": [],
+          "ImageUrl": [
+              {
+                  "imgURL": "https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/product-images/prod-5_Bmvc6No5S.jpg",
+                  "weightage": null,
+                  "description": "master image"
+              }
+          ]
+      },
         "ssk-special": {
             "title": "SSK special",
             "description": "This is the special ssk bead.",
@@ -1187,7 +1387,7 @@ export class ProductInformation {
             "productSlug": "a1-pendants",
             "product_subcategory": {
                 "subcategoryLabel": "Special pendants",
-                "quantityUnitLabel": "pieces"
+                "quantityUnitLabel": "line(s)"
             },
             "similar_products":[
               {
