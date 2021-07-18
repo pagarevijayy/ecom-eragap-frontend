@@ -47,6 +47,10 @@
         width: 100%;
       }
     }
+
+    @media only screen and (min-width: 960px) {
+      max-height: 300px;
+    }
   }
 
   .image-wrapper {
@@ -143,6 +147,11 @@
   }
 }
 
+.border-radius-xl {
+  @media only screen and (min-width: 1279px) {
+    border-radius: 1.75rem;
+  }
+}
 
 //  Layouts: 
 
@@ -175,8 +184,7 @@
   .showcase-card-long {
 
     border-radius: 4px;
-    max-width: 415px;
-
+    max-width: 350px;
 
     @media only screen and (max-width: 600px) {
       min-width: calc(65vw);
@@ -198,8 +206,7 @@
 
   .showcase-card-long {
     border-radius: 4px;
-    max-width: 415px;
-
+    max-width: 350px;
 
     @media only screen and (max-width: 600px) {
       min-width: calc(50vw - 1.5em);
@@ -215,8 +222,7 @@
 
   .showcase-card-long {
     border-radius: 4px;
-    max-width: 415px;
-
+    max-width: 350px;
 
     @media only screen and (max-width: 600px) {
       min-width: calc(33vw - 1.25em);
