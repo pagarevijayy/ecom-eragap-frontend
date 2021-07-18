@@ -8,8 +8,8 @@ export class browserData {
 
   static carouselSmallScreen: Array<any> = [
     'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-2_Cl6oj1OGRD.webp',
+    'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-3__zfmRXYjhF.webp',
     'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-1_9hLMRUm9bS.webp',
-    'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-3__zfmRXYjhF.webp'
   ];
 
   static whatsAppDataContent = {

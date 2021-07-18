@@ -92,7 +92,7 @@
       margin: 4em;
       background: #fff;
       border-radius: 16px;
-      padding: 1em 0 4em 0;
+      padding: 1em 4em 4em 4em;
     }
   }
 
@@ -173,13 +173,13 @@
   overflow-x: auto;
 
   .showcase-card-long {
-    // background-color: aquamarine;
-    // height: 250px;
-    border-radius: 4px;
-    min-width: calc(65vw);
 
-    @media only screen and (min-width: 600px) {
-      min-width: calc(25%);
+    border-radius: 4px;
+    max-width: 415px;
+
+
+    @media only screen and (max-width: 600px) {
+      min-width: calc(65vw);
     }
 
   }
@@ -197,13 +197,12 @@
   margin-left: auto;
 
   .showcase-card-long {
-    // background-color: aquamarine;
-    // height: 250px;
     border-radius: 4px;
-    min-width: calc(50vw - 1.5em);
+    max-width: 415px;
 
-    @media only screen and (min-width: 600px) {
-      min-width: calc(33% - 0.5em);
+
+    @media only screen and (max-width: 600px) {
+      min-width: calc(50vw - 1.5em);
     }
   }
 }
@@ -215,13 +214,12 @@
   overflow-x: auto;
 
   .showcase-card-long {
-    // background-color: aquamarine;
-    // height: 250px;
     border-radius: 4px;
-    min-width: calc(33vw - 1.25em);
+    max-width: 415px;
 
-    @media only screen and (min-width: 600px) {
-      min-width: calc(20%);
+
+    @media only screen and (max-width: 600px) {
+      min-width: calc(33vw - 1.25em);
     }
   }
 }
