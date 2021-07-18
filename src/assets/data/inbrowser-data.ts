@@ -14,7 +14,7 @@ export class browserData {
 
   static whatsAppDataContent = {
     whatsAppContactNumber: 917972071550,
-    buttonLabelPrimary: `Contact for Business Enquiry`,
+    buttonLabelPrimary: `Contact for Enquiry`,
     buttonLabelSecondary: "Looking for something? Let us know!",
     enquiryTextPrimary: `Hi! I wanted to know more about your product and services. Can we have a word?`
   };
