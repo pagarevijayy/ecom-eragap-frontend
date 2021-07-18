@@ -31,7 +31,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <div class="menu-wrapper">
-        <div class="px-2 cursor-pointer logo-font" (click)="navigationRoute(false, 'home')">{{storeName}}</div>
+        <div class="px-3 cursor-pointer logo-font" (click)="navigationRoute(false, 'home')">{{storeName}}</div>
         <nav class="d-flex flex-wrap mx-2 margin-pull" *ngIf="!(isHandset$ | async)">
           <a class="nav-item-link mx-2 cursor-pointer" *ngFor="let item of homepageItems"
             (click)="navigationRoute(true, item?.route); menuItemClicked(item)">{{item?.categoryLabel}}</a>

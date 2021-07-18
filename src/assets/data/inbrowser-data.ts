@@ -1,9 +1,9 @@
 export class browserData {
 
   static carouselLargeScreen: Array<any> = [
-    'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-1_Bi3IshONp.jpg',
     'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-3_p-1jMlTZ9m.jpg',
-    'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-2_N0vvEThjJ.jpg'
+    'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-2_N0vvEThjJ.jpg',
+    'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-1_Bi3IshONp.jpg',
   ];
 
   static carouselSmallScreen: Array<any> = [
