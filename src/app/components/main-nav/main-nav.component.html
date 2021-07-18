@@ -1,15 +1,17 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav text-center" fixedInViewport
+  <mat-sidenav [autoFocus]="false" #drawer class="sidenav text-center" fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'">
     <mat-toolbar class="secondary-text fs-18">Categories</mat-toolbar>
     <mat-nav-list class="pt-0">
-      <a mat-list-item *ngFor="let item of homepageItems" (click)="navigationRoute(true, item?.route); menuItemClicked(item)">
+      <a mat-list-item *ngFor="let item of homepageItems"
+        (click)="navigationRoute(true, item?.route); menuItemClicked(item)">
         <span> {{item?.categoryLabel}} </span>
         <span> <img src="assets/images/chevron_right.svg" alt="chevron"> </span>
       </a>
     </mat-nav-list>
     <div class="whatsapp-cta p-3 mt-2">
-      <a class="btn btn-whatsapp-style" href="https://wa.me/{{whatsAppContactNumber}}?text={{whatsAppEnquiryTextPrimary}}" target="_blank">
+      <a class="btn btn-whatsapp-style"
+        href="https://wa.me/{{whatsAppContactNumber}}?text={{whatsAppEnquiryTextPrimary}}" target="_blank">
         <section class="d-flex align-items-center">
           <img src="assets/images/whatsapp.svg" alt="whatsapp">
           <span class="px-2 fs-12">{{whatsAppButtonLabelPrimary}}</span>
@@ -18,20 +20,20 @@
     </div>
     <div class="copyright-text pt-2">
       <span class="d-block secondary-text fs-12">{{copyrightText}}</span>
-      <span class="d-block secondary-text fs-12 pt-2 cursor-pointer" (click)="poweredByEragapTech()"> <small style="font-size: 8px;">Powered by</small> Eragap Tech Company</span>
+      <span class="d-block secondary-text fs-12 pt-2 cursor-pointer" (click)="poweredByEragapTech()"> <small
+          style="font-size: 8px;">Powered by</small> Eragap Tech</span>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar class="main-toolbar mb-3">
-      <button type="button" aria-label="Toggle sidenav"
-        mat-icon-button style="outline: none;" 
-        (click)="drawer.toggle()"
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button style="outline: none;" (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span  class="px-2 cursor-pointer logo-font" (click)="navigationRoute(false, 'home')">{{storeName}}</span>
+      <span class="px-2 cursor-pointer logo-font" (click)="navigationRoute(false, 'home')">{{storeName}}</span>
       <nav class="d-flex flex-wrap mx-2 margin-pull" *ngIf="!(isHandset$ | async)">
-        <a class="nav-item-link mx-2 cursor-pointer" *ngFor="let item of homepageItems" (click)="navigationRoute(true, item?.route); menuItemClicked(item)">{{item?.categoryLabel}}</a>
+        <a class="nav-item-link mx-2 cursor-pointer" *ngFor="let item of homepageItems"
+          (click)="navigationRoute(true, item?.route); menuItemClicked(item)">{{item?.categoryLabel}}</a>
       </nav>
     </mat-toolbar>
     <!-- Add Main Page Content Here -->

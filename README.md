@@ -1,27 +1,40 @@
-# Ecom frontend eragap
+# Ecom fronten
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+1. production branch is v1 something
 
-## Development server
+### Project dependencies
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Change inbrowser data (in assets folder)
+2. environment variables
 
-## Code scaffolding
+### todo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+small screen
 
-## Build
+- [ ] Keep small screens as it is (only whatsapp CTA for 320px is off)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+larger screen
 
-## Running unit tests
+- [ ] don't break small screen
+- [ ] container:1280 px
+  - [ ] fix scroll (by removing height 100% on sidenav-container)
+- [ ] menu bar:
+  - [ ] wrapper be full screen and content wrapped in container
+  - [ ] give menubar a shadow
+  - [ ] shift menu items on right side
+- [ ] carousel: object fit image with fixed height
+- [ ] home page:
+  - [ ] sections give div or images a height (all sections should have equal length)
+  - [ ] do something with visit us section and footer (typography)
+- [ ] products section:
+  - [ ] fix view port issue
+  - [ ] multi-line product names break
+  - [ ] button breaks
+  - [ ] max height breaks in empty products category
+- [ ] product details
+  - [ ] max width 65ch (product name and description)
+- [ ] apply large screen from lg (fix sm md with mobile views)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Wiki
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- [ ] Edit wiki

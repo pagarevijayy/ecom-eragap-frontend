@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "internet": "ng serve --host=192.168.0.105",
+    "internet": "ng serve --host=192.168.0.106",
     "pwa": "ng build --prod && http-server dist/ecom-frontend-eragap -p 8081",
     "build": "ng build",
     "test": "ng test",
