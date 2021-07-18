@@ -9,9 +9,9 @@
     </mat-form-field>
 
     <div class="whatsapp-cta px-2 mt-2" *ngIf="!(isHandset$ | async)">
-      <a class="btn btn-whatsapp-style"
+      <a class="btn btn-whatsapp-style w-100"
         href="https://wa.me/{{whatsAppContactNumber}}?text={{whatsAppEnquiryTextPrimary}}" target="_blank">
-        <section class="d-flex align-items-center">
+        <section class="d-flex align-items-center justify-content-center">
           <img src="assets/images/whatsapp.svg" alt="whatsapp">
           <span class="btn-wa-label fs-12">{{whatsAppButtonLabelPrimary}}</span>
         </section>
@@ -33,7 +33,8 @@
       </div>
     </div>
     <!-- products -->
-    <div class="product-catlogue" *ngIf="productsAvailable && !isLoading" [ngClass]="{'large-screen-product-catlogue': !(isHandset$ | async)}">
+    <div class="product-catlogue" *ngIf="productsAvailable && !isLoading"
+      [ngClass]="{'large-screen-product-catlogue': !(isHandset$ | async)}">
       <div class="product-wrapper" *ngFor="let product of productsCatlogue">
         <app-product-card [productDetail]="product"></app-product-card>
       </div>
