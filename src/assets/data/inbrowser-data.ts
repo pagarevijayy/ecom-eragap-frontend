@@ -1,21 +1,21 @@
 export class browserData {
 
   static carouselLargeScreen: Array<any> = [
-    'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-1_Bi3IshONp.jpg',
     'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-3_p-1jMlTZ9m.jpg',
-    'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-2_N0vvEThjJ.jpg'
+    'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-2_N0vvEThjJ.jpg',
+    'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel/carousel-1_Bi3IshONp.jpg',
   ];
 
   static carouselSmallScreen: Array<any> = [
     'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-2_Cl6oj1OGRD.webp',
+    'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-3__zfmRXYjhF.webp',
     'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-1_9hLMRUm9bS.webp',
-    'https://ik.imagekit.io/pagarevijayytech/ecom-platform-eragap/carousel-small-screen/mob-carousel-3__zfmRXYjhF.webp'
   ];
 
   static whatsAppDataContent = {
     whatsAppContactNumber: 9102222422972,
-    buttonLabelPrimary: `Contact for Business Enquiry`,
-    buttonLabelSecondary: "Looking for something else? Let us know!",
+    buttonLabelPrimary: `Contact for Enquiry`,
+    buttonLabelSecondary: "Looking for something? Let us know!",
     enquiryTextPrimary: `Hi! I wanted to know more about your product and services. Can we have a word?`
   };
 
