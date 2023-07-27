@@ -107,6 +107,6 @@ export class AppComponent implements OnInit {
   }
 
   poweredByEragapTech() {
-    window.open(`https://eragap.co.in`, "_blank");
+    window.open(`https://twitter.com/pagarevijayy`, "_blank");
   }
 }
