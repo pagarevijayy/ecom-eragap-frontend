@@ -13,7 +13,7 @@ export class browserData {
   ];
 
   static whatsAppDataContent = {
-    whatsAppContactNumber: 917972071550,
+    whatsAppContactNumber: "91797207xxx0",
     buttonLabelPrimary: `Contact for Enquiry`,
     buttonLabelSecondary: "Looking for something? Let us know!",
     enquiryTextPrimary: `Hi! I wanted to know more about your product and services. Can we have a word?`
@@ -23,14 +23,14 @@ export class browserData {
     useInBrowserProductData: true,
     storeName: "Eragap Co.",
     faviconURL: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛍️</text></svg>",
-    googleMapsLocationURL: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1883.0353227697742!2d72.85859100051474!3d19.279293798848443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b04e2398e9fd%3A0x7f02171ee4cd53d0!2sB-52%2C%20Mira%20Rd%2C%20Sector%201%2C%20Shanti%20Nagar%2C%20Mira%20Road%2C%20Mira%20Bhayandar%2C%20Maharashtra%20401107!5e0!3m2!1sen!2sin!4v1615579587841!5m2!1sen!2sin",
-    contactNumber: 7972071550,
+    googleMapsLocationURL: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30128.03683973049!2d72.87653655!3d19.28216595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0458cf7298b%3A0x468ed839e9df2b21!2sMira%20Road%20East%2C%20Mira%20Bhayandar%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1690421998514!5m2!1sen!2sin",
+    contactNumber: "797207xxx0", // needs to be a number - not string
     emailAddress: "pagarevijayy@gmail.com",
-    addressLineOne: "Sector 1, Shantinagar",
+    addressLineOne: "Shantinagar",
     addressLineTwo: "Miraroad (E), Thane 401107",
-    socialFacebook: "https://eragap.co.in/",
-    socialInstagram: "https://eragap.co.in/",
-    socialTwitter: 'https://eragap.co.in/',
+    socialFacebook: "https://twitter.com/pagarevijayy",
+    socialInstagram: "https://twitter.com/pagarevijayy/",
+    socialTwitter: 'https://twitter.com/pagarevijayy',
   };
 
   static footerContent = {
